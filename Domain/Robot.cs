@@ -1,7 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
+using Regresser.Domain.RobotsActions;
+using Regresser.Domain.Shipper;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -22,24 +21,73 @@ namespace Regresser
 
         public async Task<HttpResponseMessage> SendActions()
         {
-            var values = new List<Robot>
+            var jarvis = new Robot
             {
-                new Robot
+                TestId = Guid.NewGuid(),
+                RobotName = "jarvis",
+                actions = new List<Actions>
                 {
-                    TestId = Guid.NewGuid(),
-                    RobotName = "userbolt",
-                    actions = new List<Actions>
+                    new JarvisActions
                     {
-                       new Actions
-                       {
-                           type = "timeout",
-                           timeout = 4000
-                       }
+                        URL_WS_OTM = "http://191.239.245.232:{{port}}/tmsExchangeMessage/TMSExchangeMessage.asmx",
+                        Shipments = new List<Shipment>
+                        {
+                            new Shipment
+                            {
+                                ShipmentDomainName = "EMBDEV",
+                                ShipmentXid = "SH-ROBO-DE-TESTE-{{shipmentNumber}}",
+                                TravelStatus = "PLANEJADO",
+                                EmissionStatus = "PRE_EMISSAO_ENVIADA",
+                                XidCarrier = "Carrier",
+                                XidSourceLocation = "Source",
+                                XidDestinationLocation = "Destination",
+                                XidTakerLocation = "Taker",
+                                AddedTax = "N",
+                                TaxIncluded = "N",
+                                ShipmentCosts = new List<ShipmentCost>
+                                {
+                                    new ShipmentCost
+                                    {
+                                        CostType = "B",
+                                        Value = 900.00f,
+                                        AllocateCost = true,
+                                    }
+                                },
+                                Releases = new List<Release>
+                                {
+                                    new Release
+                                    {
+                                        ReleaseDomainName = "EMBDEV",
+                                        ReleaseXid = "SH-ROBO-DE-TESTE-{{shipmentNumber}}"
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+            };
+        
+            var userbolt = new Robot
+            {
+                TestId = Guid.NewGuid(),
+                RobotName = "userbolt",
+                actions = new List<Actions>
+                {
+                    new UserBoltActions
+                    {
+                        type = "timeout",
+                        timeout = 4000
                     }
                 }
             };
 
-            var json = JsonConvert.SerializeObject(values);
+            var robots = new List<Robot>
+            {
+                jarvis, userbolt
+            };
+
+            var json = JsonConvert.SerializeObject(robots);
 
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
