@@ -29,13 +29,13 @@ namespace Regresser
                 {
                     new JarvisActions
                     {
-                        URL_WS_OTM = "http://191.239.245.232:{{port}}/tmsExchangeMessage/TMSExchangeMessage.asmx",
+                        URL_WS_OTM = "http://191.239.245.232:1048/tmsExchangeMessage/TMSExchangeMessage.asmx",
                         Shipments = new List<Shipment>
                         {
                             new Shipment
                             {
                                 ShipmentDomainName = "EMBDEV",
-                                ShipmentXid = "SH-ROBO-DE-TESTE-{{shipmentNumber}}",
+                                ShipmentXid = "EMBARQUE-1",
                                 TravelStatus = "PLANEJADO",
                                 EmissionStatus = "PRE_EMISSAO_ENVIADA",
                                 XidCarrier = "Carrier",
@@ -58,16 +58,16 @@ namespace Regresser
                                     new Release
                                     {
                                         ReleaseDomainName = "EMBDEV",
-                                        ReleaseXid = "SH-ROBO-DE-TESTE-{{shipmentNumber}}"
+                                        ReleaseXid = "ORDEM-1"
                                     }
                                 }
-                                
+
                             }
                         }
                     }
                 }
             };
-        
+
             var userbolt = new Robot
             {
                 TestId = Guid.NewGuid(),
@@ -91,7 +91,7 @@ namespace Regresser
 
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await client.PostAsync("http://localhost:3001/actions",httpContent);
+            var response = await client.PostAsync("http://localhost:3001/actions", httpContent);
 
             Console.WriteLine(response);
 
