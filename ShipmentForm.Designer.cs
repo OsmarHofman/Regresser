@@ -48,9 +48,9 @@ namespace Regresser
             this.label9 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_UF = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox_IBGE = new System.Windows.Forms.MaskedTextBox();
             this.listBox_Release_Refnums = new System.Windows.Forms.ListBox();
             this.listBox_Release_Xids = new System.Windows.Forms.ListBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -65,7 +65,7 @@ namespace Regresser
             this.label16 = new System.Windows.Forms.Label();
             this.button_Save = new System.Windows.Forms.Button();
             this.button_Cancelar = new System.Windows.Forms.Button();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabControl_Shipment_Costs = new System.Windows.Forms.TabControl();
             this.tabPage_Planning = new System.Windows.Forms.TabPage();
             this.textBox_Driver_Xid = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -88,7 +88,7 @@ namespace Regresser
             this.button_Add_Shipment_Refnum = new System.Windows.Forms.Button();
             this.tabPage_Address = new System.Windows.Forms.TabPage();
             this.tabPage_Release = new System.Windows.Forms.TabPage();
-            this.tabControl1.SuspendLayout();
+            this.tabControl_Shipment_Costs.SuspendLayout();
             this.tabPage_Planning.SuspendLayout();
             this.tabPage_Shipment_Cost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Shipment_Costs)).BeginInit();
@@ -142,6 +142,7 @@ namespace Regresser
             this.comboBox_Travel_Status.Name = "comboBox_Travel_Status";
             this.comboBox_Travel_Status.Size = new System.Drawing.Size(140, 23);
             this.comboBox_Travel_Status.TabIndex = 4;
+            this.comboBox_Travel_Status.Text = "PLANEJADO";
             // 
             // label3
             // 
@@ -171,6 +172,7 @@ namespace Regresser
             this.comboBox_Emission_Status.Name = "comboBox_Emission_Status";
             this.comboBox_Emission_Status.Size = new System.Drawing.Size(140, 23);
             this.comboBox_Emission_Status.TabIndex = 6;
+            this.comboBox_Emission_Status.Text = "PRE_EMISSAO_ENVIADA";
             // 
             // label5
             // 
@@ -266,10 +268,10 @@ namespace Regresser
             this.label10.TabIndex = 19;
             this.label10.Text = "Estado";
             // 
-            // comboBox1
+            // comboBox_UF
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.comboBox_UF.FormattingEnabled = true;
+            this.comboBox_UF.Items.AddRange(new object[] {
             "AC",
             "AL",
             "AP",
@@ -298,10 +300,11 @@ namespace Regresser
             "SP",
             "SE",
             "TO"});
-            this.comboBox1.Location = new System.Drawing.Point(323, 76);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(47, 23);
-            this.comboBox1.TabIndex = 20;
+            this.comboBox_UF.Location = new System.Drawing.Point(323, 76);
+            this.comboBox_UF.Name = "comboBox_UF";
+            this.comboBox_UF.Size = new System.Drawing.Size(47, 23);
+            this.comboBox_UF.TabIndex = 20;
+            this.comboBox_UF.Text = "SP";
             // 
             // label11
             // 
@@ -312,13 +315,14 @@ namespace Regresser
             this.label11.TabIndex = 22;
             this.label11.Text = "IBGE";
             // 
-            // maskedTextBox1
+            // maskedTextBox_IBGE
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(444, 76);
-            this.maskedTextBox1.Mask = "0000000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(47, 23);
-            this.maskedTextBox1.TabIndex = 11;
+            this.maskedTextBox_IBGE.Location = new System.Drawing.Point(444, 76);
+            this.maskedTextBox_IBGE.Mask = "0000000";
+            this.maskedTextBox_IBGE.Name = "maskedTextBox_IBGE";
+            this.maskedTextBox_IBGE.Size = new System.Drawing.Size(61, 23);
+            this.maskedTextBox_IBGE.TabIndex = 11;
+            this.maskedTextBox_IBGE.Text = "3550308";
             // 
             // listBox_Release_Refnums
             // 
@@ -457,6 +461,7 @@ namespace Regresser
             this.button_Save.Text = "Salvar";
             this.button_Save.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Save.UseVisualStyleBackColor = true;
+            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             // 
             // button_Cancelar
             // 
@@ -470,18 +475,18 @@ namespace Regresser
             this.button_Cancelar.UseVisualStyleBackColor = true;
             this.button_Cancelar.Click += new System.EventHandler(this.button_Cancelar_Click);
             // 
-            // tabControl1
+            // tabControl_Shipment_Costs
             // 
-            this.tabControl1.Controls.Add(this.tabPage_Planning);
-            this.tabControl1.Controls.Add(this.tabPage_Shipment_Cost);
-            this.tabControl1.Controls.Add(this.tabPageShipment_Refnum);
-            this.tabControl1.Controls.Add(this.tabPage_Address);
-            this.tabControl1.Controls.Add(this.tabPage_Release);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(614, 246);
-            this.tabControl1.TabIndex = 16;
+            this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Planning);
+            this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Shipment_Cost);
+            this.tabControl_Shipment_Costs.Controls.Add(this.tabPageShipment_Refnum);
+            this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Address);
+            this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Release);
+            this.tabControl_Shipment_Costs.Location = new System.Drawing.Point(12, 12);
+            this.tabControl_Shipment_Costs.Name = "tabControl_Shipment_Costs";
+            this.tabControl_Shipment_Costs.SelectedIndex = 0;
+            this.tabControl_Shipment_Costs.Size = new System.Drawing.Size(614, 246);
+            this.tabControl_Shipment_Costs.TabIndex = 16;
             // 
             // tabPage_Planning
             // 
@@ -650,6 +655,7 @@ namespace Regresser
             // 
             // button_Remove_Shipment_Refnum
             // 
+            this.button_Remove_Shipment_Refnum.Enabled = false;
             this.button_Remove_Shipment_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Remove_Shipment_Refnum.Location = new System.Drawing.Point(348, 154);
             this.button_Remove_Shipment_Refnum.Name = "button_Remove_Shipment_Refnum";
@@ -659,9 +665,11 @@ namespace Regresser
             this.button_Remove_Shipment_Refnum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Remove_Shipment_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Remove_Shipment_Refnum.UseVisualStyleBackColor = true;
+            this.button_Remove_Shipment_Refnum.Click += new System.EventHandler(this.button_Remove_Shipment_Refnum_Click);
             // 
             // button_Edit_Shipment_Refnum
             // 
+            this.button_Edit_Shipment_Refnum.Enabled = false;
             this.button_Edit_Shipment_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Edit_Shipment_Refnum.Location = new System.Drawing.Point(355, 100);
             this.button_Edit_Shipment_Refnum.Name = "button_Edit_Shipment_Refnum";
@@ -670,6 +678,7 @@ namespace Regresser
             this.button_Edit_Shipment_Refnum.Text = "Editar";
             this.button_Edit_Shipment_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Edit_Shipment_Refnum.UseVisualStyleBackColor = true;
+            this.button_Edit_Shipment_Refnum.Click += new System.EventHandler(this.button_Edit_Shipment_Refnum_Click);
             // 
             // listBox_Shipment_Refnums
             // 
@@ -679,6 +688,7 @@ namespace Regresser
             this.listBox_Shipment_Refnums.Name = "listBox_Shipment_Refnums";
             this.listBox_Shipment_Refnums.Size = new System.Drawing.Size(226, 184);
             this.listBox_Shipment_Refnums.TabIndex = 14;
+            this.listBox_Shipment_Refnums.SelectedIndexChanged += new System.EventHandler(this.listBox_Shipment_Refnums_SelectedIndexChanged);
             // 
             // button_Add_Shipment_Refnum
             // 
@@ -691,13 +701,14 @@ namespace Regresser
             this.button_Add_Shipment_Refnum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Add_Shipment_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Add_Shipment_Refnum.UseVisualStyleBackColor = true;
+            this.button_Add_Shipment_Refnum.Click += new System.EventHandler(this.button_Add_Shipment_Refnum_Click);
             // 
             // tabPage_Address
             // 
-            this.tabPage_Address.Controls.Add(this.maskedTextBox1);
+            this.tabPage_Address.Controls.Add(this.maskedTextBox_IBGE);
             this.tabPage_Address.Controls.Add(this.label11);
             this.tabPage_Address.Controls.Add(this.label9);
-            this.tabPage_Address.Controls.Add(this.comboBox1);
+            this.tabPage_Address.Controls.Add(this.comboBox_UF);
             this.tabPage_Address.Controls.Add(this.textBox1);
             this.tabPage_Address.Controls.Add(this.label10);
             this.tabPage_Address.Location = new System.Drawing.Point(4, 24);
@@ -733,7 +744,7 @@ namespace Regresser
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 330);
             this.ControlBox = false;
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabControl_Shipment_Costs);
             this.Controls.Add(this.button_Cancelar);
             this.Controls.Add(this.button_Save);
             this.Controls.Add(this.label16);
@@ -742,7 +753,8 @@ namespace Regresser
             this.Name = "ShipmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Embarque - Jarvis";
-            this.tabControl1.ResumeLayout(false);
+            this.Activated += new System.EventHandler(this.ShipmentForm_Activated);
+            this.tabControl_Shipment_Costs.ResumeLayout(false);
             this.tabPage_Planning.ResumeLayout(false);
             this.tabPage_Planning.PerformLayout();
             this.tabPage_Shipment_Cost.ResumeLayout(false);
@@ -776,11 +788,11 @@ namespace Regresser
         private System.Windows.Forms.TextBox textBox_Destination_Location_Xid;
         private System.Windows.Forms.TextBox textBox_Source_Location_Xid;
         private System.Windows.Forms.TextBox textBox_Carrier_Xid;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_UF;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox_IBGE;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ListBox listBox_Release_Refnums;
         private System.Windows.Forms.Label label14;
@@ -796,7 +808,7 @@ namespace Regresser
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button_Save;
         private System.Windows.Forms.Button button_Cancelar;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabControl_Shipment_Costs;
         private System.Windows.Forms.TabPage tabPage_Planning;
         private System.Windows.Forms.TabPage tabPage_Shipment_Cost;
         private System.Windows.Forms.DataGridView dataGridView_Shipment_Costs;
