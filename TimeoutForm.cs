@@ -21,7 +21,7 @@ namespace Regresser
             this.Close();
         }
 
-        private void button_Ok_Click(object sender, EventArgs e)
+        private void button_Save_Click(object sender, EventArgs e)
         {
             var timeout = Int16.Parse(textBox_Valor_Timeout.Text) * 1000;
 

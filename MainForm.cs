@@ -66,6 +66,8 @@ namespace Regresser
 
         private void embarqueToolStripMenuItem_Shipment_Click(object sender, EventArgs e)
         {
+            ShipmentForm shipmentForm = new ShipmentForm();
+            shipmentForm.ShowDialog();
         }
 
         private void timeoutToolStripMenuItem_Timeout_Click(object sender, EventArgs e)

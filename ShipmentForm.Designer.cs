@@ -74,24 +74,24 @@ namespace Regresser
             this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.checkBox_Added_Tax = new System.Windows.Forms.CheckBox();
-            this.checkBox_Tax_Included = new System.Windows.Forms.CheckBox();
-            this.tabPageShipment_Refnum = new System.Windows.Forms.TabPage();
-            this.tabPage_Address = new System.Windows.Forms.TabPage();
-            this.tabPage_Release = new System.Windows.Forms.TabPage();
-            this.button_Remove_Shipment_Refnum = new System.Windows.Forms.Button();
-            this.button_Edit_Shipment_Refnum = new System.Windows.Forms.Button();
-            this.listBox_Shipment_Refnums = new System.Windows.Forms.ListBox();
-            this.button_Add_Shipment_Refnum = new System.Windows.Forms.Button();
+            this.dataGridView_Shipment_Costs = new System.Windows.Forms.DataGridView();
             this.CostType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.CostValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AllocatedCost = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.AcessorialCostXid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkBox_Added_Tax = new System.Windows.Forms.CheckBox();
+            this.checkBox_Tax_Included = new System.Windows.Forms.CheckBox();
+            this.tabPageShipment_Refnum = new System.Windows.Forms.TabPage();
+            this.button_Remove_Shipment_Refnum = new System.Windows.Forms.Button();
+            this.button_Edit_Shipment_Refnum = new System.Windows.Forms.Button();
+            this.listBox_Shipment_Refnums = new System.Windows.Forms.ListBox();
+            this.button_Add_Shipment_Refnum = new System.Windows.Forms.Button();
+            this.tabPage_Address = new System.Windows.Forms.TabPage();
+            this.tabPage_Release = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage_Planning.SuspendLayout();
             this.tabPage_Shipment_Cost.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Shipment_Costs)).BeginInit();
             this.tabPageShipment_Refnum.SuspendLayout();
             this.tabPage_Address.SuspendLayout();
             this.tabPage_Release.SuspendLayout();
@@ -99,16 +99,16 @@ namespace Regresser
             // 
             // textBox_Shipment_DomainName
             // 
-            this.textBox_Shipment_DomainName.Location = new System.Drawing.Point(162, 26);
+            this.textBox_Shipment_DomainName.Location = new System.Drawing.Point(155, 26);
             this.textBox_Shipment_DomainName.Name = "textBox_Shipment_DomainName";
-            this.textBox_Shipment_DomainName.Size = new System.Drawing.Size(100, 23);
+            this.textBox_Shipment_DomainName.Size = new System.Drawing.Size(140, 23);
             this.textBox_Shipment_DomainName.TabIndex = 0;
             this.textBox_Shipment_DomainName.Text = "EMBDEV";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(18, 29);
+            this.label1.Location = new System.Drawing.Point(11, 29);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 15);
             this.label1.TabIndex = 1;
@@ -117,7 +117,7 @@ namespace Regresser
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(81, 74);
+            this.label2.Location = new System.Drawing.Point(74, 74);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 15);
             this.label2.TabIndex = 3;
@@ -125,9 +125,9 @@ namespace Regresser
             // 
             // textBox_Shipment_Number
             // 
-            this.textBox_Shipment_Number.Location = new System.Drawing.Point(162, 71);
+            this.textBox_Shipment_Number.Location = new System.Drawing.Point(155, 71);
             this.textBox_Shipment_Number.Name = "textBox_Shipment_Number";
-            this.textBox_Shipment_Number.Size = new System.Drawing.Size(100, 23);
+            this.textBox_Shipment_Number.Size = new System.Drawing.Size(140, 23);
             this.textBox_Shipment_Number.TabIndex = 2;
             this.textBox_Shipment_Number.Text = "1";
             // 
@@ -138,15 +138,15 @@ namespace Regresser
             "PLANEJADO",
             "INICIADO",
             "EMBARCADO"});
-            this.comboBox_Travel_Status.Location = new System.Drawing.Point(162, 123);
+            this.comboBox_Travel_Status.Location = new System.Drawing.Point(155, 123);
             this.comboBox_Travel_Status.Name = "comboBox_Travel_Status";
-            this.comboBox_Travel_Status.Size = new System.Drawing.Size(100, 23);
+            this.comboBox_Travel_Status.Size = new System.Drawing.Size(140, 23);
             this.comboBox_Travel_Status.TabIndex = 4;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(58, 126);
+            this.label3.Location = new System.Drawing.Point(51, 126);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 15);
             this.label3.TabIndex = 5;
@@ -155,7 +155,7 @@ namespace Regresser
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(58, 175);
+            this.label4.Location = new System.Drawing.Point(51, 175);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 15);
             this.label4.TabIndex = 7;
@@ -167,15 +167,15 @@ namespace Regresser
             this.comboBox_Emission_Status.Items.AddRange(new object[] {
             "PRE_EMISSAO_ENVIADA",
             "DADOS_DPS_RECEBIDO"});
-            this.comboBox_Emission_Status.Location = new System.Drawing.Point(162, 172);
+            this.comboBox_Emission_Status.Location = new System.Drawing.Point(155, 172);
             this.comboBox_Emission_Status.Name = "comboBox_Emission_Status";
-            this.comboBox_Emission_Status.Size = new System.Drawing.Size(100, 23);
+            this.comboBox_Emission_Status.Size = new System.Drawing.Size(140, 23);
             this.comboBox_Emission_Status.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(281, 19);
+            this.label5.Location = new System.Drawing.Point(328, 16);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 15);
             this.label5.TabIndex = 8;
@@ -184,7 +184,7 @@ namespace Regresser
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(314, 62);
+            this.label6.Location = new System.Drawing.Point(361, 59);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(67, 15);
             this.label6.TabIndex = 9;
@@ -193,7 +193,7 @@ namespace Regresser
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(314, 102);
+            this.label7.Location = new System.Drawing.Point(361, 99);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(67, 15);
             this.label7.TabIndex = 10;
@@ -202,7 +202,7 @@ namespace Regresser
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(307, 146);
+            this.label8.Location = new System.Drawing.Point(354, 143);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 15);
             this.label8.TabIndex = 11;
@@ -210,31 +210,35 @@ namespace Regresser
             // 
             // textBox_Carrier_Xid
             // 
-            this.textBox_Carrier_Xid.Location = new System.Drawing.Point(387, 16);
+            this.textBox_Carrier_Xid.Location = new System.Drawing.Point(434, 13);
             this.textBox_Carrier_Xid.Name = "textBox_Carrier_Xid";
-            this.textBox_Carrier_Xid.Size = new System.Drawing.Size(171, 23);
+            this.textBox_Carrier_Xid.Size = new System.Drawing.Size(152, 23);
             this.textBox_Carrier_Xid.TabIndex = 12;
+            this.textBox_Carrier_Xid.Text = "CAR-12521";
             // 
             // textBox_Source_Location_Xid
             // 
-            this.textBox_Source_Location_Xid.Location = new System.Drawing.Point(387, 59);
+            this.textBox_Source_Location_Xid.Location = new System.Drawing.Point(434, 56);
             this.textBox_Source_Location_Xid.Name = "textBox_Source_Location_Xid";
-            this.textBox_Source_Location_Xid.Size = new System.Drawing.Size(171, 23);
+            this.textBox_Source_Location_Xid.Size = new System.Drawing.Size(152, 23);
             this.textBox_Source_Location_Xid.TabIndex = 13;
+            this.textBox_Source_Location_Xid.Text = "ORG-8027-30018";
             // 
             // textBox_Destination_Location_Xid
             // 
-            this.textBox_Destination_Location_Xid.Location = new System.Drawing.Point(387, 102);
+            this.textBox_Destination_Location_Xid.Location = new System.Drawing.Point(434, 99);
             this.textBox_Destination_Location_Xid.Name = "textBox_Destination_Location_Xid";
-            this.textBox_Destination_Location_Xid.Size = new System.Drawing.Size(171, 23);
+            this.textBox_Destination_Location_Xid.Size = new System.Drawing.Size(152, 23);
             this.textBox_Destination_Location_Xid.TabIndex = 14;
+            this.textBox_Destination_Location_Xid.Text = "CUS-6429-18171";
             // 
             // textBox_Taker_Xid
             // 
-            this.textBox_Taker_Xid.Location = new System.Drawing.Point(387, 143);
+            this.textBox_Taker_Xid.Location = new System.Drawing.Point(434, 140);
             this.textBox_Taker_Xid.Name = "textBox_Taker_Xid";
-            this.textBox_Taker_Xid.Size = new System.Drawing.Size(171, 23);
+            this.textBox_Taker_Xid.Size = new System.Drawing.Size(152, 23);
             this.textBox_Taker_Xid.TabIndex = 15;
+            this.textBox_Taker_Xid.Text = "ORG-8027-30018";
             // 
             // label9
             // 
@@ -464,6 +468,7 @@ namespace Regresser
             this.button_Cancelar.Text = "Cancelar";
             this.button_Cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Cancelar.UseVisualStyleBackColor = true;
+            this.button_Cancelar.Click += new System.EventHandler(this.button_Cancelar_Click);
             // 
             // tabControl1
             // 
@@ -508,15 +513,15 @@ namespace Regresser
             // 
             // textBox_Driver_Xid
             // 
-            this.textBox_Driver_Xid.Location = new System.Drawing.Point(387, 182);
+            this.textBox_Driver_Xid.Location = new System.Drawing.Point(434, 179);
             this.textBox_Driver_Xid.Name = "textBox_Driver_Xid";
-            this.textBox_Driver_Xid.Size = new System.Drawing.Size(171, 23);
+            this.textBox_Driver_Xid.Size = new System.Drawing.Size(152, 23);
             this.textBox_Driver_Xid.TabIndex = 17;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(303, 185);
+            this.label18.Location = new System.Drawing.Point(350, 182);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(78, 15);
             this.label18.TabIndex = 16;
@@ -528,7 +533,7 @@ namespace Regresser
             this.tabPage_Shipment_Cost.Controls.Add(this.label17);
             this.tabPage_Shipment_Cost.Controls.Add(this.label12);
             this.tabPage_Shipment_Cost.Controls.Add(this.textBox2);
-            this.tabPage_Shipment_Cost.Controls.Add(this.dataGridView1);
+            this.tabPage_Shipment_Cost.Controls.Add(this.dataGridView_Shipment_Costs);
             this.tabPage_Shipment_Cost.Controls.Add(this.checkBox_Added_Tax);
             this.tabPage_Shipment_Cost.Controls.Add(this.checkBox_Tax_Included);
             this.tabPage_Shipment_Cost.Location = new System.Drawing.Point(4, 24);
@@ -538,18 +543,19 @@ namespace Regresser
             this.tabPage_Shipment_Cost.TabIndex = 1;
             this.tabPage_Shipment_Cost.Text = "Custo";
             this.tabPage_Shipment_Cost.UseVisualStyleBackColor = true;
+            this.tabPage_Shipment_Cost.Click += new System.EventHandler(this.tabPage_Shipment_Cost_Click);
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(446, 151);
+            this.textBox3.Location = new System.Drawing.Point(525, 122);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(98, 23);
+            this.textBox3.Size = new System.Drawing.Size(69, 23);
             this.textBox3.TabIndex = 9;
             // 
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(375, 154);
+            this.label17.Location = new System.Drawing.Point(454, 125);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(65, 15);
             this.label17.TabIndex = 8;
@@ -558,7 +564,7 @@ namespace Regresser
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(413, 105);
+            this.label12.Location = new System.Drawing.Point(492, 175);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(27, 15);
             this.label12.TabIndex = 6;
@@ -566,29 +572,53 @@ namespace Regresser
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(446, 102);
+            this.textBox2.Location = new System.Drawing.Point(525, 172);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(98, 23);
+            this.textBox2.Size = new System.Drawing.Size(69, 23);
             this.textBox2.TabIndex = 5;
             // 
-            // dataGridView1
+            // dataGridView_Shipment_Costs
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridView_Shipment_Costs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_Shipment_Costs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.CostType,
             this.CostValue,
             this.AllocatedCost,
             this.AcessorialCostXid});
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(343, 177);
-            this.dataGridView1.TabIndex = 4;
+            this.dataGridView_Shipment_Costs.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView_Shipment_Costs.Name = "dataGridView_Shipment_Costs";
+            this.dataGridView_Shipment_Costs.RowTemplate.Height = 25;
+            this.dataGridView_Shipment_Costs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView_Shipment_Costs.Size = new System.Drawing.Size(442, 206);
+            this.dataGridView_Shipment_Costs.TabIndex = 4;
+            // 
+            // CostType
+            // 
+            this.CostType.HeaderText = "Tipo do Custo";
+            this.CostType.Items.AddRange(new object[] {
+            "Base",
+            "Acessório"});
+            this.CostType.Name = "CostType";
+            // 
+            // CostValue
+            // 
+            this.CostValue.HeaderText = "Valor";
+            this.CostValue.Name = "CostValue";
+            // 
+            // AllocatedCost
+            // 
+            this.AllocatedCost.HeaderText = "Custo Alocado";
+            this.AllocatedCost.Name = "AllocatedCost";
+            // 
+            // AcessorialCostXid
+            // 
+            this.AcessorialCostXid.HeaderText = "Xid do Custo Acessório";
+            this.AcessorialCostXid.Name = "AcessorialCostXid";
             // 
             // checkBox_Added_Tax
             // 
             this.checkBox_Added_Tax.AutoSize = true;
-            this.checkBox_Added_Tax.Location = new System.Drawing.Point(427, 60);
+            this.checkBox_Added_Tax.Location = new System.Drawing.Point(474, 75);
             this.checkBox_Added_Tax.Name = "checkBox_Added_Tax";
             this.checkBox_Added_Tax.Size = new System.Drawing.Size(117, 19);
             this.checkBox_Added_Tax.TabIndex = 3;
@@ -598,7 +628,7 @@ namespace Regresser
             // checkBox_Tax_Included
             // 
             this.checkBox_Tax_Included.AutoSize = true;
-            this.checkBox_Tax_Included.Location = new System.Drawing.Point(427, 21);
+            this.checkBox_Tax_Included.Location = new System.Drawing.Point(474, 30);
             this.checkBox_Tax_Included.Name = "checkBox_Tax_Included";
             this.checkBox_Tax_Included.Size = new System.Drawing.Size(111, 19);
             this.checkBox_Tax_Included.TabIndex = 2;
@@ -617,6 +647,50 @@ namespace Regresser
             this.tabPageShipment_Refnum.TabIndex = 4;
             this.tabPageShipment_Refnum.Text = "Refnum";
             this.tabPageShipment_Refnum.UseVisualStyleBackColor = true;
+            // 
+            // button_Remove_Shipment_Refnum
+            // 
+            this.button_Remove_Shipment_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Remove_Shipment_Refnum.Location = new System.Drawing.Point(348, 154);
+            this.button_Remove_Shipment_Refnum.Name = "button_Remove_Shipment_Refnum";
+            this.button_Remove_Shipment_Refnum.Size = new System.Drawing.Size(65, 26);
+            this.button_Remove_Shipment_Refnum.TabIndex = 17;
+            this.button_Remove_Shipment_Refnum.Text = "Remover";
+            this.button_Remove_Shipment_Refnum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Remove_Shipment_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Remove_Shipment_Refnum.UseVisualStyleBackColor = true;
+            // 
+            // button_Edit_Shipment_Refnum
+            // 
+            this.button_Edit_Shipment_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Edit_Shipment_Refnum.Location = new System.Drawing.Point(355, 100);
+            this.button_Edit_Shipment_Refnum.Name = "button_Edit_Shipment_Refnum";
+            this.button_Edit_Shipment_Refnum.Size = new System.Drawing.Size(52, 26);
+            this.button_Edit_Shipment_Refnum.TabIndex = 16;
+            this.button_Edit_Shipment_Refnum.Text = "Editar";
+            this.button_Edit_Shipment_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Edit_Shipment_Refnum.UseVisualStyleBackColor = true;
+            // 
+            // listBox_Shipment_Refnums
+            // 
+            this.listBox_Shipment_Refnums.FormattingEnabled = true;
+            this.listBox_Shipment_Refnums.ItemHeight = 15;
+            this.listBox_Shipment_Refnums.Location = new System.Drawing.Point(112, 19);
+            this.listBox_Shipment_Refnums.Name = "listBox_Shipment_Refnums";
+            this.listBox_Shipment_Refnums.Size = new System.Drawing.Size(226, 184);
+            this.listBox_Shipment_Refnums.TabIndex = 14;
+            // 
+            // button_Add_Shipment_Refnum
+            // 
+            this.button_Add_Shipment_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Add_Shipment_Refnum.Location = new System.Drawing.Point(344, 45);
+            this.button_Add_Shipment_Refnum.Name = "button_Add_Shipment_Refnum";
+            this.button_Add_Shipment_Refnum.Size = new System.Drawing.Size(70, 26);
+            this.button_Add_Shipment_Refnum.TabIndex = 15;
+            this.button_Add_Shipment_Refnum.Text = "Adicionar";
+            this.button_Add_Shipment_Refnum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Add_Shipment_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Add_Shipment_Refnum.UseVisualStyleBackColor = true;
             // 
             // tabPage_Address
             // 
@@ -653,90 +727,27 @@ namespace Regresser
             this.tabPage_Release.Text = "Ordem";
             this.tabPage_Release.UseVisualStyleBackColor = true;
             // 
-            // button_Remove_Shipment_Refnum
-            // 
-            this.button_Remove_Shipment_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Remove_Shipment_Refnum.Location = new System.Drawing.Point(332, 145);
-            this.button_Remove_Shipment_Refnum.Name = "button_Remove_Shipment_Refnum";
-            this.button_Remove_Shipment_Refnum.Size = new System.Drawing.Size(65, 26);
-            this.button_Remove_Shipment_Refnum.TabIndex = 17;
-            this.button_Remove_Shipment_Refnum.Text = "Remover";
-            this.button_Remove_Shipment_Refnum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Remove_Shipment_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button_Remove_Shipment_Refnum.UseVisualStyleBackColor = true;
-            // 
-            // button_Edit_Shipment_Refnum
-            // 
-            this.button_Edit_Shipment_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Edit_Shipment_Refnum.Location = new System.Drawing.Point(270, 145);
-            this.button_Edit_Shipment_Refnum.Name = "button_Edit_Shipment_Refnum";
-            this.button_Edit_Shipment_Refnum.Size = new System.Drawing.Size(52, 26);
-            this.button_Edit_Shipment_Refnum.TabIndex = 16;
-            this.button_Edit_Shipment_Refnum.Text = "Editar";
-            this.button_Edit_Shipment_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button_Edit_Shipment_Refnum.UseVisualStyleBackColor = true;
-            // 
-            // listBox_Shipment_Refnums
-            // 
-            this.listBox_Shipment_Refnums.FormattingEnabled = true;
-            this.listBox_Shipment_Refnums.ItemHeight = 15;
-            this.listBox_Shipment_Refnums.Location = new System.Drawing.Point(179, 45);
-            this.listBox_Shipment_Refnums.Name = "listBox_Shipment_Refnums";
-            this.listBox_Shipment_Refnums.Size = new System.Drawing.Size(226, 94);
-            this.listBox_Shipment_Refnums.TabIndex = 14;
-            // 
-            // button_Add_Shipment_Refnum
-            // 
-            this.button_Add_Shipment_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Add_Shipment_Refnum.Location = new System.Drawing.Point(188, 145);
-            this.button_Add_Shipment_Refnum.Name = "button_Add_Shipment_Refnum";
-            this.button_Add_Shipment_Refnum.Size = new System.Drawing.Size(70, 26);
-            this.button_Add_Shipment_Refnum.TabIndex = 15;
-            this.button_Add_Shipment_Refnum.Text = "Adicionar";
-            this.button_Add_Shipment_Refnum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Add_Shipment_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button_Add_Shipment_Refnum.UseVisualStyleBackColor = true;
-            // 
-            // CostType
-            // 
-            this.CostType.HeaderText = "Tipo do Custo";
-            this.CostType.Items.AddRange(new object[] {
-            "Base",
-            "Acessório"});
-            this.CostType.Name = "CostType";
-            // 
-            // CostValue
-            // 
-            this.CostValue.HeaderText = "Valor";
-            this.CostValue.Name = "CostValue";
-            // 
-            // AllocatedCost
-            // 
-            this.AllocatedCost.HeaderText = "Custo Alocado";
-            this.AllocatedCost.Name = "AllocatedCost";
-            // 
-            // AcessorialCostXid
-            // 
-            this.AcessorialCostXid.HeaderText = "Xid do Custo Acessório";
-            this.AcessorialCostXid.Name = "AcessorialCostXid";
-            // 
             // ShipmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(634, 330);
+            this.ControlBox = false;
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button_Cancelar);
             this.Controls.Add(this.button_Save);
             this.Controls.Add(this.label16);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ShipmentForm";
-            this.Text = "ShipmentForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Embarque - Jarvis";
             this.tabControl1.ResumeLayout(false);
             this.tabPage_Planning.ResumeLayout(false);
             this.tabPage_Planning.PerformLayout();
             this.tabPage_Shipment_Cost.ResumeLayout(false);
             this.tabPage_Shipment_Cost.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Shipment_Costs)).EndInit();
             this.tabPageShipment_Refnum.ResumeLayout(false);
             this.tabPage_Address.ResumeLayout(false);
             this.tabPage_Address.PerformLayout();
@@ -788,7 +799,7 @@ namespace Regresser
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage_Planning;
         private System.Windows.Forms.TabPage tabPage_Shipment_Cost;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView_Shipment_Costs;
         private System.Windows.Forms.CheckBox checkBox_Added_Tax;
         private System.Windows.Forms.CheckBox checkBox_Tax_Included;
         private System.Windows.Forms.TabPage tabPage_Address;

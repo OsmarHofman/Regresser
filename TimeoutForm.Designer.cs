@@ -31,7 +31,7 @@ namespace Regresser
         {
             this.textBox_Valor_Timeout = new System.Windows.Forms.TextBox();
             this.label_Timeout = new System.Windows.Forms.Label();
-            this.button_Ok = new System.Windows.Forms.Button();
+            this.button_Save = new System.Windows.Forms.Button();
             this.button_Cancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -52,16 +52,16 @@ namespace Regresser
             this.label_Timeout.TabIndex = 1;
             this.label_Timeout.Text = "Tempo de Timeout (s)";
             // 
-            // button_Ok
+            // button_Save
             // 
-            this.button_Ok.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Ok.Location = new System.Drawing.Point(66, 67);
-            this.button_Ok.Name = "button_Ok";
-            this.button_Ok.Size = new System.Drawing.Size(90, 26);
-            this.button_Ok.TabIndex = 5;
-            this.button_Ok.Text = "OK";
-            this.button_Ok.UseVisualStyleBackColor = true;
-            this.button_Ok.Click += new System.EventHandler(this.button_Ok_Click);
+            this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Save.Location = new System.Drawing.Point(66, 67);
+            this.button_Save.Name = "button_Save";
+            this.button_Save.Size = new System.Drawing.Size(90, 26);
+            this.button_Save.TabIndex = 5;
+            this.button_Save.Text = "Salvar";
+            this.button_Save.UseVisualStyleBackColor = true;
+            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             // 
             // button_Cancelar
             // 
@@ -81,12 +81,13 @@ namespace Regresser
             this.ClientSize = new System.Drawing.Size(340, 115);
             this.ControlBox = false;
             this.Controls.Add(this.button_Cancelar);
-            this.Controls.Add(this.button_Ok);
+            this.Controls.Add(this.button_Save);
             this.Controls.Add(this.label_Timeout);
             this.Controls.Add(this.textBox_Valor_Timeout);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TimeoutForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timeout - UserBolt";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -97,7 +98,7 @@ namespace Regresser
 
         private System.Windows.Forms.TextBox textBox_Valor_Timeout;
         private System.Windows.Forms.Label label_Timeout;
-        private System.Windows.Forms.Button button_Ok;
+        private System.Windows.Forms.Button button_Save;
         private System.Windows.Forms.Button button_Cancelar;
     }
 }
