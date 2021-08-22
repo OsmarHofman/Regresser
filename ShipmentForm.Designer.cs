@@ -596,6 +596,7 @@ namespace Regresser
             this.dataGridView_Shipment_Costs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_Shipment_Costs.Size = new System.Drawing.Size(442, 206);
             this.dataGridView_Shipment_Costs.TabIndex = 4;
+            this.dataGridView_Shipment_Costs.Rows.Add("Base","900",true,null);
             // 
             // CostType
             // 
