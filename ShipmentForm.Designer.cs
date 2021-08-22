@@ -59,9 +59,9 @@ namespace Regresser
             this.button_Add_Release_Xid = new System.Windows.Forms.Button();
             this.button_Edit_Release_Xid = new System.Windows.Forms.Button();
             this.button_Remove_Release_Xid = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.button_Remove_Release_Refnum = new System.Windows.Forms.Button();
+            this.button_Edit_Release_Refnum = new System.Windows.Forms.Button();
+            this.button_Add_Release_Refnum = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.button_Save = new System.Windows.Forms.Button();
             this.button_Cancelar = new System.Windows.Forms.Button();
@@ -81,7 +81,7 @@ namespace Regresser
             this.AcessorialCostXid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.checkBox_Added_Tax = new System.Windows.Forms.CheckBox();
             this.checkBox_Tax_Included = new System.Windows.Forms.CheckBox();
-            this.tabPageShipment_Refnum = new System.Windows.Forms.TabPage();
+            this.tabPage_Shipment_Refnum = new System.Windows.Forms.TabPage();
             this.button_Remove_Shipment_Refnum = new System.Windows.Forms.Button();
             this.button_Edit_Shipment_Refnum = new System.Windows.Forms.Button();
             this.listBox_Shipment_Refnums = new System.Windows.Forms.ListBox();
@@ -92,7 +92,7 @@ namespace Regresser
             this.tabPage_Planning.SuspendLayout();
             this.tabPage_Shipment_Cost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Shipment_Costs)).BeginInit();
-            this.tabPageShipment_Refnum.SuspendLayout();
+            this.tabPage_Shipment_Refnum.SuspendLayout();
             this.tabPage_Address.SuspendLayout();
             this.tabPage_Release.SuspendLayout();
             this.SuspendLayout();
@@ -332,15 +332,19 @@ namespace Regresser
             this.listBox_Release_Refnums.Name = "listBox_Release_Refnums";
             this.listBox_Release_Refnums.Size = new System.Drawing.Size(226, 94);
             this.listBox_Release_Refnums.TabIndex = 0;
+            this.listBox_Release_Refnums.SelectedIndexChanged += new System.EventHandler(this.listBox_Release_Refnums_SelectedIndexChanged);
             // 
             // listBox_Release_Xids
             // 
             this.listBox_Release_Xids.FormattingEnabled = true;
             this.listBox_Release_Xids.ItemHeight = 15;
+            this.listBox_Release_Xids.Items.AddRange(new object[] {
+            "1"});
             this.listBox_Release_Xids.Location = new System.Drawing.Point(51, 43);
             this.listBox_Release_Xids.Name = "listBox_Release_Xids";
             this.listBox_Release_Xids.Size = new System.Drawing.Size(229, 94);
             this.listBox_Release_Xids.TabIndex = 1;
+            this.listBox_Release_Xids.SelectedIndexChanged += new System.EventHandler(this.listBox_Release_Xids_SelectedIndexChanged);
             // 
             // label13
             // 
@@ -381,6 +385,7 @@ namespace Regresser
             this.button_Add_Release_Xid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Add_Release_Xid.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Add_Release_Xid.UseVisualStyleBackColor = true;
+            this.button_Add_Release_Xid.Click += new System.EventHandler(this.button_Add_Release_Xid_Click);
             // 
             // button_Edit_Release_Xid
             // 
@@ -392,6 +397,7 @@ namespace Regresser
             this.button_Edit_Release_Xid.Text = "Editar";
             this.button_Edit_Release_Xid.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Edit_Release_Xid.UseVisualStyleBackColor = true;
+            this.button_Edit_Release_Xid.Click += new System.EventHandler(this.button_Edit_Release_Xid_Click);
             // 
             // button_Remove_Release_Xid
             // 
@@ -404,41 +410,48 @@ namespace Regresser
             this.button_Remove_Release_Xid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_Remove_Release_Xid.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Remove_Release_Xid.UseVisualStyleBackColor = true;
+            this.button_Remove_Release_Xid.Click += new System.EventHandler(this.button_Remove_Release_Xid_Click);
             // 
-            // button1
+            // button_Remove_Release_Refnum
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(486, 143);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(65, 26);
-            this.button1.TabIndex = 13;
-            this.button1.Text = "Remover";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button1.UseVisualStyleBackColor = true;
+            this.button_Remove_Release_Refnum.Enabled = false;
+            this.button_Remove_Release_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Remove_Release_Refnum.Location = new System.Drawing.Point(486, 143);
+            this.button_Remove_Release_Refnum.Name = "button_Remove_Release_Refnum";
+            this.button_Remove_Release_Refnum.Size = new System.Drawing.Size(65, 26);
+            this.button_Remove_Release_Refnum.TabIndex = 13;
+            this.button_Remove_Release_Refnum.Text = "Remover";
+            this.button_Remove_Release_Refnum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Remove_Release_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Remove_Release_Refnum.UseVisualStyleBackColor = true;
+            this.button_Remove_Release_Refnum.Click += new System.EventHandler(this.button_Remove_Release_Refnum_Click);
             // 
-            // button2
+            // button_Edit_Release_Refnum
             // 
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(424, 143);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(52, 26);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Editar";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button2.UseVisualStyleBackColor = true;
+            this.button_Edit_Release_Refnum.Enabled = false;
+            this.button_Edit_Release_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Edit_Release_Refnum.Location = new System.Drawing.Point(424, 143);
+            this.button_Edit_Release_Refnum.Name = "button_Edit_Release_Refnum";
+            this.button_Edit_Release_Refnum.Size = new System.Drawing.Size(52, 26);
+            this.button_Edit_Release_Refnum.TabIndex = 12;
+            this.button_Edit_Release_Refnum.Text = "Editar";
+            this.button_Edit_Release_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Edit_Release_Refnum.UseVisualStyleBackColor = true;
+            this.button_Edit_Release_Refnum.Click += new System.EventHandler(this.button_Edit_Release_Refnum_Click);
             // 
-            // button3
+            // button_Add_Release_Refnum
             // 
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(342, 143);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(70, 26);
-            this.button3.TabIndex = 11;
-            this.button3.Text = "Adicionar";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button3.UseVisualStyleBackColor = true;
+            this.button_Add_Release_Refnum.Enabled = false;
+            this.button_Add_Release_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Add_Release_Refnum.Location = new System.Drawing.Point(342, 143);
+            this.button_Add_Release_Refnum.Name = "button_Add_Release_Refnum";
+            this.button_Add_Release_Refnum.Size = new System.Drawing.Size(70, 26);
+            this.button_Add_Release_Refnum.TabIndex = 11;
+            this.button_Add_Release_Refnum.Text = "Adicionar";
+            this.button_Add_Release_Refnum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Add_Release_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Add_Release_Refnum.UseVisualStyleBackColor = true;
+            this.button_Add_Release_Refnum.Click += new System.EventHandler(this.button_Add_Release_Refnum_Click);
             // 
             // label16
             // 
@@ -479,7 +492,7 @@ namespace Regresser
             // 
             this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Planning);
             this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Shipment_Cost);
-            this.tabControl_Shipment_Costs.Controls.Add(this.tabPageShipment_Refnum);
+            this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Shipment_Refnum);
             this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Address);
             this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Release);
             this.tabControl_Shipment_Costs.Location = new System.Drawing.Point(12, 12);
@@ -548,7 +561,6 @@ namespace Regresser
             this.tabPage_Shipment_Cost.TabIndex = 1;
             this.tabPage_Shipment_Cost.Text = "Custo";
             this.tabPage_Shipment_Cost.UseVisualStyleBackColor = true;
-            this.tabPage_Shipment_Cost.Click += new System.EventHandler(this.tabPage_Shipment_Cost_Click);
             // 
             // textBox3
             // 
@@ -596,7 +608,6 @@ namespace Regresser
             this.dataGridView_Shipment_Costs.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView_Shipment_Costs.Size = new System.Drawing.Size(442, 206);
             this.dataGridView_Shipment_Costs.TabIndex = 4;
-            this.dataGridView_Shipment_Costs.Rows.Add("Base","900",true,null);
             // 
             // CostType
             // 
@@ -641,18 +652,18 @@ namespace Regresser
             this.checkBox_Tax_Included.Text = "Imposto Incluso";
             this.checkBox_Tax_Included.UseVisualStyleBackColor = true;
             // 
-            // tabPageShipment_Refnum
+            // tabPage_Shipment_Refnum
             // 
-            this.tabPageShipment_Refnum.Controls.Add(this.button_Remove_Shipment_Refnum);
-            this.tabPageShipment_Refnum.Controls.Add(this.button_Edit_Shipment_Refnum);
-            this.tabPageShipment_Refnum.Controls.Add(this.listBox_Shipment_Refnums);
-            this.tabPageShipment_Refnum.Controls.Add(this.button_Add_Shipment_Refnum);
-            this.tabPageShipment_Refnum.Location = new System.Drawing.Point(4, 24);
-            this.tabPageShipment_Refnum.Name = "tabPageShipment_Refnum";
-            this.tabPageShipment_Refnum.Size = new System.Drawing.Size(606, 218);
-            this.tabPageShipment_Refnum.TabIndex = 4;
-            this.tabPageShipment_Refnum.Text = "Refnum";
-            this.tabPageShipment_Refnum.UseVisualStyleBackColor = true;
+            this.tabPage_Shipment_Refnum.Controls.Add(this.button_Remove_Shipment_Refnum);
+            this.tabPage_Shipment_Refnum.Controls.Add(this.button_Edit_Shipment_Refnum);
+            this.tabPage_Shipment_Refnum.Controls.Add(this.listBox_Shipment_Refnums);
+            this.tabPage_Shipment_Refnum.Controls.Add(this.button_Add_Shipment_Refnum);
+            this.tabPage_Shipment_Refnum.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_Shipment_Refnum.Name = "tabPage_Shipment_Refnum";
+            this.tabPage_Shipment_Refnum.Size = new System.Drawing.Size(606, 218);
+            this.tabPage_Shipment_Refnum.TabIndex = 4;
+            this.tabPage_Shipment_Refnum.Text = "Refnum";
+            this.tabPage_Shipment_Refnum.UseVisualStyleBackColor = true;
             // 
             // button_Remove_Shipment_Refnum
             // 
@@ -721,13 +732,13 @@ namespace Regresser
             // 
             // tabPage_Release
             // 
-            this.tabPage_Release.Controls.Add(this.button1);
+            this.tabPage_Release.Controls.Add(this.button_Remove_Release_Refnum);
             this.tabPage_Release.Controls.Add(this.listBox_Release_Xids);
             this.tabPage_Release.Controls.Add(this.label14);
-            this.tabPage_Release.Controls.Add(this.button2);
+            this.tabPage_Release.Controls.Add(this.button_Edit_Release_Refnum);
             this.tabPage_Release.Controls.Add(this.label15);
             this.tabPage_Release.Controls.Add(this.listBox_Release_Refnums);
-            this.tabPage_Release.Controls.Add(this.button3);
+            this.tabPage_Release.Controls.Add(this.button_Add_Release_Refnum);
             this.tabPage_Release.Controls.Add(this.button_Add_Release_Xid);
             this.tabPage_Release.Controls.Add(this.label13);
             this.tabPage_Release.Controls.Add(this.button_Remove_Release_Xid);
@@ -761,7 +772,7 @@ namespace Regresser
             this.tabPage_Shipment_Cost.ResumeLayout(false);
             this.tabPage_Shipment_Cost.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Shipment_Costs)).EndInit();
-            this.tabPageShipment_Refnum.ResumeLayout(false);
+            this.tabPage_Shipment_Refnum.ResumeLayout(false);
             this.tabPage_Address.ResumeLayout(false);
             this.tabPage_Address.PerformLayout();
             this.tabPage_Release.ResumeLayout(false);
@@ -803,9 +814,9 @@ namespace Regresser
         private System.Windows.Forms.Button button_Add_Release_Xid;
         private System.Windows.Forms.Button button_Edit_Release_Xid;
         private System.Windows.Forms.Button button_Remove_Release_Xid;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button_Remove_Release_Refnum;
+        private System.Windows.Forms.Button button_Edit_Release_Refnum;
+        private System.Windows.Forms.Button button_Add_Release_Refnum;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button_Save;
         private System.Windows.Forms.Button button_Cancelar;
@@ -817,7 +828,7 @@ namespace Regresser
         private System.Windows.Forms.CheckBox checkBox_Tax_Included;
         private System.Windows.Forms.TabPage tabPage_Address;
         private System.Windows.Forms.TabPage tabPage_Release;
-        private System.Windows.Forms.TabPage tabPageShipment_Refnum;
+        private System.Windows.Forms.TabPage tabPage_Shipment_Refnum;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label12;
