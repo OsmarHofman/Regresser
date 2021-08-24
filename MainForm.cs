@@ -21,7 +21,7 @@ namespace Regresser
             InitializeComponent();
         }
 
-        private void buttonEureka_Click(object sender, EventArgs e)
+        private void buttonSend_Click(object sender, EventArgs e)
         {
             Robot robot = new Robot();
             var result = robot.SendActions();

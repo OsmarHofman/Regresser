@@ -30,7 +30,7 @@ namespace Regresser
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.buttonEureka = new System.Windows.Forms.Button();
+            this.buttonSend = new System.Windows.Forms.Button();
             this.label_TMS_Port = new System.Windows.Forms.Label();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.embarqueToolStripMenuItem_Shipment = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,20 +47,20 @@ namespace Regresser
             this.panel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // buttonEureka
+            // buttonSend
             // 
-            this.buttonEureka.Location = new System.Drawing.Point(141, 544);
-            this.buttonEureka.Name = "buttonEureka";
-            this.buttonEureka.Size = new System.Drawing.Size(75, 23);
-            this.buttonEureka.TabIndex = 0;
-            this.buttonEureka.Text = "Eureka";
-            this.buttonEureka.UseVisualStyleBackColor = true;
-            this.buttonEureka.Click += new System.EventHandler(this.buttonEureka_Click);
+            this.buttonSend.Location = new System.Drawing.Point(114, 544);
+            this.buttonSend.Name = "buttonSend";
+            this.buttonSend.Size = new System.Drawing.Size(185, 23);
+            this.buttonSend.TabIndex = 0;
+            this.buttonSend.Text = "Enviar para Robozinhos";
+            this.buttonSend.UseVisualStyleBackColor = true;
+            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
             // 
             // label_TMS_Port
             // 
             this.label_TMS_Port.AutoSize = true;
-            this.label_TMS_Port.Location = new System.Drawing.Point(30, 20);
+            this.label_TMS_Port.Location = new System.Drawing.Point(81, 20);
             this.label_TMS_Port.Name = "label_TMS_Port";
             this.label_TMS_Port.Size = new System.Drawing.Size(78, 15);
             this.label_TMS_Port.TabIndex = 2;
@@ -100,18 +100,18 @@ namespace Regresser
             // 
             // textBox_TMS_Port
             // 
-            this.textBox_TMS_Port.Location = new System.Drawing.Point(114, 17);
+            this.textBox_TMS_Port.Location = new System.Drawing.Point(165, 17);
             this.textBox_TMS_Port.Name = "textBox_TMS_Port";
-            this.textBox_TMS_Port.Size = new System.Drawing.Size(145, 23);
+            this.textBox_TMS_Port.Size = new System.Drawing.Size(169, 23);
             this.textBox_TMS_Port.TabIndex = 1;
             // 
             // listBox_Actions
             // 
             this.listBox_Actions.FormattingEnabled = true;
             this.listBox_Actions.ItemHeight = 15;
-            this.listBox_Actions.Location = new System.Drawing.Point(56, 3);
+            this.listBox_Actions.Location = new System.Drawing.Point(18, 3);
             this.listBox_Actions.Name = "listBox_Actions";
-            this.listBox_Actions.Size = new System.Drawing.Size(232, 394);
+            this.listBox_Actions.Size = new System.Drawing.Size(365, 394);
             this.listBox_Actions.TabIndex = 3;
             this.listBox_Actions.SelectedIndexChanged += new System.EventHandler(this.listBox_Actions_SelectedIndexChanged);
             // 
@@ -119,7 +119,7 @@ namespace Regresser
             // 
             this.button_Remove.Enabled = false;
             this.button_Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Remove.Location = new System.Drawing.Point(66, 452);
+            this.button_Remove.Location = new System.Drawing.Point(88, 452);
             this.button_Remove.Name = "button_Remove";
             this.button_Remove.Size = new System.Drawing.Size(90, 26);
             this.button_Remove.TabIndex = 4;
@@ -131,7 +131,7 @@ namespace Regresser
             this.button_Move_Up.Enabled = false;
             this.button_Move_Up.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Move_Up.Image = global::Regresser.Properties.Resources.upload;
-            this.button_Move_Up.Location = new System.Drawing.Point(186, 403);
+            this.button_Move_Up.Location = new System.Drawing.Point(208, 403);
             this.button_Move_Up.Name = "button_Move_Up";
             this.button_Move_Up.Size = new System.Drawing.Size(90, 26);
             this.button_Move_Up.TabIndex = 5;
@@ -146,7 +146,7 @@ namespace Regresser
             this.button_Move_Down.Enabled = false;
             this.button_Move_Down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Move_Down.Image = global::Regresser.Properties.Resources.download;
-            this.button_Move_Down.Location = new System.Drawing.Point(186, 450);
+            this.button_Move_Down.Location = new System.Drawing.Point(208, 450);
             this.button_Move_Down.Name = "button_Move_Down";
             this.button_Move_Down.Size = new System.Drawing.Size(90, 26);
             this.button_Move_Down.TabIndex = 6;
@@ -160,7 +160,7 @@ namespace Regresser
             // 
             this.button_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Add.Image = global::Regresser.Properties.Resources.add;
-            this.button_Add.Location = new System.Drawing.Point(66, 403);
+            this.button_Add.Location = new System.Drawing.Point(88, 403);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(90, 26);
             this.button_Add.TabIndex = 7;
@@ -179,19 +179,19 @@ namespace Regresser
             this.panel.Controls.Add(this.button_Move_Up);
             this.panel.Location = new System.Drawing.Point(12, 51);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(347, 487);
+            this.panel.Size = new System.Drawing.Size(399, 487);
             this.panel.TabIndex = 6;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(376, 573);
+            this.ClientSize = new System.Drawing.Size(427, 573);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.divider);
             this.Controls.Add(this.label_TMS_Port);
             this.Controls.Add(this.textBox_TMS_Port);
-            this.Controls.Add(this.buttonEureka);
+            this.Controls.Add(this.buttonSend);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -206,7 +206,7 @@ namespace Regresser
 
         #endregion
 
-        private System.Windows.Forms.Button buttonEureka;
+        private System.Windows.Forms.Button buttonSend;
         private System.Windows.Forms.Label label_TMS_Port;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem embarqueToolStripMenuItem_Shipment;

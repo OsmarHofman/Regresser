@@ -19,6 +19,15 @@ namespace Regresser
 
         private static readonly HttpClient client = new HttpClient();
 
+        public Robot () { }
+
+        public Robot(string robotName, List<Actions> actions)
+        {
+            TestId = Guid.NewGuid();
+            RobotName = robotName;
+            this.actions = actions;
+        }
+
         public async Task<HttpResponseMessage> SendActions()
         {
             var jarvis = new Robot

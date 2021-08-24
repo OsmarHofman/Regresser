@@ -46,7 +46,7 @@ namespace Regresser
             this.textBox_Destination_Location_Xid = new System.Windows.Forms.TextBox();
             this.textBox_Taker_Xid = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox_City = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox_UF = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -88,6 +88,14 @@ namespace Regresser
             this.button_Add_Shipment_Refnum = new System.Windows.Forms.Button();
             this.tabPage_Address = new System.Windows.Forms.TabPage();
             this.tabPage_Release = new System.Windows.Forms.TabPage();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
             this.tabControl_Shipment_Costs.SuspendLayout();
             this.tabPage_Planning.SuspendLayout();
             this.tabPage_Shipment_Cost.SuspendLayout();
@@ -245,24 +253,24 @@ namespace Regresser
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(92, 79);
+            this.label9.Location = new System.Drawing.Point(76, 67);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 15);
             this.label9.TabIndex = 17;
             this.label9.Text = "Cidade";
             // 
-            // textBox1
+            // textBox_City
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 23);
-            this.textBox1.TabIndex = 16;
-            this.textBox1.Text = "São Paulo";
+            this.textBox_City.Location = new System.Drawing.Point(126, 64);
+            this.textBox_City.Name = "textBox_City";
+            this.textBox_City.Size = new System.Drawing.Size(100, 23);
+            this.textBox_City.TabIndex = 16;
+            this.textBox_City.Text = "São Paulo";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(273, 79);
+            this.label10.Location = new System.Drawing.Point(76, 109);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 15);
             this.label10.TabIndex = 19;
@@ -300,7 +308,7 @@ namespace Regresser
             "SP",
             "SE",
             "TO"});
-            this.comboBox_UF.Location = new System.Drawing.Point(323, 76);
+            this.comboBox_UF.Location = new System.Drawing.Point(126, 106);
             this.comboBox_UF.Name = "comboBox_UF";
             this.comboBox_UF.Size = new System.Drawing.Size(47, 23);
             this.comboBox_UF.TabIndex = 20;
@@ -309,7 +317,7 @@ namespace Regresser
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(407, 79);
+            this.label11.Location = new System.Drawing.Point(89, 150);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 15);
             this.label11.TabIndex = 22;
@@ -317,7 +325,7 @@ namespace Regresser
             // 
             // maskedTextBox_IBGE
             // 
-            this.maskedTextBox_IBGE.Location = new System.Drawing.Point(444, 76);
+            this.maskedTextBox_IBGE.Location = new System.Drawing.Point(126, 147);
             this.maskedTextBox_IBGE.Mask = "0000000";
             this.maskedTextBox_IBGE.Name = "maskedTextBox_IBGE";
             this.maskedTextBox_IBGE.Size = new System.Drawing.Size(61, 23);
@@ -717,11 +725,19 @@ namespace Regresser
             // 
             // tabPage_Address
             // 
+            this.tabPage_Address.Controls.Add(this.label26);
+            this.tabPage_Address.Controls.Add(this.label25);
+            this.tabPage_Address.Controls.Add(this.label24);
+            this.tabPage_Address.Controls.Add(this.label20);
+            this.tabPage_Address.Controls.Add(this.label21);
+            this.tabPage_Address.Controls.Add(this.label22);
+            this.tabPage_Address.Controls.Add(this.label23);
+            this.tabPage_Address.Controls.Add(this.label19);
             this.tabPage_Address.Controls.Add(this.maskedTextBox_IBGE);
             this.tabPage_Address.Controls.Add(this.label11);
             this.tabPage_Address.Controls.Add(this.label9);
             this.tabPage_Address.Controls.Add(this.comboBox_UF);
-            this.tabPage_Address.Controls.Add(this.textBox1);
+            this.tabPage_Address.Controls.Add(this.textBox_City);
             this.tabPage_Address.Controls.Add(this.label10);
             this.tabPage_Address.Location = new System.Drawing.Point(4, 24);
             this.tabPage_Address.Name = "tabPage_Address";
@@ -749,6 +765,80 @@ namespace Regresser
             this.tabPage_Release.TabIndex = 3;
             this.tabPage_Release.Text = "Ordem";
             this.tabPage_Release.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label19.Location = new System.Drawing.Point(112, 21);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(75, 25);
+            this.label19.TabIndex = 23;
+            this.label19.Text = "Origem";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label20.Location = new System.Drawing.Point(397, 21);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(76, 25);
+            this.label20.TabIndex = 30;
+            this.label20.Text = "Destino";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(374, 150);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(31, 15);
+            this.label21.TabIndex = 29;
+            this.label21.Text = "IBGE";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(361, 67);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(44, 15);
+            this.label22.TabIndex = 26;
+            this.label22.Text = "Cidade";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(361, 109);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(42, 15);
+            this.label23.TabIndex = 27;
+            this.label23.Text = "Estado";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(411, 67);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(59, 15);
+            this.label24.TabIndex = 31;
+            this.label24.Text = "São Paulo";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(414, 109);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(20, 15);
+            this.label25.TabIndex = 32;
+            this.label25.Text = "SP";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(414, 150);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(49, 15);
+            this.label26.TabIndex = 33;
+            this.label26.Text = "3550308";
             // 
             // ShipmentForm
             // 
@@ -803,7 +893,7 @@ namespace Regresser
         private System.Windows.Forms.ComboBox comboBox_UF;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_City;
         private System.Windows.Forms.MaskedTextBox maskedTextBox_IBGE;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ListBox listBox_Release_Refnums;
@@ -843,5 +933,13 @@ namespace Regresser
         private System.Windows.Forms.DataGridViewTextBoxColumn CostValue;
         private System.Windows.Forms.DataGridViewCheckBoxColumn AllocatedCost;
         private System.Windows.Forms.DataGridViewTextBoxColumn AcessorialCostXid;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label19;
     }
 }

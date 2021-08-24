@@ -1,7 +1,9 @@
-﻿using Regresser.Domain.Shipper;
+﻿using Regresser.Domain.RobotsActions;
+using Regresser.Domain.Shipper;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using System.Linq;
 
 namespace Regresser
 {
@@ -27,6 +29,8 @@ namespace Regresser
 
             shipmentRefnums = new Dictionary<string, string>
             {
+                {"CLL_IMPOSTO_SOMADO", "N" },
+                {"CLL_IMPOSTO_INCLUSO", "N" },
                 {"CLL_CALCULAR_PEDAGIO", "N" },
                 {"CLL_PAGAMENTO_PEDAGIO", "N" },
                 {"CLL_VIAGEM_RETORNO", "N" },
@@ -108,6 +112,98 @@ namespace Regresser
         private void button_Save_Click(object sender, EventArgs e)
         {
 
+            //TODO: Dividir em metodos menores
+            var shipmentCosts = new List<ShipmentCost>();
+
+            for (int i = 0; i < dataGridView_Shipment_Costs.Rows.Count - 1; i++)
+            {
+                var row = dataGridView_Shipment_Costs.Rows[i];
+
+                var shipmentCost = new ShipmentCost
+                {
+                    CostType = row.Cells[0].Value.ToString(),
+                    Value = float.Parse(row.Cells[1].Value.ToString(), System.Globalization.NumberStyles.Float),
+                    AllocateCost = bool.Parse(row.Cells[2].FormattedValue.ToString()),
+                    AccessorialCostXid = (row.Cells[3].Value == null)
+                            ? null
+                            : row.Cells[3].Value.ToString(),
+                };
+
+                shipmentCosts.Add(shipmentCost);
+            }
+
+            var domainName = textBox_Shipment_DomainName.Text;
+
+            var releases = new List<Release>();
+
+            foreach (var refnum in releaseRefnums)
+            {
+                var release = new Release
+                {
+                    ReleaseDomainName = domainName,
+                    ReleaseXid = refnum.ReleaseXid,
+                    ReleaseRefnums = refnum.ReleaseRefnums
+                };
+
+                releases.Add(release);
+            }
+
+            var sourceAddress = new Address
+            {
+                City = textBox_City.Text,
+                State = comboBox_UF.SelectedItem.ToString(),
+                IBGE = maskedTextBox_IBGE.Text
+            };
+
+            var shipmentNumber = textBox_Shipment_Number.Text;
+
+            var shipmentTravelStatus = comboBox_Travel_Status.SelectedItem.ToString();
+
+            var shipmentEmissionStatus = comboBox_Emission_Status.SelectedItem.ToString();
+
+            var carrierXid = textBox_Carrier_Xid.Text;
+
+            var originLocationXid = textBox_Source_Location_Xid.Text;
+
+            var destinationLocationXid = textBox_Destination_Location_Xid.Text;
+
+            var takerXid = textBox_Taker_Xid.Text;
+
+            var driverXid = (string.IsNullOrEmpty(textBox_Driver_Xid.Text)) ? null : textBox_Driver_Xid.Text;
+
+            var shipment = new Shipment
+            {
+                ShipmentDomainName = domainName,
+                ShipmentXid = shipmentNumber,
+                TravelStatus = shipmentTravelStatus,
+                EmissionStatus = shipmentEmissionStatus,
+                XidCarrier = carrierXid,
+                XidSourceLocation = originLocationXid,
+                XidDestinationLocation = destinationLocationXid,
+                XidTakerLocation = takerXid,
+                DriverXid = driverXid,
+                AddedTax = shipmentRefnums.GetValueOrDefault("CLL_IMPOSTO_SOMADO"),
+                TaxIncluded = shipmentRefnums.GetValueOrDefault("CLL_IMPOSTO_INCLUSO"),
+                SourceAddress = sourceAddress,
+                ShipmentCosts = shipmentCosts,
+                ShipmentRefnums = shipmentRefnums,
+                Releases = releases,
+            };
+
+            var jarvisActions = new List<Actions>
+            {
+                new JarvisActions
+                {
+                    Shipments = new List<Shipment> { shipment },
+                }
+            };
+
+            var jarvis = new Robot("jarvis", jarvisActions);
+
+            MainForm.robots.Add(jarvis);
+            MainForm.robotLabels.Add($"Embarque {shipmentNumber}; {shipmentTravelStatus}; Custo Total: {shipmentCosts.Sum(x => x.Value)}; Qtd Ordens: {releases.Count}.");
+
+            Close();
         }
 
         private void ShipmentForm_Activated(object sender, EventArgs e)

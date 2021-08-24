@@ -26,8 +26,15 @@ namespace Regresser.Domain.Shipper
 
         public string TaxIncluded { get; set; }
 
-        public List<ShipmentCost> ShipmentCosts { get; set; }
+        public string DriverXid { get; set; }
+
+        public Address SourceAddress { get; set; }
+
+        public Dictionary<string, string> ShipmentRefnums { get; set; }
 
         public List<Release> Releases { get; set; }
+
+        public List<ShipmentCost> ShipmentCosts { get; set; }
+
     }
 }
