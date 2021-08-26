@@ -25,7 +25,7 @@ namespace Regresser
         {
             InitializeComponent();
 
-            dataGridView_Shipment_Costs.Rows.Add("Base", "900", true, null);
+            dataGridView_Shipment_Costs.Rows.Add("Base", "900,50", true, null);
 
             shipmentRefnums = new Dictionary<string, string>
             {
@@ -91,28 +91,8 @@ namespace Regresser
 
         private string[] GetSelectedRefnum(ListBox listBox) => listBox.SelectedItem.ToString().Split(" - ");
 
-        #endregion
-
-        #region FormMethods
-        private void button_Cancelar_Click(object sender, EventArgs e) => Close();
-
-        private void listBox_Shipment_Refnums_SelectedIndexChanged(object sender, EventArgs e)
+        private List<ShipmentCost> GenerateShipmentCosts()
         {
-            button_Edit_Shipment_Refnum.Enabled = true;
-            button_Remove_Shipment_Refnum.Enabled = true;
-        }
-
-        private void button_Add_Shipment_Refnum_Click(object sender, EventArgs e)
-        {
-
-            RefNumForm refNumForm = new RefNumForm(shipmentRefnums, new KeyValuePair<string, string>());
-            refNumForm.ShowDialog();
-        }
-
-        private void button_Save_Click(object sender, EventArgs e)
-        {
-
-            //TODO: Dividir em metodos menores
             var shipmentCosts = new List<ShipmentCost>();
 
             for (int i = 0; i < dataGridView_Shipment_Costs.Rows.Count - 1; i++)
@@ -132,8 +112,11 @@ namespace Regresser
                 shipmentCosts.Add(shipmentCost);
             }
 
-            var domainName = textBox_Shipment_DomainName.Text;
+            return shipmentCosts;
+        }
 
+        private List<Release> GenerateReleases(string domainName)
+        {
             var releases = new List<Release>();
 
             foreach (var refnum in releaseRefnums)
@@ -148,6 +131,11 @@ namespace Regresser
                 releases.Add(release);
             }
 
+            return releases;
+        }
+
+        private Shipment GenerateShipment(string domainName, List<Release> releases, List<ShipmentCost>shipmentCosts)
+        {
             var sourceAddress = new Address
             {
                 City = textBox_City.Text,
@@ -171,7 +159,7 @@ namespace Regresser
 
             var driverXid = (string.IsNullOrEmpty(textBox_Driver_Xid.Text)) ? null : textBox_Driver_Xid.Text;
 
-            var shipment = new Shipment
+            return new Shipment
             {
                 ShipmentDomainName = domainName,
                 ShipmentXid = shipmentNumber,
@@ -189,6 +177,36 @@ namespace Regresser
                 ShipmentRefnums = shipmentRefnums,
                 Releases = releases,
             };
+        }
+
+        #endregion
+
+        #region FormMethods
+        private void button_Cancelar_Click(object sender, EventArgs e) => Close();
+
+        private void listBox_Shipment_Refnums_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            button_Edit_Shipment_Refnum.Enabled = true;
+            button_Remove_Shipment_Refnum.Enabled = true;
+        }
+
+        private void button_Add_Shipment_Refnum_Click(object sender, EventArgs e)
+        {
+
+            RefNumForm refNumForm = new RefNumForm(shipmentRefnums, new KeyValuePair<string, string>());
+            refNumForm.ShowDialog();
+        }
+
+        private void button_Save_Click(object sender, EventArgs e)
+        {
+
+            var domainName = textBox_Shipment_DomainName.Text;
+
+            var releases = GenerateReleases(domainName);
+
+            var shipmentCosts = GenerateShipmentCosts();
+
+            var shipment = GenerateShipment(domainName, releases, shipmentCosts);
 
             var jarvisActions = new List<Actions>
             {
@@ -201,7 +219,8 @@ namespace Regresser
             var jarvis = new Robot("jarvis", jarvisActions);
 
             MainForm.robots.Add(jarvis);
-            MainForm.robotLabels.Add($"Embarque {shipmentNumber}; {shipmentTravelStatus}; Custo Total: {shipmentCosts.Sum(x => x.Value)}; Qtd Ordens: {releases.Count}.");
+            MainForm.robotLabels.Add($"Embarque {shipment.ShipmentXid}; {shipment.TravelStatus}; " +
+                $"Custo Total: {shipmentCosts.Sum(x => x.Value)}; Qtd Ordens: {releases.Count}.");
 
             Close();
         }
