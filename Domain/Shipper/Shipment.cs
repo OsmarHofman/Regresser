@@ -30,11 +30,10 @@ namespace Regresser.Domain.Shipper
 
         public Address SourceAddress { get; set; }
 
-        public Dictionary<string, string> ShipmentRefnums { get; set; }
-
-        public List<Release> Releases { get; set; }
+        public List<Refnum> ShipmentRefnums { get; set; }
 
         public List<ShipmentCost> ShipmentCosts { get; set; }
 
+        public List<Release> Releases { get; set; }
     }
 }

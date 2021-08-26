@@ -30,7 +30,6 @@ namespace Regresser
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.buttonSend = new System.Windows.Forms.Button();
             this.label_TMS_Port = new System.Windows.Forms.Label();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.embarqueToolStripMenuItem_Shipment = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,19 +42,11 @@ namespace Regresser
             this.button_Move_Down = new System.Windows.Forms.Button();
             this.button_Add = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
+            this.button_Send = new System.Windows.Forms.Button();
+            this.button_Load = new System.Windows.Forms.Button();
             this.contextMenuStrip.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // buttonSend
-            // 
-            this.buttonSend.Location = new System.Drawing.Point(114, 544);
-            this.buttonSend.Name = "buttonSend";
-            this.buttonSend.Size = new System.Drawing.Size(185, 23);
-            this.buttonSend.TabIndex = 0;
-            this.buttonSend.Text = "Enviar para Robozinhos";
-            this.buttonSend.UseVisualStyleBackColor = true;
-            this.buttonSend.Click += new System.EventHandler(this.buttonSend_Click);
             // 
             // label_TMS_Port
             // 
@@ -182,16 +173,42 @@ namespace Regresser
             this.panel.Size = new System.Drawing.Size(399, 487);
             this.panel.TabIndex = 6;
             // 
+            // button_Send
+            // 
+            this.button_Send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Send.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_Send.Location = new System.Drawing.Point(176, 551);
+            this.button_Send.Name = "button_Send";
+            this.button_Send.Size = new System.Drawing.Size(90, 28);
+            this.button_Send.TabIndex = 8;
+            this.button_Send.Text = "Enviar";
+            this.button_Send.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Send.UseVisualStyleBackColor = true;
+            this.button_Send.Click += new System.EventHandler(this.button_Send_Click);
+            // 
+            // button_Load
+            // 
+            this.button_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Load.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_Load.Location = new System.Drawing.Point(12, 551);
+            this.button_Load.Name = "button_Load";
+            this.button_Load.Size = new System.Drawing.Size(108, 26);
+            this.button_Load.TabIndex = 9;
+            this.button_Load.Text = "Carregar JSON";
+            this.button_Load.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Load.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 573);
+            this.ClientSize = new System.Drawing.Size(427, 587);
+            this.Controls.Add(this.button_Load);
+            this.Controls.Add(this.button_Send);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.divider);
             this.Controls.Add(this.label_TMS_Port);
             this.Controls.Add(this.textBox_TMS_Port);
-            this.Controls.Add(this.buttonSend);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -205,8 +222,6 @@ namespace Regresser
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonSend;
         private System.Windows.Forms.Label label_TMS_Port;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem embarqueToolStripMenuItem_Shipment;
@@ -219,6 +234,8 @@ namespace Regresser
         private System.Windows.Forms.Button button_Move_Down;
         private System.Windows.Forms.Button button_Add;
         private System.Windows.Forms.Panel panel;
+        private System.Windows.Forms.Button button_Send;
+        private System.Windows.Forms.Button button_Load;
     }
 }
 

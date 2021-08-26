@@ -11,7 +11,7 @@ namespace Regresser
 {
     public partial class RefNumForm : Form
     {
-        private Dictionary<string, string> refNums;
+        private List<Refnum> refNums;
         private string releaseXid;
         private bool isEditing = false;
 
@@ -20,16 +20,16 @@ namespace Regresser
             InitializeComponent();
         }
 
-        public RefNumForm(Dictionary<string, string> refNums, KeyValuePair<string, string> editRefNum)
+        public RefNumForm(List<Refnum> refNums, Refnum editRefNum = null)
         {
             InitializeComponent();
 
-            SetupEdit(refNums,editRefNum);
+            SetupEdit(refNums, editRefNum);
 
             this.refNums = refNums;
         }
 
-        public RefNumForm(ReleaseRefnum releaseRefnum, KeyValuePair<string, string> editRefNum)
+        public RefNumForm(ReleaseRefnum releaseRefnum, Refnum editRefNum = null)
         {
             InitializeComponent();
 
@@ -39,17 +39,19 @@ namespace Regresser
             this.refNums = releaseRefnum.ReleaseRefnums;
         }
 
-        private void SetupEdit(Dictionary<string, string> refNums, KeyValuePair<string, string> editRefNum)
+        private void SetupEdit(List<Refnum> refNums, Refnum editRefNum)
         {
-            if (!string.IsNullOrEmpty(editRefNum.Key))
+            if (editRefNum != null)
             {
-                textBox_Refnum_Key.Text = editRefNum.Key;
-                textBox_Refnum_Value.Text = editRefNum.Value;
-                refNums.Remove(editRefNum.Key);
+                textBox_Refnum_Key.Text = editRefNum.RefnumKey;
+                textBox_Refnum_Value.Text = editRefNum.RefnumValue;
+                Refnum.RemoveFromRefnumList(refNums,editRefNum.RefnumKey);
 
                 this.isEditing = true;
             }
         }
+
+
 
         private void button_Save_Click(object sender, EventArgs e)
         {
@@ -61,7 +63,7 @@ namespace Regresser
             {
                 try
                 {
-                    this.refNums.Add(textBox_Refnum_Key.Text, textBox_Refnum_Value.Text);
+                    this.refNums.Add(new Refnum(textBox_Refnum_Key.Text, textBox_Refnum_Value.Text));
 
                     if (string.IsNullOrEmpty(releaseXid))
                         ShipmentForm.shipmentRefnums = this.refNums;

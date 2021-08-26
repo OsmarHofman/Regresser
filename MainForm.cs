@@ -1,12 +1,7 @@
-﻿using Newtonsoft.Json;
-using Regresser.Properties;
+﻿using Regresser.Domain.RobotsActions;
 using System;
 using System.Collections.Generic;
-using System.Net.Http;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.ListBox;
 
 namespace Regresser
 {
@@ -21,10 +16,32 @@ namespace Regresser
             InitializeComponent();
         }
 
-        private void buttonSend_Click(object sender, EventArgs e)
+
+        private void SetUrlsOnRobots()
         {
-            Robot robot = new Robot();
-            var result = robot.SendActions();
+            var url = $"http://191.239.245.232:{textBox_TMS_Port.Text}/exchangeMessage/WSExchangeMessage.asmx";
+
+            foreach (var robot in robots)
+            {
+                if (robot.actions[0] is JarvisActions)
+                {
+                    foreach (var action in robot.actions)
+                    {
+                        var actionWithUrl = (JarvisActions)action;
+
+                        actionWithUrl.URL_WS_OTM = url;
+                    }
+                }
+            }
+        }
+
+        private void button_Send_Click(object sender, EventArgs e)
+        {
+           SetUrlsOnRobots();
+
+           var response = Robot.SendActions(robots);
+
+           MessageBox.Show($"Resposta dos Robozinhos:\n {response}");
         }
 
         private void button_Add_Click(object sender, EventArgs e)

@@ -1,7 +1,5 @@
 ﻿using Regresser.Domain.Shipper;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Regresser.Domain.RobotsActions
 {

@@ -19,7 +19,7 @@ namespace Regresser
 
         private static readonly HttpClient client = new HttpClient();
 
-        public Robot () { }
+        public Robot() { }
 
         public Robot(string robotName, List<Actions> actions)
         {
@@ -28,75 +28,10 @@ namespace Regresser
             this.actions = actions;
         }
 
-        public async Task<HttpResponseMessage> SendActions()
+        public static async Task<HttpResponseMessage> SendActions(List<Robot> robots)
         {
-            var jarvis = new Robot
-            {
-                TestId = Guid.NewGuid(),
-                RobotName = "jarvis",
-                actions = new List<Actions>
-                {
-                    new JarvisActions
-                    {
-                        URL_WS_OTM = "http://191.239.245.232:1048/tmsExchangeMessage/TMSExchangeMessage.asmx",
-                        Shipments = new List<Shipment>
-                        {
-                            new Shipment
-                            {
-                                ShipmentDomainName = "EMBDEV",
-                                ShipmentXid = "EMBARQUE-1",
-                                TravelStatus = "PLANEJADO",
-                                EmissionStatus = "PRE_EMISSAO_ENVIADA",
-                                XidCarrier = "Carrier",
-                                XidSourceLocation = "Source",
-                                XidDestinationLocation = "Destination",
-                                XidTakerLocation = "Taker",
-                                AddedTax = "N",
-                                TaxIncluded = "N",
-                                ShipmentCosts = new List<ShipmentCost>
-                                {
-                                    new ShipmentCost
-                                    {
-                                        CostType = "B",
-                                        Value = 900.00f,
-                                        AllocateCost = true,
-                                    }
-                                },
-                                Releases = new List<Release>
-                                {
-                                    new Release
-                                    {
-                                        ReleaseDomainName = "EMBDEV",
-                                        ReleaseXid = "ORDEM-1"
-                                    }
-                                }
-
-                            }
-                        }
-                    }
-                }
-            };
-
-            var userbolt = new Robot
-            {
-                TestId = Guid.NewGuid(),
-                RobotName = "userbolt",
-                actions = new List<Actions>
-                {
-                    new UserBoltActions
-                    {
-                        type = "timeout",
-                        timeout = 4000
-                    }
-                }
-            };
-
-            var robots = new List<Robot>
-            {
-                jarvis, userbolt
-            };
-
-            var json = JsonConvert.SerializeObject(robots);
+            var json = JsonConvert.SerializeObject(robots,
+                new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 

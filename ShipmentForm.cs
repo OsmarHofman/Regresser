@@ -11,7 +11,7 @@ namespace Regresser
     {
         #region Properties
 
-        public static Dictionary<string, string> shipmentRefnums;
+        public static List<Refnum> shipmentRefnums;
 
         public static List<ReleaseRefnum> releaseRefnums;
 
@@ -27,13 +27,13 @@ namespace Regresser
 
             dataGridView_Shipment_Costs.Rows.Add("Base", "900,50", true, null);
 
-            shipmentRefnums = new Dictionary<string, string>
+            shipmentRefnums = new List<Refnum>
             {
-                {"CLL_IMPOSTO_SOMADO", "N" },
-                {"CLL_IMPOSTO_INCLUSO", "N" },
-                {"CLL_CALCULAR_PEDAGIO", "N" },
-                {"CLL_PAGAMENTO_PEDAGIO", "N" },
-                {"CLL_VIAGEM_RETORNO", "N" },
+                new Refnum("CLL_IMPOSTO_SOMADO", "N" ),
+                new Refnum("CLL_IMPOSTO_INCLUSO", "N" ),
+                new Refnum("CLL_CALCULAR_PEDAGIO", "N" ),
+                new Refnum("CLL_PAGAMENTO_PEDAGIO", "N" ),
+                new Refnum("CLL_VIAGEM_RETORNO", "N" )
             };
 
             InsertShipmentRefNums();
@@ -52,7 +52,7 @@ namespace Regresser
 
             foreach (var refNum in shipmentRefnums)
             {
-                var refNumText = string.Join(" - ", refNum.Key, refNum.Value);
+                var refNumText = string.Join(" - ", refNum.RefnumKey, refNum.RefnumValue);
                 listBox_Shipment_Refnums.Items.Add(refNumText);
             }
         }
@@ -77,17 +77,17 @@ namespace Regresser
 
             if (listBox_Release_Xids.SelectedItem != null)
             {
-                var specificReleaseRefnums = GetReleaseRefnumsByXid(listBox_Release_Xids.SelectedItem.ToString());
+                var specificReleaseRefnums = GetReleaseRefnumByXid(listBox_Release_Xids.SelectedItem.ToString());
 
-                foreach (var refNum in specificReleaseRefnums)
+                foreach (var refNum in specificReleaseRefnums.ReleaseRefnums)
                 {
-                    var refNumText = string.Join(" - ", refNum.Key, refNum.Value);
+                    var refNumText = string.Join(" - ", refNum.RefnumKey, refNum.RefnumValue);
                     listBox_Release_Refnums.Items.Add(refNumText);
                 }
             }
         }
 
-        private Dictionary<string, string> GetReleaseRefnumsByXid(string releaseXid) => releaseRefnums.Find(x => x.ReleaseXid == releaseXid).ReleaseRefnums;
+        private ReleaseRefnum GetReleaseRefnumByXid(string releaseXid) => releaseRefnums.Find(x => x.ReleaseXid == releaseXid);
 
         private string[] GetSelectedRefnum(ListBox listBox) => listBox.SelectedItem.ToString().Split(" - ");
 
@@ -117,6 +117,9 @@ namespace Regresser
 
         private List<Release> GenerateReleases(string domainName)
         {
+            if (!releaseRefnums.Any())
+                return null;
+
             var releases = new List<Release>();
 
             foreach (var refnum in releaseRefnums)
@@ -134,7 +137,7 @@ namespace Regresser
             return releases;
         }
 
-        private Shipment GenerateShipment(string domainName, List<Release> releases, List<ShipmentCost>shipmentCosts)
+        private Shipment GenerateShipment(string domainName, List<Release> releases, List<ShipmentCost> shipmentCosts)
         {
             var sourceAddress = new Address
             {
@@ -159,6 +162,8 @@ namespace Regresser
 
             var driverXid = (string.IsNullOrEmpty(textBox_Driver_Xid.Text)) ? null : textBox_Driver_Xid.Text;
 
+            if (!shipmentRefnums.Any())
+                shipmentRefnums = null;
             return new Shipment
             {
                 ShipmentDomainName = domainName,
@@ -170,8 +175,8 @@ namespace Regresser
                 XidDestinationLocation = destinationLocationXid,
                 XidTakerLocation = takerXid,
                 DriverXid = driverXid,
-                AddedTax = shipmentRefnums.GetValueOrDefault("CLL_IMPOSTO_SOMADO"),
-                TaxIncluded = shipmentRefnums.GetValueOrDefault("CLL_IMPOSTO_INCLUSO"),
+                AddedTax = Refnum.GetValueByKeyOnList(shipmentRefnums, "CLL_IMPOSTO_SOMADO"),
+                TaxIncluded = Refnum.GetValueByKeyOnList(shipmentRefnums, "CLL_IMPOSTO_INCLUSO"),
                 SourceAddress = sourceAddress,
                 ShipmentCosts = shipmentCosts,
                 ShipmentRefnums = shipmentRefnums,
@@ -192,8 +197,7 @@ namespace Regresser
 
         private void button_Add_Shipment_Refnum_Click(object sender, EventArgs e)
         {
-
-            RefNumForm refNumForm = new RefNumForm(shipmentRefnums, new KeyValuePair<string, string>());
+            RefNumForm refNumForm = new RefNumForm(shipmentRefnums);
             refNumForm.ShowDialog();
         }
 
@@ -238,14 +242,14 @@ namespace Regresser
         {
             var refNumKey = GetSelectedRefnum(listBox_Shipment_Refnums)[0];
             listBox_Shipment_Refnums.Items.RemoveAt(listBox_Shipment_Refnums.SelectedIndex);
-            shipmentRefnums.Remove(refNumKey);
+            Refnum.RemoveFromRefnumList(shipmentRefnums, refNumKey);
         }
 
         private void button_Edit_Shipment_Refnum_Click(object sender, EventArgs e)
         {
             try
             {
-                KeyValuePair<string, string> refnum = new KeyValuePair<string, string>(GetSelectedRefnum(listBox_Shipment_Refnums)[0], GetSelectedRefnum(listBox_Shipment_Refnums)[1]);
+                Refnum refnum = new Refnum(GetSelectedRefnum(listBox_Shipment_Refnums)[0], GetSelectedRefnum(listBox_Shipment_Refnums)[1]);
                 RefNumForm refNumForm = new RefNumForm(shipmentRefnums, refnum);
                 refNumForm.ShowDialog();
             }
@@ -265,7 +269,7 @@ namespace Regresser
         private void button_Add_Release_Refnum_Click(object sender, EventArgs e)
         {
             activeReleaseIndex = listBox_Release_Xids.SelectedIndex;
-            RefNumForm refNumForm = new RefNumForm(GetReleaseRefnumsByXid(listBox_Release_Xids.SelectedItem.ToString()), new KeyValuePair<string, string>());
+            RefNumForm refNumForm = new RefNumForm(GetReleaseRefnumByXid(listBox_Release_Xids.SelectedItem.ToString()));
             refNumForm.ShowDialog();
         }
 
@@ -281,9 +285,9 @@ namespace Regresser
             {
                 activeReleaseIndex = listBox_Release_Xids.SelectedIndex;
 
-                var releaseRefnum = GetReleaseRefnumsByXid(listBox_Release_Xids.SelectedItem.ToString());
+                var releaseRefnum = GetReleaseRefnumByXid(listBox_Release_Xids.SelectedItem.ToString());
 
-                KeyValuePair<string, string> refnum = new KeyValuePair<string, string>(GetSelectedRefnum(listBox_Release_Refnums)[0], GetSelectedRefnum(listBox_Release_Refnums)[1]);
+                Refnum refnum = new Refnum(GetSelectedRefnum(listBox_Release_Refnums)[0], GetSelectedRefnum(listBox_Release_Refnums)[1]);
 
                 RefNumForm refNumForm = new RefNumForm(releaseRefnum, refnum);
                 refNumForm.ShowDialog();
@@ -298,8 +302,8 @@ namespace Regresser
         {
             var refNumKey = GetSelectedRefnum(listBox_Release_Refnums)[0];
             listBox_Release_Refnums.Items.RemoveAt(listBox_Release_Refnums.SelectedIndex);
-            var releaseRefnums = GetReleaseRefnumsByXid(listBox_Release_Xids.SelectedItem.ToString());
-            releaseRefnums.Remove(refNumKey);
+            var releaseRefnums = GetReleaseRefnumByXid(listBox_Release_Xids.SelectedItem.ToString());
+            Refnum.RemoveFromRefnumList(releaseRefnums.ReleaseRefnums, refNumKey);
         }
 
         private void button_Add_Release_Xid_Click(object sender, EventArgs e)

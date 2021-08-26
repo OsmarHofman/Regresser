@@ -8,15 +8,15 @@ namespace Regresser.Domain.Shipper
     {
         public string ReleaseXid { get; set; }
 
-        public Dictionary<string, string> ReleaseRefnums { get; set; }
+        public List<Refnum> ReleaseRefnums { get; set; }
 
         public ReleaseRefnum(string releaseXid)
         {
             ReleaseXid = releaseXid;
-            ReleaseRefnums = new Dictionary<string, string>();
+            ReleaseRefnums = new List<Refnum>();
         }
 
-        public ReleaseRefnum(string releaseXid, Dictionary<string, string> releaseRefnums)
+        public ReleaseRefnum(string releaseXid, List<Refnum> releaseRefnums)
         {
             ReleaseXid = releaseXid;
             ReleaseRefnums = releaseRefnums;
