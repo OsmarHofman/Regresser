@@ -9,8 +9,6 @@ namespace Regresser
     {
         public static List<Robot> robots = new List<Robot>();
 
-        public static List<string> robotLabels = new List<string>();
-
         public MainForm()
         {
             InitializeComponent();
@@ -35,18 +33,30 @@ namespace Regresser
             }
         }
 
+        private List<string> GetRobotLabels()
+        {
+            var labels = new List<string>();
+
+            foreach (var robot in robots)
+            {
+                labels.Add(robot.ToString());
+            }
+
+            return labels;
+        }
+
         private void button_Send_Click(object sender, EventArgs e)
         {
-           SetUrlsOnRobots();
+            SetUrlsOnRobots();
 
-           var response = Robot.SendActions(robots);
+            var response = Robot.SendActions(robots);
 
-           MessageBox.Show($"Resposta dos Robozinhos:\n {response}");
+            MessageBox.Show($"Resposta dos Robozinhos:\n {response}");
         }
 
         private void button_Add_Click(object sender, EventArgs e)
         {
-            contextMenuStrip.Show(Cursor.Position.X,Cursor.Position.Y);
+            contextMenuStrip.Show(Cursor.Position.X, Cursor.Position.Y);
         }
 
         private void listBox_Actions_SelectedIndexChanged(object sender, EventArgs e)
@@ -70,7 +80,7 @@ namespace Regresser
             var aux = listBox_Actions.SelectedItem;
             listBox_Actions.Items[listBox_Actions.SelectedIndex] = listBox_Actions.Items[listBox_Actions.SelectedIndex - 1];
             listBox_Actions.Items[listBox_Actions.SelectedIndex - 1] = aux;
-            listBox_Actions.SelectedIndex -= 1; 
+            listBox_Actions.SelectedIndex -= 1;
         }
 
         private void button_Move_Down_Click(object sender, EventArgs e)
@@ -96,7 +106,21 @@ namespace Regresser
         private void MainForm_Activated(object sender, EventArgs e)
         {
             listBox_Actions.Items.Clear();
+
+            var robotLabels = GetRobotLabels();
+
             listBox_Actions.Items.AddRange(robotLabels.ToArray());
+        }
+
+        private void button_Load_Click(object sender, EventArgs e)
+        {
+            LoadJSONForm loadJSONForm = new LoadJSONForm();
+            loadJSONForm.ShowDialog();
+        }
+
+        private void button_Remove_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

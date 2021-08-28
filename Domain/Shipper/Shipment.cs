@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace Regresser.Domain.Shipper
 {
@@ -35,5 +35,11 @@ namespace Regresser.Domain.Shipper
         public List<ShipmentCost> ShipmentCosts { get; set; }
 
         public List<Release> Releases { get; set; }
+
+        public override string ToString()
+        {
+            return $"Embarque {ShipmentXid}; {TravelStatus}; " +
+                $"Custo Total: {ShipmentCosts.Sum(x => x.Value)}; Qtd Ordens: {Releases.Count}.";
+        }
     }
 }

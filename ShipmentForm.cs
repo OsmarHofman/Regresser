@@ -223,8 +223,6 @@ namespace Regresser
             var jarvis = new Robot("jarvis", jarvisActions);
 
             MainForm.robots.Add(jarvis);
-            MainForm.robotLabels.Add($"Embarque {shipment.ShipmentXid}; {shipment.TravelStatus}; " +
-                $"Custo Total: {shipmentCosts.Sum(x => x.Value)}; Qtd Ordens: {releases.Count}.");
 
             Close();
         }

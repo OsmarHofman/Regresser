@@ -40,7 +40,6 @@ namespace Regresser
             };
 
             MainForm.robots.Add(userbolt);
-            MainForm.robotLabels.Add($"Timeout - {timeout}");
             this.Close();
         }
     }

@@ -51,9 +51,10 @@ namespace Regresser
             // label_TMS_Port
             // 
             this.label_TMS_Port.AutoSize = true;
-            this.label_TMS_Port.Location = new System.Drawing.Point(81, 20);
+            this.label_TMS_Port.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_TMS_Port.Location = new System.Drawing.Point(30, 22);
             this.label_TMS_Port.Name = "label_TMS_Port";
-            this.label_TMS_Port.Size = new System.Drawing.Size(78, 15);
+            this.label_TMS_Port.Size = new System.Drawing.Size(106, 20);
             this.label_TMS_Port.TabIndex = 2;
             this.label_TMS_Port.Text = "Porta do TMS";
             // 
@@ -91,18 +92,21 @@ namespace Regresser
             // 
             // textBox_TMS_Port
             // 
-            this.textBox_TMS_Port.Location = new System.Drawing.Point(165, 17);
+            this.textBox_TMS_Port.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.textBox_TMS_Port.Location = new System.Drawing.Point(142, 19);
             this.textBox_TMS_Port.Name = "textBox_TMS_Port";
-            this.textBox_TMS_Port.Size = new System.Drawing.Size(169, 23);
+            this.textBox_TMS_Port.Size = new System.Drawing.Size(147, 26);
             this.textBox_TMS_Port.TabIndex = 1;
             // 
             // listBox_Actions
             // 
             this.listBox_Actions.FormattingEnabled = true;
+            this.listBox_Actions.HorizontalScrollbar = true;
+            this.listBox_Actions.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.listBox_Actions.ItemHeight = 15;
             this.listBox_Actions.Location = new System.Drawing.Point(18, 3);
             this.listBox_Actions.Name = "listBox_Actions";
-            this.listBox_Actions.Size = new System.Drawing.Size(365, 394);
+            this.listBox_Actions.Size = new System.Drawing.Size(666, 394);
             this.listBox_Actions.TabIndex = 3;
             this.listBox_Actions.SelectedIndexChanged += new System.EventHandler(this.listBox_Actions_SelectedIndexChanged);
             // 
@@ -110,21 +114,24 @@ namespace Regresser
             // 
             this.button_Remove.Enabled = false;
             this.button_Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Remove.Location = new System.Drawing.Point(88, 452);
+            this.button_Remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_Remove.Location = new System.Drawing.Point(203, 416);
             this.button_Remove.Name = "button_Remove";
-            this.button_Remove.Size = new System.Drawing.Size(90, 26);
+            this.button_Remove.Size = new System.Drawing.Size(130, 40);
             this.button_Remove.TabIndex = 4;
             this.button_Remove.Text = "Remover";
             this.button_Remove.UseVisualStyleBackColor = true;
+            this.button_Remove.Click += new System.EventHandler(this.button_Remove_Click);
             // 
             // button_Move_Up
             // 
             this.button_Move_Up.Enabled = false;
             this.button_Move_Up.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Move_Up.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_Move_Up.Image = global::Regresser.Properties.Resources.upload;
-            this.button_Move_Up.Location = new System.Drawing.Point(208, 403);
+            this.button_Move_Up.Location = new System.Drawing.Point(371, 416);
             this.button_Move_Up.Name = "button_Move_Up";
-            this.button_Move_Up.Size = new System.Drawing.Size(90, 26);
+            this.button_Move_Up.Size = new System.Drawing.Size(130, 40);
             this.button_Move_Up.TabIndex = 5;
             this.button_Move_Up.Text = "Mover ";
             this.button_Move_Up.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -136,10 +143,11 @@ namespace Regresser
             // 
             this.button_Move_Down.Enabled = false;
             this.button_Move_Down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Move_Down.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_Move_Down.Image = global::Regresser.Properties.Resources.download;
-            this.button_Move_Down.Location = new System.Drawing.Point(208, 450);
+            this.button_Move_Down.Location = new System.Drawing.Point(535, 416);
             this.button_Move_Down.Name = "button_Move_Down";
-            this.button_Move_Down.Size = new System.Drawing.Size(90, 26);
+            this.button_Move_Down.Size = new System.Drawing.Size(130, 40);
             this.button_Move_Down.TabIndex = 6;
             this.button_Move_Down.Text = "Mover ";
             this.button_Move_Down.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -150,10 +158,11 @@ namespace Regresser
             // button_Add
             // 
             this.button_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_Add.Image = global::Regresser.Properties.Resources.add;
-            this.button_Add.Location = new System.Drawing.Point(88, 403);
+            this.button_Add.Location = new System.Drawing.Point(27, 416);
             this.button_Add.Name = "button_Add";
-            this.button_Add.Size = new System.Drawing.Size(90, 26);
+            this.button_Add.Size = new System.Drawing.Size(130, 40);
             this.button_Add.TabIndex = 7;
             this.button_Add.Text = "Adicionar";
             this.button_Add.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -170,16 +179,16 @@ namespace Regresser
             this.panel.Controls.Add(this.button_Move_Up);
             this.panel.Location = new System.Drawing.Point(12, 51);
             this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(399, 487);
+            this.panel.Size = new System.Drawing.Size(706, 473);
             this.panel.TabIndex = 6;
             // 
             // button_Send
             // 
             this.button_Send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Send.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button_Send.Location = new System.Drawing.Point(176, 551);
+            this.button_Send.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button_Send.Location = new System.Drawing.Point(547, 8);
             this.button_Send.Name = "button_Send";
-            this.button_Send.Size = new System.Drawing.Size(90, 28);
+            this.button_Send.Size = new System.Drawing.Size(130, 40);
             this.button_Send.TabIndex = 8;
             this.button_Send.Text = "Enviar";
             this.button_Send.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -189,20 +198,21 @@ namespace Regresser
             // button_Load
             // 
             this.button_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Load.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Load.Location = new System.Drawing.Point(12, 551);
+            this.button_Load.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_Load.Location = new System.Drawing.Point(340, 8);
             this.button_Load.Name = "button_Load";
-            this.button_Load.Size = new System.Drawing.Size(108, 26);
+            this.button_Load.Size = new System.Drawing.Size(130, 40);
             this.button_Load.TabIndex = 9;
             this.button_Load.Text = "Carregar JSON";
             this.button_Load.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Load.UseVisualStyleBackColor = true;
+            this.button_Load.Click += new System.EventHandler(this.button_Load_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(427, 587);
+            this.ClientSize = new System.Drawing.Size(730, 539);
             this.Controls.Add(this.button_Load);
             this.Controls.Add(this.button_Send);
             this.Controls.Add(this.panel);

@@ -1,11 +1,11 @@
 ﻿using Newtonsoft.Json;
 using Regresser.Domain.RobotsActions;
-using Regresser.Domain.Shipper;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace Regresser
 {
@@ -40,6 +40,11 @@ namespace Regresser
             Console.WriteLine(response);
 
             return response;
+        }
+
+        public override string ToString()
+        {
+            return $"[{RobotName}]: {actions.First()}";
         }
     }
 }

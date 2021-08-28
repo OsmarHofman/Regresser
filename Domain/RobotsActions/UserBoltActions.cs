@@ -8,5 +8,10 @@ namespace Regresser
 
         public int timeout { get; set; }
 
+
+        public override string ToString()
+        {
+            return $"Timeout - { timeout }";
+        }
     }
 }
