@@ -14,25 +14,6 @@ namespace Regresser
             InitializeComponent();
         }
 
-
-        private void SetUrlsOnRobots()
-        {
-            var url = $"http://191.239.245.232:{textBox_TMS_Port.Text}/exchangeMessage/WSExchangeMessage.asmx";
-
-            foreach (var robot in robots)
-            {
-                if (robot.actions[0] is JarvisActions)
-                {
-                    foreach (var action in robot.actions)
-                    {
-                        var actionWithUrl = (JarvisActions)action;
-
-                        actionWithUrl.URL_WS_OTM = url;
-                    }
-                }
-            }
-        }
-
         private List<string> GetRobotLabels()
         {
             var labels = new List<string>();
@@ -47,8 +28,6 @@ namespace Regresser
 
         private void button_Send_Click(object sender, EventArgs e)
         {
-            SetUrlsOnRobots();
-
             var response = Robot.SendActions(robots);
 
             MessageBox.Show($"Resposta dos Robozinhos:\n {response}");
@@ -61,18 +40,22 @@ namespace Regresser
 
         private void listBox_Actions_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (listBox_Actions.SelectedIndex != -1)
+            {
+                button_Send.Enabled = true;
 
-            if (listBox_Actions.SelectedIndex != 0)
-                button_Move_Up.Enabled = true;
+                if (listBox_Actions.SelectedIndex != 0)
+                    button_Move_Up.Enabled = true;
 
-            if (listBox_Actions.SelectedIndex == 0)
-                button_Move_Up.Enabled = false;
+                if (listBox_Actions.SelectedIndex == 0)
+                    button_Move_Up.Enabled = false;
 
-            if (listBox_Actions.SelectedIndex != listBox_Actions.Items.Count)
-                button_Move_Down.Enabled = true;
+                if (listBox_Actions.SelectedIndex != listBox_Actions.Items.Count)
+                    button_Move_Down.Enabled = true;
 
-            if (listBox_Actions.SelectedIndex == listBox_Actions.Items.Count - 1)
-                button_Move_Down.Enabled = false;
+                if (listBox_Actions.SelectedIndex == listBox_Actions.Items.Count - 1)
+                    button_Move_Down.Enabled = false;
+            }
         }
 
         private void button_Move_Up_Click(object sender, EventArgs e)

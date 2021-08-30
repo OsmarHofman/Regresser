@@ -21,11 +21,14 @@ namespace Regresser.Util
 
             JObject jo = JObject.Load(reader);
 
-            if (HasKeys(jo, "URL_WS_OTM", "Shipments"))
+            if (HasKeys(jo, "UrlWs", "Shipments"))
                 return JsonConvert.DeserializeObject<JarvisActions>(jo.ToString(), SpecifiedSubclassConversion);
 
             if (HasKeys(jo, "type", "timeout"))
                 return JsonConvert.DeserializeObject<UserBoltActions>(jo.ToString(), SpecifiedSubclassConversion);
+
+            if (HasKeys(jo, "UrlWs", "Nfes"))
+                return JsonConvert.DeserializeObject<GigibaActions>(jo.ToString(), SpecifiedSubclassConversion);
 
             StringBuilder stringBuilder = new StringBuilder();
             foreach (var item in jo.Children())

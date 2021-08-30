@@ -65,6 +65,7 @@ namespace Regresser
             // listBox_JSON_Logs
             // 
             this.listBox_JSON_Logs.FormattingEnabled = true;
+            this.listBox_JSON_Logs.HorizontalScrollbar = true;
             this.listBox_JSON_Logs.ItemHeight = 15;
             this.listBox_JSON_Logs.Location = new System.Drawing.Point(12, 51);
             this.listBox_JSON_Logs.Name = "listBox_JSON_Logs";
@@ -95,6 +96,8 @@ namespace Regresser
             this.Controls.Add(this.listBox_JSON_Logs);
             this.Controls.Add(this.textBox_File_Path);
             this.Controls.Add(this.button_Load);
+            this.MaximumSize = new System.Drawing.Size(816, 240);
+            this.MinimumSize = new System.Drawing.Size(816, 240);
             this.Name = "LoadJSONForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Carregar JSON";

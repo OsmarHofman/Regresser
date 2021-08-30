@@ -30,12 +30,10 @@ namespace Regresser
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.label_TMS_Port = new System.Windows.Forms.Label();
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.embarqueToolStripMenuItem_Shipment = new System.Windows.Forms.ToolStripMenuItem();
             this.timeoutToolStripMenuItem_Timeout = new System.Windows.Forms.ToolStripMenuItem();
             this.divider = new System.Windows.Forms.Label();
-            this.textBox_TMS_Port = new System.Windows.Forms.TextBox();
             this.listBox_Actions = new System.Windows.Forms.ListBox();
             this.button_Remove = new System.Windows.Forms.Button();
             this.button_Move_Up = new System.Windows.Forms.Button();
@@ -47,16 +45,6 @@ namespace Regresser
             this.contextMenuStrip.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label_TMS_Port
-            // 
-            this.label_TMS_Port.AutoSize = true;
-            this.label_TMS_Port.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_TMS_Port.Location = new System.Drawing.Point(30, 22);
-            this.label_TMS_Port.Name = "label_TMS_Port";
-            this.label_TMS_Port.Size = new System.Drawing.Size(106, 20);
-            this.label_TMS_Port.TabIndex = 2;
-            this.label_TMS_Port.Text = "Porta do TMS";
             // 
             // contextMenuStrip
             // 
@@ -90,21 +78,13 @@ namespace Regresser
             this.divider.Size = new System.Drawing.Size(0, 2);
             this.divider.TabIndex = 5;
             // 
-            // textBox_TMS_Port
-            // 
-            this.textBox_TMS_Port.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox_TMS_Port.Location = new System.Drawing.Point(142, 19);
-            this.textBox_TMS_Port.Name = "textBox_TMS_Port";
-            this.textBox_TMS_Port.Size = new System.Drawing.Size(147, 26);
-            this.textBox_TMS_Port.TabIndex = 1;
-            // 
             // listBox_Actions
             // 
             this.listBox_Actions.FormattingEnabled = true;
             this.listBox_Actions.HorizontalScrollbar = true;
             this.listBox_Actions.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.listBox_Actions.ItemHeight = 15;
-            this.listBox_Actions.Location = new System.Drawing.Point(18, 3);
+            this.listBox_Actions.Location = new System.Drawing.Point(18, 7);
             this.listBox_Actions.Name = "listBox_Actions";
             this.listBox_Actions.Size = new System.Drawing.Size(666, 394);
             this.listBox_Actions.TabIndex = 3;
@@ -184,9 +164,10 @@ namespace Regresser
             // 
             // button_Send
             // 
+            this.button_Send.Enabled = false;
             this.button_Send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Send.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.button_Send.Location = new System.Drawing.Point(547, 8);
+            this.button_Send.Location = new System.Drawing.Point(282, 5);
             this.button_Send.Name = "button_Send";
             this.button_Send.Size = new System.Drawing.Size(130, 40);
             this.button_Send.TabIndex = 8;
@@ -199,7 +180,7 @@ namespace Regresser
             // 
             this.button_Load.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Load.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Load.Location = new System.Drawing.Point(340, 8);
+            this.button_Load.Location = new System.Drawing.Point(56, 5);
             this.button_Load.Name = "button_Load";
             this.button_Load.Size = new System.Drawing.Size(130, 40);
             this.button_Load.TabIndex = 9;
@@ -217,9 +198,9 @@ namespace Regresser
             this.Controls.Add(this.button_Send);
             this.Controls.Add(this.panel);
             this.Controls.Add(this.divider);
-            this.Controls.Add(this.label_TMS_Port);
-            this.Controls.Add(this.textBox_TMS_Port);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(746, 578);
+            this.MinimumSize = new System.Drawing.Size(746, 578);
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Regresser";
@@ -227,17 +208,14 @@ namespace Regresser
             this.contextMenuStrip.ResumeLayout(false);
             this.panel.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label_TMS_Port;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem embarqueToolStripMenuItem_Shipment;
         private System.Windows.Forms.ToolStripMenuItem timeoutToolStripMenuItem_Timeout;
         private System.Windows.Forms.Label divider;
-        private System.Windows.Forms.TextBox textBox_TMS_Port;
         private System.Windows.Forms.ListBox listBox_Actions;
         private System.Windows.Forms.Button button_Remove;
         private System.Windows.Forms.Button button_Move_Up;

@@ -1,18 +1,19 @@
 ﻿using Regresser.Domain.Shipper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace Regresser.Domain.RobotsActions
 {
-    public class JarvisActions : Actions
+    public class GigibaActions : Actions
     {
-        public string UrlWs { get; set; }
+        public String UrlWs { get; set; }
 
-        public List<Shipment> Shipments { get; set; }
+        public List<Nfe> Nfes { get; set; }
 
         public override string ToString()
         {
-            return $"{Shipments.First()} Url do Ws: {UrlWs}.";
+            return $"{Nfes.First()} Url do Ws: {UrlWs}.";
         }
     }
 }
