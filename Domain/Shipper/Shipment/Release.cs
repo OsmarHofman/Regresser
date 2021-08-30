@@ -9,6 +9,5 @@ namespace Regresser.Domain.Shipper
         public string ReleaseXid { get; set; }
 
         public List<Refnum> ReleaseRefnums { get; set; }
-
     }
 }

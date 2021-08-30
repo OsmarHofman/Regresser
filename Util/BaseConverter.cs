@@ -24,11 +24,14 @@ namespace Regresser.Util
             if (HasKeys(jo, "UrlWs", "Shipments"))
                 return JsonConvert.DeserializeObject<JarvisActions>(jo.ToString(), SpecifiedSubclassConversion);
 
-            if (HasKeys(jo, "type", "timeout"))
-                return JsonConvert.DeserializeObject<UserBoltActions>(jo.ToString(), SpecifiedSubclassConversion);
-
             if (HasKeys(jo, "UrlWs", "Nfes"))
                 return JsonConvert.DeserializeObject<GigibaActions>(jo.ToString(), SpecifiedSubclassConversion);
+
+            if (HasKeys(jo, "UrlWs", "Ctes", "ComplementaryCtes"))
+                return JsonConvert.DeserializeObject<BinoActions>(jo.ToString(), SpecifiedSubclassConversion);
+
+            if (HasKeys(jo, "type", "timeout"))
+                return JsonConvert.DeserializeObject<UserBoltActions>(jo.ToString(), SpecifiedSubclassConversion);
 
             StringBuilder stringBuilder = new StringBuilder();
             foreach (var item in jo.Children())
@@ -45,7 +48,7 @@ namespace Regresser.Util
 
             foreach (var key in keys)
             {
-                if (jo.ContainsKey(key)) keysFoundCount++;
+                if (jo.ContainsKey(key) || jo.ContainsKey(key.ToLower())) keysFoundCount++;
             }
 
             return keysFoundCount == keys.Length;
@@ -61,12 +64,14 @@ namespace Regresser.Util
             throw new NotImplementedException(); // won't be called because CanWrite returns false
         }
     }
+
     public class BaseSpecifiedConcreteClassConverter : DefaultContractResolver
     {
         protected override JsonConverter ResolveContractConverter(Type objectType)
         {
             if (typeof(Actions).IsAssignableFrom(objectType) && !objectType.IsAbstract)
                 return null; // pretend TableSortRuleConvert is not specified (thus avoiding a stack overflow)
+
             return base.ResolveContractConverter(objectType);
         }
     }

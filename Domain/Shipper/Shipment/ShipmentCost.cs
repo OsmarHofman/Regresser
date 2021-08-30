@@ -9,6 +9,5 @@
         public bool AllocateCost { get; set; }
 
         public string AccessorialCostXid { get; set; }
-
     }
 }
