@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Regresser.Domain.Shipper
 {
@@ -21,6 +22,7 @@ namespace Regresser.Domain.Shipper
         {
             return refnums.Single(x => x.RefnumKey == key).RefnumValue;
         }
+
         public static void RemoveFromRefnumList(List<Refnum> refNums, string refnumKey)
         {
             var indexToRemove = 0;
@@ -31,6 +33,11 @@ namespace Regresser.Domain.Shipper
             }
 
             refNums.RemoveAt(indexToRemove);
+        }
+
+        public TreeNode ToStringAsTreeNodes()
+        {
+            return new TreeNode($"Refnum: {RefnumKey} - {RefnumValue}");
         }
     }
 }

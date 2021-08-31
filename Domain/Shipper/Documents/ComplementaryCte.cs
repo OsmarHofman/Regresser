@@ -11,7 +11,7 @@ namespace Regresser.Domain.Shipper.Documents
 
         public override string ToString()
         {
-            return $"Cte vinculado: {CteNorm} ";
+            return $"CTe vinculado ao CTe Complementar: {CteNorm} ";
         }
     }
 }

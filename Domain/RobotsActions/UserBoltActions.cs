@@ -1,4 +1,5 @@
 ﻿using Regresser.Domain.RobotsActions;
+using System.Windows.Forms;
 
 namespace Regresser
 {
@@ -12,6 +13,11 @@ namespace Regresser
         public override string ToString()
         {
             return $"Timeout - { timeout }";
+        }
+
+        public override TreeNode ToStringAsTreeNodes()
+        {
+            return new TreeNode($"{type} - {timeout}");
         }
     }
 }

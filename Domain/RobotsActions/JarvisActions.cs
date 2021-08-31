@@ -1,6 +1,7 @@
 ﻿using Regresser.Domain.Shipper;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Regresser.Domain.RobotsActions
 {
@@ -13,6 +14,15 @@ namespace Regresser.Domain.RobotsActions
         public override string ToString()
         {
             return $"{Shipments.First()} Url do Ws: {UrlWs}.";
+        }
+
+        public override TreeNode ToStringAsTreeNodes()
+        {
+            var treeNodes = new List<TreeNode> { new TreeNode($"Url do WS: {UrlWs}") };
+
+            foreach (var shipment in Shipments) treeNodes.Add(shipment.ToStringAsTreeNodes());
+
+            return new TreeNode("Actions", treeNodes.ToArray());
         }
     }
 }

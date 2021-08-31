@@ -34,7 +34,6 @@ namespace Regresser
             this.embarqueToolStripMenuItem_Shipment = new System.Windows.Forms.ToolStripMenuItem();
             this.timeoutToolStripMenuItem_Timeout = new System.Windows.Forms.ToolStripMenuItem();
             this.divider = new System.Windows.Forms.Label();
-            this.listBox_Actions = new System.Windows.Forms.ListBox();
             this.button_Remove = new System.Windows.Forms.Button();
             this.button_Move_Up = new System.Windows.Forms.Button();
             this.button_Move_Down = new System.Windows.Forms.Button();
@@ -42,6 +41,7 @@ namespace Regresser
             this.panel = new System.Windows.Forms.Panel();
             this.button_Send = new System.Windows.Forms.Button();
             this.button_Load = new System.Windows.Forms.Button();
+            this.treeView_Actions = new System.Windows.Forms.TreeView();
             this.contextMenuStrip.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -77,18 +77,6 @@ namespace Regresser
             this.divider.Name = "divider";
             this.divider.Size = new System.Drawing.Size(0, 2);
             this.divider.TabIndex = 5;
-            // 
-            // listBox_Actions
-            // 
-            this.listBox_Actions.FormattingEnabled = true;
-            this.listBox_Actions.HorizontalScrollbar = true;
-            this.listBox_Actions.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.listBox_Actions.ItemHeight = 15;
-            this.listBox_Actions.Location = new System.Drawing.Point(18, 7);
-            this.listBox_Actions.Name = "listBox_Actions";
-            this.listBox_Actions.Size = new System.Drawing.Size(666, 394);
-            this.listBox_Actions.TabIndex = 3;
-            this.listBox_Actions.SelectedIndexChanged += new System.EventHandler(this.listBox_Actions_SelectedIndexChanged);
             // 
             // button_Remove
             // 
@@ -152,8 +140,8 @@ namespace Regresser
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.treeView_Actions);
             this.panel.Controls.Add(this.button_Add);
-            this.panel.Controls.Add(this.listBox_Actions);
             this.panel.Controls.Add(this.button_Move_Down);
             this.panel.Controls.Add(this.button_Remove);
             this.panel.Controls.Add(this.button_Move_Up);
@@ -189,6 +177,13 @@ namespace Regresser
             this.button_Load.UseVisualStyleBackColor = true;
             this.button_Load.Click += new System.EventHandler(this.button_Load_Click);
             // 
+            // treeView_Actions
+            // 
+            this.treeView_Actions.Location = new System.Drawing.Point(16, 13);
+            this.treeView_Actions.Name = "treeView_Actions";
+            this.treeView_Actions.Size = new System.Drawing.Size(674, 387);
+            this.treeView_Actions.TabIndex = 10;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -216,7 +211,6 @@ namespace Regresser
         private System.Windows.Forms.ToolStripMenuItem embarqueToolStripMenuItem_Shipment;
         private System.Windows.Forms.ToolStripMenuItem timeoutToolStripMenuItem_Timeout;
         private System.Windows.Forms.Label divider;
-        private System.Windows.Forms.ListBox listBox_Actions;
         private System.Windows.Forms.Button button_Remove;
         private System.Windows.Forms.Button button_Move_Up;
         private System.Windows.Forms.Button button_Move_Down;
@@ -224,6 +218,7 @@ namespace Regresser
         private System.Windows.Forms.Panel panel;
         private System.Windows.Forms.Button button_Send;
         private System.Windows.Forms.Button button_Load;
+        private System.Windows.Forms.TreeView treeView_Actions;
     }
 }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Regresser.Domain.Shipper
 {
@@ -40,6 +41,39 @@ namespace Regresser.Domain.Shipper
         {
             return $"Embarque {ShipmentXid}; {TravelStatus}; " +
                 $"Custo Total: {ShipmentCosts.Sum(x => x.Value)}; Qtd Ordens: {Releases.Count}.";
+        }
+
+        public TreeNode ToStringAsTreeNodes()
+        {
+            var treeNodes = new List<TreeNode>
+            {
+                new TreeNode($"Status da Viagem: {TravelStatus}"),
+                new TreeNode($"Status de Emissão: {EmissionStatus}"),
+                new TreeNode($"Transportador: {XidCarrier}"),
+                new TreeNode($"Origem: {XidSourceLocation}"),
+                new TreeNode($"Destino: {XidDestinationLocation}"),
+                new TreeNode($"Tomador: {XidTakerLocation}"),
+                new TreeNode($"Imposto Somado: {AddedTax}"),
+                new TreeNode($"Imposto Incluso: {TaxIncluded}"),
+            };
+
+            if (!string.IsNullOrEmpty(DriverXid))
+                treeNodes.Add(new TreeNode($"Motorista: {DriverXid}"));
+
+            if (SourceAddress != null)
+                treeNodes.Add(SourceAddress.ToStringAsTreeNodes());
+
+            if (ShipmentCosts != null)
+                foreach (var shipmentCost in ShipmentCosts) treeNodes.Add(shipmentCost.ToStringAsTreeNodes());
+
+            if (ShipmentRefnums != null)
+                foreach (var shipmentRefnum in ShipmentRefnums) treeNodes.Add(shipmentRefnum.ToStringAsTreeNodes());
+
+            if (Releases != null)
+                foreach (var release in Releases) treeNodes.Add(release.ToStringAsTreeNodes());
+
+
+            return new TreeNode($"Embarque: {ShipmentDomainName}.{ShipmentXid}", treeNodes.ToArray());
         }
     }
 }
