@@ -39,9 +39,9 @@ namespace Regresser
             this.button_Move_Down = new System.Windows.Forms.Button();
             this.button_Add = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
+            this.treeView_Actions = new System.Windows.Forms.TreeView();
             this.button_Send = new System.Windows.Forms.Button();
             this.button_Load = new System.Windows.Forms.Button();
-            this.treeView_Actions = new System.Windows.Forms.TreeView();
             this.contextMenuStrip.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -150,9 +150,15 @@ namespace Regresser
             this.panel.Size = new System.Drawing.Size(706, 473);
             this.panel.TabIndex = 6;
             // 
+            // treeView_Actions
+            // 
+            this.treeView_Actions.Location = new System.Drawing.Point(16, 13);
+            this.treeView_Actions.Name = "treeView_Actions";
+            this.treeView_Actions.Size = new System.Drawing.Size(674, 387);
+            this.treeView_Actions.TabIndex = 10;
+            // 
             // button_Send
             // 
-            this.button_Send.Enabled = false;
             this.button_Send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Send.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button_Send.Location = new System.Drawing.Point(282, 5);
@@ -176,13 +182,6 @@ namespace Regresser
             this.button_Load.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Load.UseVisualStyleBackColor = true;
             this.button_Load.Click += new System.EventHandler(this.button_Load_Click);
-            // 
-            // treeView_Actions
-            // 
-            this.treeView_Actions.Location = new System.Drawing.Point(16, 13);
-            this.treeView_Actions.Name = "treeView_Actions";
-            this.treeView_Actions.Size = new System.Drawing.Size(674, 387);
-            this.treeView_Actions.TabIndex = 10;
             // 
             // MainForm
             // 

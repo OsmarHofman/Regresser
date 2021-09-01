@@ -67,7 +67,11 @@ namespace Regresser.Domain.Shipper
                 foreach (var shipmentCost in ShipmentCosts) treeNodes.Add(shipmentCost.ToStringAsTreeNodes());
 
             if (ShipmentRefnums != null)
-                foreach (var shipmentRefnum in ShipmentRefnums) treeNodes.Add(shipmentRefnum.ToStringAsTreeNodes());
+            {
+                List<TreeNode> refnums = new List<TreeNode>();
+                foreach (var shipmentRefnum in ShipmentRefnums) refnums.Add(shipmentRefnum.ToStringAsTreeNodes());
+                treeNodes.Add(new TreeNode("Refnums", refnums.ToArray()));
+            }
 
             if (Releases != null)
                 foreach (var release in Releases) treeNodes.Add(release.ToStringAsTreeNodes());

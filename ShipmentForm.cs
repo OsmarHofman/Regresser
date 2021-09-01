@@ -216,6 +216,7 @@ namespace Regresser
             {
                 new JarvisActions
                 {
+                    UrlWs = textBox_Url_WS.Text,
                     Shipments = new List<Shipment> { shipment },
                 }
             };

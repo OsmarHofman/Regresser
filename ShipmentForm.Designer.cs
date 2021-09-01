@@ -87,15 +87,17 @@ namespace Regresser
             this.listBox_Shipment_Refnums = new System.Windows.Forms.ListBox();
             this.button_Add_Shipment_Refnum = new System.Windows.Forms.Button();
             this.tabPage_Address = new System.Windows.Forms.TabPage();
-            this.tabPage_Release = new System.Windows.Forms.TabPage();
-            this.label19 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.tabPage_Release = new System.Windows.Forms.TabPage();
+            this.label27 = new System.Windows.Forms.Label();
+            this.textBox_Url_WS = new System.Windows.Forms.TextBox();
             this.tabControl_Shipment_Costs.SuspendLayout();
             this.tabPage_Planning.SuspendLayout();
             this.tabPage_Shipment_Cost.SuspendLayout();
@@ -465,7 +467,7 @@ namespace Regresser
             // 
             this.label16.AutoSize = true;
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label16.Location = new System.Drawing.Point(-28, 265);
+            this.label16.Location = new System.Drawing.Point(-28, 301);
             this.label16.MaximumSize = new System.Drawing.Size(0, 2);
             this.label16.MinimumSize = new System.Drawing.Size(700, 2);
             this.label16.Name = "label16";
@@ -475,7 +477,7 @@ namespace Regresser
             // button_Save
             // 
             this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Save.Location = new System.Drawing.Point(156, 280);
+            this.button_Save.Location = new System.Drawing.Point(156, 316);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(105, 38);
             this.button_Save.TabIndex = 14;
@@ -487,7 +489,7 @@ namespace Regresser
             // button_Cancelar
             // 
             this.button_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Cancelar.Location = new System.Drawing.Point(339, 280);
+            this.button_Cancelar.Location = new System.Drawing.Point(339, 316);
             this.button_Cancelar.Name = "button_Cancelar";
             this.button_Cancelar.Size = new System.Drawing.Size(105, 38);
             this.button_Cancelar.TabIndex = 15;
@@ -503,7 +505,7 @@ namespace Regresser
             this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Shipment_Refnum);
             this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Address);
             this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Release);
-            this.tabControl_Shipment_Costs.Location = new System.Drawing.Point(12, 12);
+            this.tabControl_Shipment_Costs.Location = new System.Drawing.Point(12, 48);
             this.tabControl_Shipment_Costs.Name = "tabControl_Shipment_Costs";
             this.tabControl_Shipment_Costs.SelectedIndex = 0;
             this.tabControl_Shipment_Costs.Size = new System.Drawing.Size(614, 246);
@@ -746,35 +748,32 @@ namespace Regresser
             this.tabPage_Address.Text = "Endereço";
             this.tabPage_Address.UseVisualStyleBackColor = true;
             // 
-            // tabPage_Release
+            // label26
             // 
-            this.tabPage_Release.Controls.Add(this.button_Remove_Release_Refnum);
-            this.tabPage_Release.Controls.Add(this.listBox_Release_Xids);
-            this.tabPage_Release.Controls.Add(this.label14);
-            this.tabPage_Release.Controls.Add(this.button_Edit_Release_Refnum);
-            this.tabPage_Release.Controls.Add(this.label15);
-            this.tabPage_Release.Controls.Add(this.listBox_Release_Refnums);
-            this.tabPage_Release.Controls.Add(this.button_Add_Release_Refnum);
-            this.tabPage_Release.Controls.Add(this.button_Add_Release_Xid);
-            this.tabPage_Release.Controls.Add(this.label13);
-            this.tabPage_Release.Controls.Add(this.button_Remove_Release_Xid);
-            this.tabPage_Release.Controls.Add(this.button_Edit_Release_Xid);
-            this.tabPage_Release.Location = new System.Drawing.Point(4, 24);
-            this.tabPage_Release.Name = "tabPage_Release";
-            this.tabPage_Release.Size = new System.Drawing.Size(606, 218);
-            this.tabPage_Release.TabIndex = 3;
-            this.tabPage_Release.Text = "Ordem";
-            this.tabPage_Release.UseVisualStyleBackColor = true;
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(414, 150);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(49, 15);
+            this.label26.TabIndex = 33;
+            this.label26.Text = "3550308";
             // 
-            // label19
+            // label25
             // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(112, 21);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(75, 25);
-            this.label19.TabIndex = 23;
-            this.label19.Text = "Origem";
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(414, 109);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(20, 15);
+            this.label25.TabIndex = 32;
+            this.label25.Text = "SP";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(411, 67);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(59, 15);
+            this.label24.TabIndex = 31;
+            this.label24.Text = "São Paulo";
             // 
             // label20
             // 
@@ -813,39 +812,60 @@ namespace Regresser
             this.label23.TabIndex = 27;
             this.label23.Text = "Estado";
             // 
-            // label24
+            // label19
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(411, 67);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(59, 15);
-            this.label24.TabIndex = 31;
-            this.label24.Text = "São Paulo";
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label19.Location = new System.Drawing.Point(112, 21);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(75, 25);
+            this.label19.TabIndex = 23;
+            this.label19.Text = "Origem";
             // 
-            // label25
+            // tabPage_Release
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(414, 109);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(20, 15);
-            this.label25.TabIndex = 32;
-            this.label25.Text = "SP";
+            this.tabPage_Release.Controls.Add(this.button_Remove_Release_Refnum);
+            this.tabPage_Release.Controls.Add(this.listBox_Release_Xids);
+            this.tabPage_Release.Controls.Add(this.label14);
+            this.tabPage_Release.Controls.Add(this.button_Edit_Release_Refnum);
+            this.tabPage_Release.Controls.Add(this.label15);
+            this.tabPage_Release.Controls.Add(this.listBox_Release_Refnums);
+            this.tabPage_Release.Controls.Add(this.button_Add_Release_Refnum);
+            this.tabPage_Release.Controls.Add(this.button_Add_Release_Xid);
+            this.tabPage_Release.Controls.Add(this.label13);
+            this.tabPage_Release.Controls.Add(this.button_Remove_Release_Xid);
+            this.tabPage_Release.Controls.Add(this.button_Edit_Release_Xid);
+            this.tabPage_Release.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_Release.Name = "tabPage_Release";
+            this.tabPage_Release.Size = new System.Drawing.Size(606, 218);
+            this.tabPage_Release.TabIndex = 3;
+            this.tabPage_Release.Text = "Ordem";
+            this.tabPage_Release.UseVisualStyleBackColor = true;
             // 
-            // label26
+            // label27
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(414, 150);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(49, 15);
-            this.label26.TabIndex = 33;
-            this.label26.Text = "3550308";
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(16, 18);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(62, 15);
+            this.label27.TabIndex = 17;
+            this.label27.Text = "Url do WS:";
+            // 
+            // textBox_Url_WS
+            // 
+            this.textBox_Url_WS.Location = new System.Drawing.Point(84, 15);
+            this.textBox_Url_WS.Name = "textBox_Url_WS";
+            this.textBox_Url_WS.Size = new System.Drawing.Size(538, 23);
+            this.textBox_Url_WS.TabIndex = 18;
             // 
             // ShipmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 330);
+            this.ClientSize = new System.Drawing.Size(634, 368);
             this.ControlBox = false;
+            this.Controls.Add(this.textBox_Url_WS);
+            this.Controls.Add(this.label27);
             this.Controls.Add(this.tabControl_Shipment_Costs);
             this.Controls.Add(this.button_Cancelar);
             this.Controls.Add(this.button_Save);
@@ -941,5 +961,7 @@ namespace Regresser
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox textBox_Url_WS;
     }
 }
