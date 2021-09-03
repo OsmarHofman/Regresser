@@ -47,11 +47,22 @@ namespace Regresser
             return rootNodes;
         }
 
+        private void RefreshRobotLabels()
+        {
+            treeView_Actions.Nodes.Clear();
+
+            var robotLabels = GetRobotLabels();
+
+            treeView_Actions.Nodes.AddRange(robotLabels.ToArray());
+        }
+
         private void button_Send_Click(object sender, EventArgs e)
         {
             var response = Robot.SendActions(robots);
 
-            MessageBox.Show($"Resposta dos Robozinhos:\n {response}");
+            MessageBox.Show("Enviado aos robozinhos!");
+
+            //MessageBox.Show($"Resposta dos Robozinhos:\n {response}");
         }
 
         private void button_Add_Click(object sender, EventArgs e)
@@ -61,38 +72,27 @@ namespace Regresser
 
         private void listBox_Actions_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //if (listBox_Actions.SelectedIndex != -1)
-            //{
-            //    button_Send.Enabled = true;
 
-            //    if (listBox_Actions.SelectedIndex != 0)
-            //        button_Move_Up.Enabled = true;
-
-            //    if (listBox_Actions.SelectedIndex == 0)
-            //        button_Move_Up.Enabled = false;
-
-            //    if (listBox_Actions.SelectedIndex != listBox_Actions.Items.Count)
-            //        button_Move_Down.Enabled = true;
-
-            //    if (listBox_Actions.SelectedIndex == listBox_Actions.Items.Count - 1)
-            //        button_Move_Down.Enabled = false;
-            //}
         }
 
         private void button_Move_Up_Click(object sender, EventArgs e)
         {
-            //var aux = listBox_Actions.SelectedItem;
-            //listBox_Actions.Items[listBox_Actions.SelectedIndex] = listBox_Actions.Items[listBox_Actions.SelectedIndex - 1];
-            //listBox_Actions.Items[listBox_Actions.SelectedIndex - 1] = aux;
-            //listBox_Actions.SelectedIndex -= 1;
+            var selectedIndex = treeView_Actions.Nodes.IndexOf(treeView_Actions.SelectedNode);
+            var selectedRobotToMoveUp = robots[selectedIndex];
+            robots[selectedIndex] = robots[selectedIndex - 1];
+            robots[selectedIndex - 1] = selectedRobotToMoveUp;
+
+            RefreshRobotLabels();
         }
 
         private void button_Move_Down_Click(object sender, EventArgs e)
         {
-            //var aux = listBox_Actions.SelectedItem;
-            //listBox_Actions.Items[listBox_Actions.SelectedIndex] = listBox_Actions.Items[listBox_Actions.SelectedIndex + 1];
-            //listBox_Actions.Items[listBox_Actions.SelectedIndex + 1] = aux;
-            //listBox_Actions.SelectedIndex += 1;
+            var selectedIndex = treeView_Actions.Nodes.IndexOf(treeView_Actions.SelectedNode);
+            var selectedRobotToMoveDown = robots[selectedIndex];
+            robots[selectedIndex] = robots[selectedIndex + 1];
+            robots[selectedIndex + 1] = selectedRobotToMoveDown;
+
+            RefreshRobotLabels();
         }
 
         private void embarqueToolStripMenuItem_Shipment_Click(object sender, EventArgs e)
@@ -109,11 +109,10 @@ namespace Regresser
 
         private void MainForm_Activated(object sender, EventArgs e)
         {
-            treeView_Actions.Nodes.Clear();
+            RefreshRobotLabels();
 
-            var robotLabels = GetRobotLabels();
-
-            treeView_Actions.Nodes.AddRange(robotLabels.ToArray());
+            if (treeView_Actions.Nodes.Count != 0)
+                button_Send.Enabled = true;
         }
 
         private void button_Load_Click(object sender, EventArgs e)
@@ -124,7 +123,18 @@ namespace Regresser
 
         private void button_Remove_Click(object sender, EventArgs e)
         {
+            if (treeView_Actions.SelectedNode != null)
+            {
+                robots.RemoveAt(treeView_Actions.SelectedNode.Index);
 
+                RefreshRobotLabels();
+
+                if (!robots.Any())
+                {
+                    button_Send.Enabled = false;
+                    button_Remove.Enabled = false;
+                }
+            }
         }
 
         private void button_Save_JSON_Click(object sender, EventArgs e)
@@ -154,6 +164,28 @@ namespace Regresser
             else
                 MessageBox.Show("Nenhuma requisição para ser salva!");
 
+        }
+
+        private void treeView_Actions_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            if (treeView_Actions.SelectedNode.Index != -1)
+            {
+                button_Remove.Enabled = true;
+
+                if (treeView_Actions.SelectedNode.Index != 0)
+                    button_Move_Up.Enabled = true;
+
+                if (treeView_Actions.SelectedNode.Index == 0)
+                    button_Move_Up.Enabled = false;
+
+                if (treeView_Actions.SelectedNode.Index != treeView_Actions.Nodes.Count)
+                    button_Move_Down.Enabled = true;
+
+                if (treeView_Actions.SelectedNode.Index == treeView_Actions.Nodes.Count - 1)
+                    button_Move_Down.Enabled = false;
+            }
+            else
+                button_Remove.Enabled = false;
         }
     }
 }

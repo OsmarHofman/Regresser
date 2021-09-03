@@ -28,18 +28,18 @@ namespace Regresser
             this.actions = actions;
         }
 
-        public static async Task<HttpResponseMessage> SendActions(List<Robot> robots)
+        public static async Task<string> SendActions(List<Robot> robots)
         {
             var json = JsonConvert.SerializeObject(robots,
                 new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             var httpContent = new StringContent(json, Encoding.UTF8, "application/json");
 
-            var response = await client.PostAsync("http://localhost:3001/actions", httpContent);
+            var postResponse = await client.PostAsync("http://localhost:3001/actions", httpContent);
 
-            Console.WriteLine(response);
+            var responseString = postResponse.Content.ReadAsStringAsync().Result;
 
-            return response;
+            return responseString;
         }
 
         public override string ToString()

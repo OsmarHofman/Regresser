@@ -158,9 +158,11 @@ namespace Regresser
             this.treeView_Actions.Name = "treeView_Actions";
             this.treeView_Actions.Size = new System.Drawing.Size(674, 387);
             this.treeView_Actions.TabIndex = 10;
+            this.treeView_Actions.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_Actions_AfterSelect);
             // 
             // button_Send
             // 
+            this.button_Send.Enabled = false;
             this.button_Send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Send.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.button_Send.Location = new System.Drawing.Point(282, 5);
