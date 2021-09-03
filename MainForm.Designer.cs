@@ -42,6 +42,8 @@ namespace Regresser
             this.treeView_Actions = new System.Windows.Forms.TreeView();
             this.button_Send = new System.Windows.Forms.Button();
             this.button_Load = new System.Windows.Forms.Button();
+            this.button_Save_JSON = new System.Windows.Forms.Button();
+            this.saveFileDialog_JSON = new System.Windows.Forms.SaveFileDialog();
             this.contextMenuStrip.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -183,11 +185,31 @@ namespace Regresser
             this.button_Load.UseVisualStyleBackColor = true;
             this.button_Load.Click += new System.EventHandler(this.button_Load_Click);
             // 
+            // button_Save_JSON
+            // 
+            this.button_Save_JSON.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Save_JSON.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_Save_JSON.Location = new System.Drawing.Point(498, 5);
+            this.button_Save_JSON.Name = "button_Save_JSON";
+            this.button_Save_JSON.Size = new System.Drawing.Size(155, 40);
+            this.button_Save_JSON.TabIndex = 10;
+            this.button_Save_JSON.Text = "Salvar como JSON";
+            this.button_Save_JSON.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Save_JSON.UseVisualStyleBackColor = true;
+            this.button_Save_JSON.Click += new System.EventHandler(this.button_Save_JSON_Click);
+            // 
+            // saveFileDialog_JSON
+            // 
+            this.saveFileDialog_JSON.DefaultExt = "json";
+            this.saveFileDialog_JSON.FileName = "requisicoes";
+            this.saveFileDialog_JSON.Filter = "Arquivos JSON (*.json)|*.json|Todos os arquivos(*.*)|*.*";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(730, 539);
+            this.Controls.Add(this.button_Save_JSON);
             this.Controls.Add(this.button_Load);
             this.Controls.Add(this.button_Send);
             this.Controls.Add(this.panel);
@@ -218,6 +240,8 @@ namespace Regresser
         private System.Windows.Forms.Button button_Send;
         private System.Windows.Forms.Button button_Load;
         private System.Windows.Forms.TreeView treeView_Actions;
+        private System.Windows.Forms.Button button_Save_JSON;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog_JSON;
     }
 }
 

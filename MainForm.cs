@@ -1,6 +1,8 @@
-﻿using Regresser.Domain.RobotsActions;
+﻿using Newtonsoft.Json;
+using System.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Regresser
@@ -122,6 +124,35 @@ namespace Regresser
 
         private void button_Remove_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button_Save_JSON_Click(object sender, EventArgs e)
+        {
+
+            if (robots.Any())
+            {
+                saveFileDialog_JSON.RestoreDirectory = true;
+
+                if (saveFileDialog_JSON.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        var json = JsonConvert.SerializeObject(robots,
+                            new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+
+                        File.WriteAllText(saveFileDialog_JSON.FileName, json);
+                    }
+                    catch (Exception exp)
+                    {
+                        MessageBox.Show($"Erro ao tentar salvar o arquivo:\n {exp.Message}");
+                        throw;
+                    }
+
+                }
+            }
+            else
+                MessageBox.Show("Nenhuma requisição para ser salva!");
 
         }
     }
