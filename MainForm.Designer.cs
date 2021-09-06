@@ -45,6 +45,7 @@ namespace Regresser
             this.button_Save_JSON = new System.Windows.Forms.Button();
             this.saveFileDialog_JSON = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.nFeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -53,21 +54,22 @@ namespace Regresser
             // 
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.embarqueToolStripMenuItem_Shipment,
-            this.timeoutToolStripMenuItem_Timeout});
+            this.timeoutToolStripMenuItem_Timeout,
+            this.nFeToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip1";
-            this.contextMenuStrip.Size = new System.Drawing.Size(129, 48);
+            this.contextMenuStrip.Size = new System.Drawing.Size(181, 92);
             // 
             // embarqueToolStripMenuItem_Shipment
             // 
             this.embarqueToolStripMenuItem_Shipment.Name = "embarqueToolStripMenuItem_Shipment";
-            this.embarqueToolStripMenuItem_Shipment.Size = new System.Drawing.Size(128, 22);
+            this.embarqueToolStripMenuItem_Shipment.Size = new System.Drawing.Size(180, 22);
             this.embarqueToolStripMenuItem_Shipment.Text = "Embarque";
             this.embarqueToolStripMenuItem_Shipment.Click += new System.EventHandler(this.embarqueToolStripMenuItem_Shipment_Click);
             // 
             // timeoutToolStripMenuItem_Timeout
             // 
             this.timeoutToolStripMenuItem_Timeout.Name = "timeoutToolStripMenuItem_Timeout";
-            this.timeoutToolStripMenuItem_Timeout.Size = new System.Drawing.Size(128, 22);
+            this.timeoutToolStripMenuItem_Timeout.Size = new System.Drawing.Size(180, 22);
             this.timeoutToolStripMenuItem_Timeout.Text = "Timeout";
             this.timeoutToolStripMenuItem_Timeout.Click += new System.EventHandler(this.timeoutToolStripMenuItem_Timeout_Click);
             // 
@@ -211,6 +213,13 @@ namespace Regresser
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
+            // nFeToolStripMenuItem
+            // 
+            this.nFeToolStripMenuItem.Name = "nFeToolStripMenuItem";
+            this.nFeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nFeToolStripMenuItem.Text = "NFe";
+            this.nFeToolStripMenuItem.Click += new System.EventHandler(this.nFeToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -250,6 +259,7 @@ namespace Regresser
         private System.Windows.Forms.Button button_Save_JSON;
         private System.Windows.Forms.SaveFileDialog saveFileDialog_JSON;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
+        private System.Windows.Forms.ToolStripMenuItem nFeToolStripMenuItem;
     }
 }
 

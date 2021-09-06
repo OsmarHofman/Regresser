@@ -203,7 +203,6 @@ namespace Regresser
 
         private void button_Save_Click(object sender, EventArgs e)
         {
-
             var domainName = textBox_Shipment_DomainName.Text;
 
             var releases = GenerateReleases(domainName);

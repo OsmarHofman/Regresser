@@ -226,5 +226,11 @@ namespace Regresser
             else
                 button_Remove.Enabled = false;
         }
+
+        private void nFeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NFeForm nfeForm = new NFeForm();
+            nfeForm.ShowDialog();
+        }
     }
 }
