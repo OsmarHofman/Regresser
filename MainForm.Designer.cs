@@ -44,6 +44,7 @@ namespace Regresser
             this.button_Load = new System.Windows.Forms.Button();
             this.button_Save_JSON = new System.Windows.Forms.Button();
             this.saveFileDialog_JSON = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.contextMenuStrip.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -206,6 +207,10 @@ namespace Regresser
             this.saveFileDialog_JSON.FileName = "requisicoes";
             this.saveFileDialog_JSON.Filter = "Arquivos JSON (*.json)|*.json|Todos os arquivos(*.*)|*.*";
             // 
+            // openFileDialog
+            // 
+            this.openFileDialog.FileName = "openFileDialog1";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -244,6 +249,7 @@ namespace Regresser
         private System.Windows.Forms.TreeView treeView_Actions;
         private System.Windows.Forms.Button button_Save_JSON;
         private System.Windows.Forms.SaveFileDialog saveFileDialog_JSON;
+        private System.Windows.Forms.OpenFileDialog openFileDialog;
     }
 }
 

@@ -117,8 +117,47 @@ namespace Regresser
 
         private void button_Load_Click(object sender, EventArgs e)
         {
-            LoadJSONForm loadJSONForm = new LoadJSONForm();
-            loadJSONForm.ShowDialog();
+            openFileDialog.InitialDirectory = @"C:\git.nddigital";
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                var fileStream = openFileDialog.OpenFile();
+
+                var reader = new StreamReader(fileStream);
+
+                try
+                {
+                    var robotJson = reader.ReadToEnd();
+                    
+                    var convertedRobots = JsonConvert.DeserializeObject<List<Robot>>(robotJson, new JsonSerializerSettings
+                    {
+                        TypeNameHandling = TypeNameHandling.Auto
+                    });
+
+                    MessageBox.Show("Arquivo carregado com sucesso!");
+                    robots = convertedRobots;
+
+                    RefreshRobotLabels();
+
+                }
+                catch (IOException ioe)
+                {
+                    MessageBox.Show($"Erro ao tentar ler o arquivo {openFileDialog.FileName}:\n{ioe.Message}");
+                }
+                catch (JsonSerializationException jsonExp)
+                {
+                    MessageBox.Show($"Erro ao tentar converter arquivo {openFileDialog.FileName} para a modelagem dos robôs:\n{jsonExp.Message}");
+                }
+                catch (NotImplementedException notImpExp)
+                {
+                    MessageBox.Show(notImpExp.Message);
+                }
+                catch (Exception exp)
+                {
+                    MessageBox.Show($"Erro: {exp.Message}");
+                }
+
+            }
+
         }
 
         private void button_Remove_Click(object sender, EventArgs e)
