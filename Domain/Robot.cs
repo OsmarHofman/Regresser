@@ -28,6 +28,14 @@ namespace Regresser
             this.actions = actions;
         }
 
+        public Robot(Robot robot)
+        {
+            TestId = Guid.NewGuid();
+            RobotName = robot.RobotName;
+            actions = new List<Actions>();
+            actions.AddRange(robot.actions);
+        }
+
         public static async Task<string> SendActions(List<Robot> robots)
         {
             var json = JsonConvert.SerializeObject(robots,

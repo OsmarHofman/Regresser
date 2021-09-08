@@ -33,6 +33,7 @@ namespace Regresser
             this.contextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.embarqueToolStripMenuItem_Shipment = new System.Windows.Forms.ToolStripMenuItem();
             this.timeoutToolStripMenuItem_Timeout = new System.Windows.Forms.ToolStripMenuItem();
+            this.nFeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.divider = new System.Windows.Forms.Label();
             this.button_Remove = new System.Windows.Forms.Button();
             this.button_Move_Up = new System.Windows.Forms.Button();
@@ -45,7 +46,7 @@ namespace Regresser
             this.button_Save_JSON = new System.Windows.Forms.Button();
             this.saveFileDialog_JSON = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.nFeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.button_Clone = new System.Windows.Forms.Button();
             this.contextMenuStrip.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -57,21 +58,28 @@ namespace Regresser
             this.timeoutToolStripMenuItem_Timeout,
             this.nFeToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip1";
-            this.contextMenuStrip.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip.Size = new System.Drawing.Size(129, 70);
             // 
             // embarqueToolStripMenuItem_Shipment
             // 
             this.embarqueToolStripMenuItem_Shipment.Name = "embarqueToolStripMenuItem_Shipment";
-            this.embarqueToolStripMenuItem_Shipment.Size = new System.Drawing.Size(180, 22);
+            this.embarqueToolStripMenuItem_Shipment.Size = new System.Drawing.Size(128, 22);
             this.embarqueToolStripMenuItem_Shipment.Text = "Embarque";
             this.embarqueToolStripMenuItem_Shipment.Click += new System.EventHandler(this.embarqueToolStripMenuItem_Shipment_Click);
             // 
             // timeoutToolStripMenuItem_Timeout
             // 
             this.timeoutToolStripMenuItem_Timeout.Name = "timeoutToolStripMenuItem_Timeout";
-            this.timeoutToolStripMenuItem_Timeout.Size = new System.Drawing.Size(180, 22);
+            this.timeoutToolStripMenuItem_Timeout.Size = new System.Drawing.Size(128, 22);
             this.timeoutToolStripMenuItem_Timeout.Text = "Timeout";
             this.timeoutToolStripMenuItem_Timeout.Click += new System.EventHandler(this.timeoutToolStripMenuItem_Timeout_Click);
+            // 
+            // nFeToolStripMenuItem
+            // 
+            this.nFeToolStripMenuItem.Name = "nFeToolStripMenuItem";
+            this.nFeToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.nFeToolStripMenuItem.Text = "NFe";
+            this.nFeToolStripMenuItem.Click += new System.EventHandler(this.nFeToolStripMenuItem_Click);
             // 
             // divider
             // 
@@ -88,9 +96,9 @@ namespace Regresser
             this.button_Remove.Enabled = false;
             this.button_Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Remove.Location = new System.Drawing.Point(203, 416);
+            this.button_Remove.Location = new System.Drawing.Point(315, 416);
             this.button_Remove.Name = "button_Remove";
-            this.button_Remove.Size = new System.Drawing.Size(130, 40);
+            this.button_Remove.Size = new System.Drawing.Size(105, 40);
             this.button_Remove.TabIndex = 4;
             this.button_Remove.Text = "Remover";
             this.button_Remove.UseVisualStyleBackColor = true;
@@ -102,9 +110,9 @@ namespace Regresser
             this.button_Move_Up.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Move_Up.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_Move_Up.Image = global::Regresser.Properties.Resources.upload;
-            this.button_Move_Up.Location = new System.Drawing.Point(371, 416);
+            this.button_Move_Up.Location = new System.Drawing.Point(452, 416);
             this.button_Move_Up.Name = "button_Move_Up";
-            this.button_Move_Up.Size = new System.Drawing.Size(130, 40);
+            this.button_Move_Up.Size = new System.Drawing.Size(89, 40);
             this.button_Move_Up.TabIndex = 5;
             this.button_Move_Up.Text = "Mover ";
             this.button_Move_Up.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -118,9 +126,9 @@ namespace Regresser
             this.button_Move_Down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Move_Down.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_Move_Down.Image = global::Regresser.Properties.Resources.download;
-            this.button_Move_Down.Location = new System.Drawing.Point(535, 416);
+            this.button_Move_Down.Location = new System.Drawing.Point(590, 416);
             this.button_Move_Down.Name = "button_Move_Down";
-            this.button_Move_Down.Size = new System.Drawing.Size(130, 40);
+            this.button_Move_Down.Size = new System.Drawing.Size(89, 40);
             this.button_Move_Down.TabIndex = 6;
             this.button_Move_Down.Text = "Mover ";
             this.button_Move_Down.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -135,7 +143,7 @@ namespace Regresser
             this.button_Add.Image = global::Regresser.Properties.Resources.add;
             this.button_Add.Location = new System.Drawing.Point(27, 416);
             this.button_Add.Name = "button_Add";
-            this.button_Add.Size = new System.Drawing.Size(130, 40);
+            this.button_Add.Size = new System.Drawing.Size(113, 40);
             this.button_Add.TabIndex = 7;
             this.button_Add.Text = "Adicionar";
             this.button_Add.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -145,6 +153,7 @@ namespace Regresser
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.button_Clone);
             this.panel.Controls.Add(this.treeView_Actions);
             this.panel.Controls.Add(this.button_Add);
             this.panel.Controls.Add(this.button_Move_Down);
@@ -213,12 +222,18 @@ namespace Regresser
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
-            // nFeToolStripMenuItem
+            // button_Clone
             // 
-            this.nFeToolStripMenuItem.Name = "nFeToolStripMenuItem";
-            this.nFeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nFeToolStripMenuItem.Text = "NFe";
-            this.nFeToolStripMenuItem.Click += new System.EventHandler(this.nFeToolStripMenuItem_Click);
+            this.button_Clone.Enabled = false;
+            this.button_Clone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Clone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_Clone.Location = new System.Drawing.Point(173, 416);
+            this.button_Clone.Name = "button_Clone";
+            this.button_Clone.Size = new System.Drawing.Size(105, 40);
+            this.button_Clone.TabIndex = 11;
+            this.button_Clone.Text = "Duplicar";
+            this.button_Clone.UseVisualStyleBackColor = true;
+            this.button_Clone.Click += new System.EventHandler(this.button_Clone_Click);
             // 
             // MainForm
             // 
@@ -260,6 +275,7 @@ namespace Regresser
         private System.Windows.Forms.SaveFileDialog saveFileDialog_JSON;
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.ToolStripMenuItem nFeToolStripMenuItem;
+        private System.Windows.Forms.Button button_Clone;
     }
 }
 

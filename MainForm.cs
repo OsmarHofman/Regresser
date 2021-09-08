@@ -127,7 +127,7 @@ namespace Regresser
                 try
                 {
                     var robotJson = reader.ReadToEnd();
-                    
+
                     var convertedRobots = JsonConvert.DeserializeObject<List<Robot>>(robotJson, new JsonSerializerSettings
                     {
                         TypeNameHandling = TypeNameHandling.Auto
@@ -211,6 +211,8 @@ namespace Regresser
             {
                 button_Remove.Enabled = true;
 
+                button_Clone.Enabled = true;
+
                 if (treeView_Actions.SelectedNode.Index != 0)
                     button_Move_Up.Enabled = true;
 
@@ -231,6 +233,21 @@ namespace Regresser
         {
             NFeForm nfeForm = new NFeForm();
             nfeForm.ShowDialog();
+        }
+
+        private void button_Clone_Click(object sender, EventArgs e)
+        {
+            var robotIndex = treeView_Actions.SelectedNode.Index;
+
+            var result = MessageBox.Show($"Deseja realmente duplicar essa requisição do robô?", "Duplicar", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                var robot = new Robot(robots[robotIndex]);
+                robots.Add(robot);
+
+                RefreshRobotLabels();
+            }
         }
     }
 }
