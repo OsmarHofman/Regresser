@@ -43,9 +43,93 @@ namespace Regresser
             releaseRefnums.Add(defaultReleaseRefnum);
         }
 
+        public ShipmentForm(Robot robot)
+        {
+            InitializeComponent();
+
+            SetRobotValues(robot);
+        }
+
         #endregion
 
         #region Methods
+
+        private void SetRobotValues(Robot robot)
+        {
+            var jarvisActions = robot.actions.First() as JarvisActions;
+
+            textBox_Url_WS.Text = jarvisActions.UrlWs;
+
+            var shipment = jarvisActions.Shipments.Single();
+
+            textBox_Shipment_DomainName.Text = shipment.ShipmentDomainName;
+
+            textBox_Shipment_Number.Text = shipment.ShipmentXid;
+
+            comboBox_Travel_Status.Text = shipment.TravelStatus;
+
+            comboBox_Emission_Status.SelectedItem = shipment.EmissionStatus;
+
+            textBox_Carrier_Xid.Text = shipment.XidCarrier;
+
+            textBox_Source_Location_Xid.Text = shipment.XidSourceLocation;
+
+            textBox_Destination_Location_Xid.Text = shipment.XidDestinationLocation;
+
+            textBox_Taker_Xid.Text = shipment.XidTakerLocation;
+
+            textBox_Driver_Xid.Text = shipment.DriverXid;
+
+            textBox_Driver_Xid.Text = shipment.DriverXid;
+
+            textBox_City.Text = shipment.SourceAddress.City;
+
+            comboBox_UF.SelectedItem = shipment.SourceAddress.State;
+
+            maskedTextBox_IBGE.Text = shipment.SourceAddress.IBGE;
+
+            var addedTax = new Refnum("CLL_IMPOSTO_SOMADO", shipment.AddedTax);
+
+            var taxIncluded = new Refnum("CLL_IMPOSTO_INCLUSO", shipment.TaxIncluded);
+
+            shipmentRefnums = new List<Refnum>
+            {
+                addedTax,
+                taxIncluded
+            };
+
+            if (shipment.ShipmentRefnums != null)
+            {
+                shipmentRefnums.AddRange(shipment.ShipmentRefnums);
+
+                InsertShipmentRefNums();
+            }
+
+            dataGridView_Shipment_Costs.Rows.Clear();
+
+
+            foreach (var cost in shipment.ShipmentCosts)
+            {
+                var costType = (cost.CostType == "B") ? "Base" : "Acessório";
+
+                dataGridView_Shipment_Costs.Rows.Add(
+                    costType,
+                    cost.Value.ToString().Replace(".", ","),
+                    cost.AllocateCost,
+                    cost.AccessorialCostXid);
+            }
+
+            releaseRefnums = new List<ReleaseRefnum>();
+
+            foreach (var release in shipment.Releases)
+            {
+                var releaseRefnum = new ReleaseRefnum(release.ReleaseXid, release.ReleaseRefnums);
+                releaseRefnums.Add(releaseRefnum);
+            }
+
+            InsertReleases();
+        }
+
         private void InsertShipmentRefNums()
         {
             listBox_Shipment_Refnums.Items.Clear();

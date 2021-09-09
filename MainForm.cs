@@ -56,6 +56,23 @@ namespace Regresser
             treeView_Actions.Nodes.AddRange(robotLabels.ToArray());
         }
 
+        private void OpenRobotForm(Robot robot)
+        {
+            Form form;
+            switch (robot.RobotName)
+            {
+                case "jarvis":
+                    form = new ShipmentForm(robot);
+                    break;
+
+                default:
+                    MessageBox.Show("Tela não encontrada para editar requisição selecionada!");
+                    return;
+            }
+
+            form.ShowDialog();
+        }
+
         private void button_Send_Click(object sender, EventArgs e)
         {
             var response = Robot.SendActions(robots);
@@ -213,6 +230,8 @@ namespace Regresser
 
                 button_Clone.Enabled = true;
 
+                button_Edit.Enabled = true;
+
                 if (treeView_Actions.SelectedNode.Index != 0)
                     button_Move_Up.Enabled = true;
 
@@ -248,6 +267,12 @@ namespace Regresser
 
                 RefreshRobotLabels();
             }
+        }
+
+        private void button_Edit_Click(object sender, EventArgs e)
+        {
+            OpenRobotForm(robots[treeView_Actions.SelectedNode.Index]);
+
         }
     }
 }

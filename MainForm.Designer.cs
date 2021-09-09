@@ -40,13 +40,14 @@ namespace Regresser
             this.button_Move_Down = new System.Windows.Forms.Button();
             this.button_Add = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
+            this.button_Clone = new System.Windows.Forms.Button();
             this.treeView_Actions = new System.Windows.Forms.TreeView();
             this.button_Send = new System.Windows.Forms.Button();
             this.button_Load = new System.Windows.Forms.Button();
             this.button_Save_JSON = new System.Windows.Forms.Button();
             this.saveFileDialog_JSON = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.button_Clone = new System.Windows.Forms.Button();
+            this.button_Edit = new System.Windows.Forms.Button();
             this.contextMenuStrip.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -96,7 +97,7 @@ namespace Regresser
             this.button_Remove.Enabled = false;
             this.button_Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Remove.Location = new System.Drawing.Point(315, 416);
+            this.button_Remove.Location = new System.Drawing.Point(372, 416);
             this.button_Remove.Name = "button_Remove";
             this.button_Remove.Size = new System.Drawing.Size(105, 40);
             this.button_Remove.TabIndex = 4;
@@ -110,7 +111,7 @@ namespace Regresser
             this.button_Move_Up.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Move_Up.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_Move_Up.Image = global::Regresser.Properties.Resources.upload;
-            this.button_Move_Up.Location = new System.Drawing.Point(452, 416);
+            this.button_Move_Up.Location = new System.Drawing.Point(483, 416);
             this.button_Move_Up.Name = "button_Move_Up";
             this.button_Move_Up.Size = new System.Drawing.Size(89, 40);
             this.button_Move_Up.TabIndex = 5;
@@ -126,7 +127,7 @@ namespace Regresser
             this.button_Move_Down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Move_Down.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_Move_Down.Image = global::Regresser.Properties.Resources.download;
-            this.button_Move_Down.Location = new System.Drawing.Point(590, 416);
+            this.button_Move_Down.Location = new System.Drawing.Point(578, 416);
             this.button_Move_Down.Name = "button_Move_Down";
             this.button_Move_Down.Size = new System.Drawing.Size(89, 40);
             this.button_Move_Down.TabIndex = 6;
@@ -141,7 +142,7 @@ namespace Regresser
             this.button_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_Add.Image = global::Regresser.Properties.Resources.add;
-            this.button_Add.Location = new System.Drawing.Point(27, 416);
+            this.button_Add.Location = new System.Drawing.Point(31, 416);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(113, 40);
             this.button_Add.TabIndex = 7;
@@ -153,6 +154,7 @@ namespace Regresser
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.button_Edit);
             this.panel.Controls.Add(this.button_Clone);
             this.panel.Controls.Add(this.treeView_Actions);
             this.panel.Controls.Add(this.button_Add);
@@ -163,6 +165,19 @@ namespace Regresser
             this.panel.Name = "panel";
             this.panel.Size = new System.Drawing.Size(706, 473);
             this.panel.TabIndex = 6;
+            // 
+            // button_Clone
+            // 
+            this.button_Clone.Enabled = false;
+            this.button_Clone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Clone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_Clone.Location = new System.Drawing.Point(150, 416);
+            this.button_Clone.Name = "button_Clone";
+            this.button_Clone.Size = new System.Drawing.Size(105, 40);
+            this.button_Clone.TabIndex = 11;
+            this.button_Clone.Text = "Duplicar";
+            this.button_Clone.UseVisualStyleBackColor = true;
+            this.button_Clone.Click += new System.EventHandler(this.button_Clone_Click);
             // 
             // treeView_Actions
             // 
@@ -222,18 +237,18 @@ namespace Regresser
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
-            // button_Clone
+            // button_Edit
             // 
-            this.button_Clone.Enabled = false;
-            this.button_Clone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Clone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Clone.Location = new System.Drawing.Point(173, 416);
-            this.button_Clone.Name = "button_Clone";
-            this.button_Clone.Size = new System.Drawing.Size(105, 40);
-            this.button_Clone.TabIndex = 11;
-            this.button_Clone.Text = "Duplicar";
-            this.button_Clone.UseVisualStyleBackColor = true;
-            this.button_Clone.Click += new System.EventHandler(this.button_Clone_Click);
+            this.button_Edit.Enabled = false;
+            this.button_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_Edit.Location = new System.Drawing.Point(261, 416);
+            this.button_Edit.Name = "button_Edit";
+            this.button_Edit.Size = new System.Drawing.Size(105, 40);
+            this.button_Edit.TabIndex = 12;
+            this.button_Edit.Text = "Editar";
+            this.button_Edit.UseVisualStyleBackColor = true;
+            this.button_Edit.Click += new System.EventHandler(this.button_Edit_Click);
             // 
             // MainForm
             // 
@@ -276,6 +291,7 @@ namespace Regresser
         private System.Windows.Forms.OpenFileDialog openFileDialog;
         private System.Windows.Forms.ToolStripMenuItem nFeToolStripMenuItem;
         private System.Windows.Forms.Button button_Clone;
+        private System.Windows.Forms.Button button_Edit;
     }
 }
 
