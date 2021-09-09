@@ -25,7 +25,7 @@ namespace Regresser.Domain.Shipper
             if (!string.IsNullOrEmpty(AccessorialCostXid))
                 treeNodes.Add(new TreeNode($"Xid do custo acessório: {AccessorialCostXid}"));
 
-            return new TreeNode("Custos do Embarque", treeNodes.ToArray());
+            return new TreeNode("Custo do Embarque", treeNodes.ToArray());
         }
     }
 }

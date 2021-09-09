@@ -40,6 +40,7 @@ namespace Regresser
             this.button_Move_Down = new System.Windows.Forms.Button();
             this.button_Add = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
+            this.button_Edit = new System.Windows.Forms.Button();
             this.button_Clone = new System.Windows.Forms.Button();
             this.treeView_Actions = new System.Windows.Forms.TreeView();
             this.button_Send = new System.Windows.Forms.Button();
@@ -47,7 +48,7 @@ namespace Regresser
             this.button_Save_JSON = new System.Windows.Forms.Button();
             this.saveFileDialog_JSON = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.button_Edit = new System.Windows.Forms.Button();
+            this.cTeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -57,29 +58,30 @@ namespace Regresser
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.embarqueToolStripMenuItem_Shipment,
             this.timeoutToolStripMenuItem_Timeout,
-            this.nFeToolStripMenuItem});
+            this.nFeToolStripMenuItem,
+            this.cTeToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip1";
-            this.contextMenuStrip.Size = new System.Drawing.Size(129, 70);
+            this.contextMenuStrip.Size = new System.Drawing.Size(181, 114);
             // 
             // embarqueToolStripMenuItem_Shipment
             // 
             this.embarqueToolStripMenuItem_Shipment.Name = "embarqueToolStripMenuItem_Shipment";
-            this.embarqueToolStripMenuItem_Shipment.Size = new System.Drawing.Size(128, 22);
+            this.embarqueToolStripMenuItem_Shipment.Size = new System.Drawing.Size(180, 22);
             this.embarqueToolStripMenuItem_Shipment.Text = "Embarque";
             this.embarqueToolStripMenuItem_Shipment.Click += new System.EventHandler(this.embarqueToolStripMenuItem_Shipment_Click);
             // 
             // timeoutToolStripMenuItem_Timeout
             // 
             this.timeoutToolStripMenuItem_Timeout.Name = "timeoutToolStripMenuItem_Timeout";
-            this.timeoutToolStripMenuItem_Timeout.Size = new System.Drawing.Size(128, 22);
+            this.timeoutToolStripMenuItem_Timeout.Size = new System.Drawing.Size(180, 22);
             this.timeoutToolStripMenuItem_Timeout.Text = "Timeout";
             this.timeoutToolStripMenuItem_Timeout.Click += new System.EventHandler(this.timeoutToolStripMenuItem_Timeout_Click);
             // 
             // nFeToolStripMenuItem
             // 
             this.nFeToolStripMenuItem.Name = "nFeToolStripMenuItem";
-            this.nFeToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
-            this.nFeToolStripMenuItem.Text = "NFe";
+            this.nFeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nFeToolStripMenuItem.Text = "NF-e";
             this.nFeToolStripMenuItem.Click += new System.EventHandler(this.nFeToolStripMenuItem_Click);
             // 
             // divider
@@ -166,6 +168,19 @@ namespace Regresser
             this.panel.Size = new System.Drawing.Size(706, 473);
             this.panel.TabIndex = 6;
             // 
+            // button_Edit
+            // 
+            this.button_Edit.Enabled = false;
+            this.button_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.button_Edit.Location = new System.Drawing.Point(261, 416);
+            this.button_Edit.Name = "button_Edit";
+            this.button_Edit.Size = new System.Drawing.Size(105, 40);
+            this.button_Edit.TabIndex = 12;
+            this.button_Edit.Text = "Editar";
+            this.button_Edit.UseVisualStyleBackColor = true;
+            this.button_Edit.Click += new System.EventHandler(this.button_Edit_Click);
+            // 
             // button_Clone
             // 
             this.button_Clone.Enabled = false;
@@ -237,18 +252,12 @@ namespace Regresser
             // 
             this.openFileDialog.FileName = "openFileDialog1";
             // 
-            // button_Edit
+            // cTeToolStripMenuItem
             // 
-            this.button_Edit.Enabled = false;
-            this.button_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Edit.Location = new System.Drawing.Point(261, 416);
-            this.button_Edit.Name = "button_Edit";
-            this.button_Edit.Size = new System.Drawing.Size(105, 40);
-            this.button_Edit.TabIndex = 12;
-            this.button_Edit.Text = "Editar";
-            this.button_Edit.UseVisualStyleBackColor = true;
-            this.button_Edit.Click += new System.EventHandler(this.button_Edit_Click);
+            this.cTeToolStripMenuItem.Name = "cTeToolStripMenuItem";
+            this.cTeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cTeToolStripMenuItem.Text = "CT-e";
+            this.cTeToolStripMenuItem.Click += new System.EventHandler(this.cTeToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -292,6 +301,7 @@ namespace Regresser
         private System.Windows.Forms.ToolStripMenuItem nFeToolStripMenuItem;
         private System.Windows.Forms.Button button_Clone;
         private System.Windows.Forms.Button button_Edit;
+        private System.Windows.Forms.ToolStripMenuItem cTeToolStripMenuItem;
     }
 }
 

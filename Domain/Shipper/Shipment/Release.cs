@@ -16,7 +16,7 @@ namespace Regresser.Domain.Shipper
         {
             var treeNodes = new List<TreeNode>();
 
-            if (ReleaseRefnums.Any())
+            if (ReleaseRefnums != null && ReleaseRefnums.Any())
                 foreach (var refnum in ReleaseRefnums) treeNodes.Add(refnum.ToStringAsTreeNodes());
 
             return new TreeNode($"Ordem: {ReleaseDomainName}.{ReleaseXid}", treeNodes.ToArray());

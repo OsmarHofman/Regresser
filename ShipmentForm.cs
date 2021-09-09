@@ -27,14 +27,7 @@ namespace Regresser
 
             dataGridView_Shipment_Costs.Rows.Add("Base", "900,50", true, null);
 
-            shipmentRefnums = new List<Refnum>
-            {
-                new Refnum("CLL_IMPOSTO_SOMADO", "N" ),
-                new Refnum("CLL_IMPOSTO_INCLUSO", "N" ),
-                new Refnum("CLL_CALCULAR_PEDAGIO", "N" ),
-                new Refnum("CLL_PAGAMENTO_PEDAGIO", "N" ),
-                new Refnum("CLL_VIAGEM_RETORNO", "N" )
-            };
+            shipmentRefnums = new List<Refnum> { new Refnum("CLL_VIAGEM_RETORNO", "N") };
 
             InsertShipmentRefNums();
 
@@ -88,15 +81,15 @@ namespace Regresser
 
             maskedTextBox_IBGE.Text = shipment.SourceAddress.IBGE;
 
-            var addedTax = new Refnum("CLL_IMPOSTO_SOMADO", shipment.AddedTax);
+            checkBox_Added_Tax.Checked = shipment.AddedTax == "S";
 
-            var taxIncluded = new Refnum("CLL_IMPOSTO_INCLUSO", shipment.TaxIncluded);
+            checkBox_Tax_Included.Checked = shipment.TaxIncluded == "S";
 
-            shipmentRefnums = new List<Refnum>
-            {
-                addedTax,
-                taxIncluded
-            };
+            checkBox_Toll_Calculation.Checked = shipment.TollCalculation == "S";
+
+            checkBox_Toll_Payment.Checked = shipment.TollPayment == "S";
+
+            shipmentRefnums = new List<Refnum>();
 
             if (shipment.ShipmentRefnums != null)
             {
@@ -163,11 +156,15 @@ namespace Regresser
             {
                 var specificReleaseRefnums = GetReleaseRefnumByXid(listBox_Release_Xids.SelectedItem.ToString());
 
-                foreach (var refNum in specificReleaseRefnums.ReleaseRefnums)
+                if (specificReleaseRefnums.ReleaseRefnums != null)
                 {
-                    var refNumText = string.Join(" - ", refNum.RefnumKey, refNum.RefnumValue);
-                    listBox_Release_Refnums.Items.Add(refNumText);
+                    foreach (var refNum in specificReleaseRefnums.ReleaseRefnums)
+                    {
+                        var refNumText = string.Join(" - ", refNum.RefnumKey, refNum.RefnumValue);
+                        listBox_Release_Refnums.Items.Add(refNumText);
+                    }
                 }
+
             }
         }
 
@@ -185,7 +182,7 @@ namespace Regresser
 
                 var shipmentCost = new ShipmentCost
                 {
-                    CostType = row.Cells[0].Value.ToString(),
+                    CostType = (row.Cells[0].Value.ToString() == "Base") ? "B" : "A",
                     Value = float.Parse(row.Cells[1].Value.ToString(), System.Globalization.NumberStyles.Float),
                     AllocateCost = bool.Parse(row.Cells[2].FormattedValue.ToString()),
                     AccessorialCostXid = (row.Cells[3].Value == null)
@@ -212,7 +209,7 @@ namespace Regresser
                 {
                     ReleaseDomainName = domainName,
                     ReleaseXid = refnum.ReleaseXid,
-                    ReleaseRefnums = refnum.ReleaseRefnums
+                    ReleaseRefnums = (refnum.ReleaseRefnums != null && refnum.ReleaseRefnums.Any()) ? refnum.ReleaseRefnums : null
                 };
 
                 releases.Add(release);
@@ -244,10 +241,19 @@ namespace Regresser
 
             var takerXid = textBox_Taker_Xid.Text;
 
+            var addedTax = (checkBox_Added_Tax.Checked) ? "S" : "N";
+
+            var taxIncluded = (checkBox_Tax_Included.Checked) ? "S" : "N";
+
+            var tollCalculation = (checkBox_Toll_Calculation.Checked) ? "S" : "N";
+
+            var tollPayment = (checkBox_Toll_Payment.Checked) ? "S" : "N";
+
             var driverXid = (string.IsNullOrEmpty(textBox_Driver_Xid.Text)) ? null : textBox_Driver_Xid.Text;
 
             if (!shipmentRefnums.Any())
                 shipmentRefnums = null;
+
             return new Shipment
             {
                 ShipmentDomainName = domainName,
@@ -259,8 +265,10 @@ namespace Regresser
                 XidDestinationLocation = destinationLocationXid,
                 XidTakerLocation = takerXid,
                 DriverXid = driverXid,
-                AddedTax = Refnum.GetValueByKeyOnList(shipmentRefnums, "CLL_IMPOSTO_SOMADO"),
-                TaxIncluded = Refnum.GetValueByKeyOnList(shipmentRefnums, "CLL_IMPOSTO_INCLUSO"),
+                AddedTax = addedTax,
+                TaxIncluded = taxIncluded,
+                TollCalculation = tollCalculation,
+                TollPayment = tollPayment,
                 SourceAddress = sourceAddress,
                 ShipmentCosts = shipmentCosts,
                 ShipmentRefnums = shipmentRefnums,
@@ -313,10 +321,10 @@ namespace Regresser
 
         private void ShipmentForm_Activated(object sender, EventArgs e)
         {
-            if (tabControl_Shipment_Costs.SelectedTab == tabPage_Shipment_Refnum)
+            if (tabControl.SelectedTab == tabPage_Shipment_Refnum)
                 InsertShipmentRefNums();
 
-            if (tabControl_Shipment_Costs.SelectedTab == tabPage_Release)
+            if (tabControl.SelectedTab == tabPage_Release)
                 InsertReleases();
         }
 

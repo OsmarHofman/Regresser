@@ -27,6 +27,10 @@ namespace Regresser.Domain.Shipper
 
         public string TaxIncluded { get; set; }
 
+        public string TollCalculation { get; set; }
+
+        public string TollPayment { get; set; }
+
         public string DriverXid { get; set; }
 
         public Address SourceAddress { get; set; }
@@ -55,6 +59,9 @@ namespace Regresser.Domain.Shipper
                 new TreeNode($"Tomador: {XidTakerLocation}"),
                 new TreeNode($"Imposto Somado: {AddedTax}"),
                 new TreeNode($"Imposto Incluso: {TaxIncluded}"),
+                new TreeNode($"Cálculo do Pedágio: {TollCalculation}"),
+                new TreeNode($"Pagamento do Pedágio: {TollPayment}"),
+
             };
 
             if (!string.IsNullOrEmpty(DriverXid))
@@ -70,7 +77,7 @@ namespace Regresser.Domain.Shipper
             {
                 List<TreeNode> refnums = new List<TreeNode>();
                 foreach (var shipmentRefnum in ShipmentRefnums) refnums.Add(shipmentRefnum.ToStringAsTreeNodes());
-                treeNodes.Add(new TreeNode("Refnums", refnums.ToArray()));
+                treeNodes.Add(new TreeNode("Refnums do Embarque", refnums.ToArray()));
             }
 
             if (Releases != null)

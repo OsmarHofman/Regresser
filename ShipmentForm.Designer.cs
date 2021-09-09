@@ -65,7 +65,7 @@ namespace Regresser
             this.label16 = new System.Windows.Forms.Label();
             this.button_Save = new System.Windows.Forms.Button();
             this.button_Cancelar = new System.Windows.Forms.Button();
-            this.tabControl_Shipment_Costs = new System.Windows.Forms.TabControl();
+            this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage_Planning = new System.Windows.Forms.TabPage();
             this.textBox_Driver_Xid = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -98,13 +98,17 @@ namespace Regresser
             this.tabPage_Release = new System.Windows.Forms.TabPage();
             this.label27 = new System.Windows.Forms.Label();
             this.textBox_Url_WS = new System.Windows.Forms.TextBox();
-            this.tabControl_Shipment_Costs.SuspendLayout();
+            this.tabPage_Other = new System.Windows.Forms.TabPage();
+            this.checkBox_Toll_Calculation = new System.Windows.Forms.CheckBox();
+            this.checkBox_Toll_Payment = new System.Windows.Forms.CheckBox();
+            this.tabControl.SuspendLayout();
             this.tabPage_Planning.SuspendLayout();
             this.tabPage_Shipment_Cost.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_Shipment_Costs)).BeginInit();
             this.tabPage_Shipment_Refnum.SuspendLayout();
             this.tabPage_Address.SuspendLayout();
             this.tabPage_Release.SuspendLayout();
+            this.tabPage_Other.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox_Shipment_DomainName
@@ -498,18 +502,19 @@ namespace Regresser
             this.button_Cancelar.UseVisualStyleBackColor = true;
             this.button_Cancelar.Click += new System.EventHandler(this.button_Cancelar_Click);
             // 
-            // tabControl_Shipment_Costs
+            // tabControl
             // 
-            this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Planning);
-            this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Shipment_Cost);
-            this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Shipment_Refnum);
-            this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Address);
-            this.tabControl_Shipment_Costs.Controls.Add(this.tabPage_Release);
-            this.tabControl_Shipment_Costs.Location = new System.Drawing.Point(12, 48);
-            this.tabControl_Shipment_Costs.Name = "tabControl_Shipment_Costs";
-            this.tabControl_Shipment_Costs.SelectedIndex = 0;
-            this.tabControl_Shipment_Costs.Size = new System.Drawing.Size(614, 246);
-            this.tabControl_Shipment_Costs.TabIndex = 16;
+            this.tabControl.Controls.Add(this.tabPage_Planning);
+            this.tabControl.Controls.Add(this.tabPage_Shipment_Cost);
+            this.tabControl.Controls.Add(this.tabPage_Shipment_Refnum);
+            this.tabControl.Controls.Add(this.tabPage_Address);
+            this.tabControl.Controls.Add(this.tabPage_Release);
+            this.tabControl.Controls.Add(this.tabPage_Other);
+            this.tabControl.Location = new System.Drawing.Point(12, 48);
+            this.tabControl.Name = "tabControl";
+            this.tabControl.SelectedIndex = 0;
+            this.tabControl.Size = new System.Drawing.Size(614, 246);
+            this.tabControl.TabIndex = 16;
             // 
             // tabPage_Planning
             // 
@@ -858,6 +863,38 @@ namespace Regresser
             this.textBox_Url_WS.Size = new System.Drawing.Size(538, 23);
             this.textBox_Url_WS.TabIndex = 18;
             // 
+            // tabPage_Other
+            // 
+            this.tabPage_Other.Controls.Add(this.checkBox_Toll_Payment);
+            this.tabPage_Other.Controls.Add(this.checkBox_Toll_Calculation);
+            this.tabPage_Other.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_Other.Name = "tabPage_Other";
+            this.tabPage_Other.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_Other.Size = new System.Drawing.Size(606, 218);
+            this.tabPage_Other.TabIndex = 5;
+            this.tabPage_Other.Text = "Outros";
+            this.tabPage_Other.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_Toll_Calculation
+            // 
+            this.checkBox_Toll_Calculation.AutoSize = true;
+            this.checkBox_Toll_Calculation.Location = new System.Drawing.Point(26, 17);
+            this.checkBox_Toll_Calculation.Name = "checkBox_Toll_Calculation";
+            this.checkBox_Toll_Calculation.Size = new System.Drawing.Size(128, 19);
+            this.checkBox_Toll_Calculation.TabIndex = 3;
+            this.checkBox_Toll_Calculation.Text = "Cálculo de Pedágio";
+            this.checkBox_Toll_Calculation.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_Toll_Payment
+            // 
+            this.checkBox_Toll_Payment.AutoSize = true;
+            this.checkBox_Toll_Payment.Location = new System.Drawing.Point(203, 17);
+            this.checkBox_Toll_Payment.Name = "checkBox_Toll_Payment";
+            this.checkBox_Toll_Payment.Size = new System.Drawing.Size(149, 19);
+            this.checkBox_Toll_Payment.TabIndex = 4;
+            this.checkBox_Toll_Payment.Text = "Pagamento de Pedágio";
+            this.checkBox_Toll_Payment.UseVisualStyleBackColor = true;
+            // 
             // ShipmentForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -866,7 +903,7 @@ namespace Regresser
             this.ControlBox = false;
             this.Controls.Add(this.textBox_Url_WS);
             this.Controls.Add(this.label27);
-            this.Controls.Add(this.tabControl_Shipment_Costs);
+            this.Controls.Add(this.tabControl);
             this.Controls.Add(this.button_Cancelar);
             this.Controls.Add(this.button_Save);
             this.Controls.Add(this.label16);
@@ -876,7 +913,7 @@ namespace Regresser
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Embarque - Jarvis";
             this.Activated += new System.EventHandler(this.ShipmentForm_Activated);
-            this.tabControl_Shipment_Costs.ResumeLayout(false);
+            this.tabControl.ResumeLayout(false);
             this.tabPage_Planning.ResumeLayout(false);
             this.tabPage_Planning.PerformLayout();
             this.tabPage_Shipment_Cost.ResumeLayout(false);
@@ -887,6 +924,8 @@ namespace Regresser
             this.tabPage_Address.PerformLayout();
             this.tabPage_Release.ResumeLayout(false);
             this.tabPage_Release.PerformLayout();
+            this.tabPage_Other.ResumeLayout(false);
+            this.tabPage_Other.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -930,7 +969,7 @@ namespace Regresser
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button_Save;
         private System.Windows.Forms.Button button_Cancelar;
-        private System.Windows.Forms.TabControl tabControl_Shipment_Costs;
+        private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPage_Planning;
         private System.Windows.Forms.TabPage tabPage_Shipment_Cost;
         private System.Windows.Forms.DataGridView dataGridView_Shipment_Costs;
@@ -963,5 +1002,8 @@ namespace Regresser
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox textBox_Url_WS;
+        private System.Windows.Forms.TabPage tabPage_Other;
+        private System.Windows.Forms.CheckBox checkBox_Toll_Payment;
+        private System.Windows.Forms.CheckBox checkBox_Toll_Calculation;
     }
 }

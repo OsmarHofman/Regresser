@@ -94,22 +94,45 @@ namespace Regresser
 
         private void button_Move_Up_Click(object sender, EventArgs e)
         {
-            var selectedIndex = treeView_Actions.Nodes.IndexOf(treeView_Actions.SelectedNode);
-            var selectedRobotToMoveUp = robots[selectedIndex];
-            robots[selectedIndex] = robots[selectedIndex - 1];
-            robots[selectedIndex - 1] = selectedRobotToMoveUp;
+            if (treeView_Actions.SelectedNode != null)
+            {
+                if (treeView_Actions.SelectedNode.Level == 0)
+                {
+                    var selectedIndex = treeView_Actions.Nodes.IndexOf(treeView_Actions.SelectedNode);
+                    var selectedRobotToMoveUp = robots[selectedIndex];
+                    robots[selectedIndex] = robots[selectedIndex - 1];
+                    robots[selectedIndex - 1] = selectedRobotToMoveUp;
 
-            RefreshRobotLabels();
+                    RefreshRobotLabels();
+                }
+                else
+                    MessageBox.Show("Por favor selecione o nodo raiz para mover!");
+            }
+            else
+                MessageBox.Show("Selecione um item a ser movido!");
+
         }
 
         private void button_Move_Down_Click(object sender, EventArgs e)
         {
-            var selectedIndex = treeView_Actions.Nodes.IndexOf(treeView_Actions.SelectedNode);
-            var selectedRobotToMoveDown = robots[selectedIndex];
-            robots[selectedIndex] = robots[selectedIndex + 1];
-            robots[selectedIndex + 1] = selectedRobotToMoveDown;
+            if (treeView_Actions.SelectedNode != null)
+            {
+                if (treeView_Actions.SelectedNode.Level == 0)
+                {
+                    var selectedIndex = treeView_Actions.Nodes.IndexOf(treeView_Actions.SelectedNode);
+                    var selectedRobotToMoveDown = robots[selectedIndex];
+                    robots[selectedIndex] = robots[selectedIndex + 1];
+                    robots[selectedIndex + 1] = selectedRobotToMoveDown;
 
-            RefreshRobotLabels();
+                    RefreshRobotLabels();
+                }
+                else
+                    MessageBox.Show("Por favor selecione o nodo raiz para mover!");
+
+            }
+            else
+                MessageBox.Show("Selecione um item a ser movido!");
+
         }
 
         private void embarqueToolStripMenuItem_Shipment_Click(object sender, EventArgs e)
@@ -181,15 +204,21 @@ namespace Regresser
         {
             if (treeView_Actions.SelectedNode != null)
             {
-                robots.RemoveAt(treeView_Actions.SelectedNode.Index);
-
-                RefreshRobotLabels();
-
-                if (!robots.Any())
+                if (treeView_Actions.SelectedNode.Level == 0)
                 {
-                    button_Send.Enabled = false;
-                    button_Remove.Enabled = false;
+                    robots.RemoveAt(treeView_Actions.SelectedNode.Index);
+
+                    RefreshRobotLabels();
+
+                    if (!robots.Any())
+                    {
+                        button_Send.Enabled = false;
+                        button_Remove.Enabled = false;
+                    }
                 }
+                else
+                    MessageBox.Show("Por favor selecione o nodo raiz para remover!");
+
             }
         }
 
@@ -212,7 +241,6 @@ namespace Regresser
                     catch (Exception exp)
                     {
                         MessageBox.Show($"Erro ao tentar salvar o arquivo:\n {exp.Message}");
-                        throw;
                     }
 
                 }
@@ -258,20 +286,34 @@ namespace Regresser
         {
             var robotIndex = treeView_Actions.SelectedNode.Index;
 
-            var result = MessageBox.Show($"Deseja realmente duplicar essa requisição do robô?", "Duplicar", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.Yes)
+            if (treeView_Actions.SelectedNode.Level == 0)
             {
-                var robot = new Robot(robots[robotIndex]);
-                robots.Add(robot);
+                var result = MessageBox.Show($"Deseja realmente duplicar essa requisição do robô?", "Duplicar", MessageBoxButtons.YesNo);
 
-                RefreshRobotLabels();
+                if (result == DialogResult.Yes)
+                {
+                    var robot = new Robot(robots[robotIndex]);
+                    robots.Add(robot);
+
+                    RefreshRobotLabels();
+                }
             }
+            else
+                MessageBox.Show("Por favor selecione o nodo raiz para duplicar!");
+
         }
 
         private void button_Edit_Click(object sender, EventArgs e)
         {
-            OpenRobotForm(robots[treeView_Actions.SelectedNode.Index]);
+            if (treeView_Actions.SelectedNode.Level == 0)
+                OpenRobotForm(robots[treeView_Actions.SelectedNode.Index]);
+            else
+                MessageBox.Show("Por favor selecione o nodo raiz para editar!");
+
+        }
+
+        private void cTeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
 
         }
     }
