@@ -157,6 +157,13 @@ namespace Regresser
 
         private void button_Load_Click(object sender, EventArgs e)
         {
+            if (robots.Any())
+            {
+                var result = MessageBox.Show($"Já existem requisições cadastradas, deseja carregar um arquivo e substituir as existentes?", "Confirmação", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.No) return;
+            }
+
             openFileDialog.InitialDirectory = @"C:\git.nddigital";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -237,6 +244,8 @@ namespace Regresser
                             new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
                         File.WriteAllText(saveFileDialog_JSON.FileName, json);
+
+                        MessageBox.Show($"Arquivo {saveFileDialog_JSON.FileName} salvo com sucesso!");
                     }
                     catch (Exception exp)
                     {
