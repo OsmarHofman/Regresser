@@ -17,6 +17,8 @@ namespace Regresser.Domain.Shipper
 
         public string Recipient { get; set; }
 
+        public bool RecipientIsTaker { get; set; }
+
         public List<string> NfeNumbers { get; set; }
 
         public List<string> NfeAccessKeys { get; set; }
@@ -45,6 +47,7 @@ namespace Regresser.Domain.Shipper
                 new TreeNode($"Emissor: {Emitter}"),
                 new TreeNode($"Remetente: {Sender}"),
                 new TreeNode($"Recebedor: {Recipient}"),
+                new TreeNode($"Recebedor é o Tomador: {RecipientIsTaker}"),
             };
 
             if (GlobalCTe != null)

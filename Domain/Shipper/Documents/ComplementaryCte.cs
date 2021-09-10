@@ -4,9 +4,8 @@ using System.Text;
 
 namespace Regresser.Domain.Shipper.Documents
 {
-    public class ComplementaryCte
+    public class ComplementaryCte : Cte
     {
-
         public string CteNorm { get; set; }
 
         public override string ToString()
