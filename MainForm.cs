@@ -185,6 +185,8 @@ namespace Regresser
 
                     RefreshRobotLabels();
 
+                    button_Send.Enabled = true;
+
                 }
                 catch (IOException ioe)
                 {

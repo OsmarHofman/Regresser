@@ -87,6 +87,10 @@ namespace Regresser
             this.listBox_Shipment_Refnums = new System.Windows.Forms.ListBox();
             this.button_Add_Shipment_Refnum = new System.Windows.Forms.Button();
             this.tabPage_Address = new System.Windows.Forms.TabPage();
+            this.label29 = new System.Windows.Forms.Label();
+            this.textBox_Destination_CNPJ = new System.Windows.Forms.TextBox();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox_Source_CNPJ = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -96,11 +100,11 @@ namespace Regresser
             this.label23 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.tabPage_Release = new System.Windows.Forms.TabPage();
+            this.tabPage_Other = new System.Windows.Forms.TabPage();
+            this.checkBox_Toll_Payment = new System.Windows.Forms.CheckBox();
+            this.checkBox_Toll_Calculation = new System.Windows.Forms.CheckBox();
             this.label27 = new System.Windows.Forms.Label();
             this.textBox_Url_WS = new System.Windows.Forms.TextBox();
-            this.tabPage_Other = new System.Windows.Forms.TabPage();
-            this.checkBox_Toll_Calculation = new System.Windows.Forms.CheckBox();
-            this.checkBox_Toll_Payment = new System.Windows.Forms.CheckBox();
             this.tabControl.SuspendLayout();
             this.tabPage_Planning.SuspendLayout();
             this.tabPage_Shipment_Cost.SuspendLayout();
@@ -259,7 +263,7 @@ namespace Regresser
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(76, 67);
+            this.label9.Location = new System.Drawing.Point(69, 57);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(44, 15);
             this.label9.TabIndex = 17;
@@ -267,7 +271,7 @@ namespace Regresser
             // 
             // textBox_City
             // 
-            this.textBox_City.Location = new System.Drawing.Point(126, 64);
+            this.textBox_City.Location = new System.Drawing.Point(119, 54);
             this.textBox_City.Name = "textBox_City";
             this.textBox_City.Size = new System.Drawing.Size(100, 23);
             this.textBox_City.TabIndex = 16;
@@ -276,7 +280,7 @@ namespace Regresser
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(76, 109);
+            this.label10.Location = new System.Drawing.Point(69, 99);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(42, 15);
             this.label10.TabIndex = 19;
@@ -314,7 +318,7 @@ namespace Regresser
             "SP",
             "SE",
             "TO"});
-            this.comboBox_UF.Location = new System.Drawing.Point(126, 106);
+            this.comboBox_UF.Location = new System.Drawing.Point(119, 96);
             this.comboBox_UF.Name = "comboBox_UF";
             this.comboBox_UF.Size = new System.Drawing.Size(47, 23);
             this.comboBox_UF.TabIndex = 20;
@@ -323,7 +327,7 @@ namespace Regresser
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(89, 150);
+            this.label11.Location = new System.Drawing.Point(82, 140);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(31, 15);
             this.label11.TabIndex = 22;
@@ -331,7 +335,7 @@ namespace Regresser
             // 
             // maskedTextBox_IBGE
             // 
-            this.maskedTextBox_IBGE.Location = new System.Drawing.Point(126, 147);
+            this.maskedTextBox_IBGE.Location = new System.Drawing.Point(119, 137);
             this.maskedTextBox_IBGE.Mask = "0000000";
             this.maskedTextBox_IBGE.Name = "maskedTextBox_IBGE";
             this.maskedTextBox_IBGE.Size = new System.Drawing.Size(61, 23);
@@ -732,6 +736,10 @@ namespace Regresser
             // 
             // tabPage_Address
             // 
+            this.tabPage_Address.Controls.Add(this.label29);
+            this.tabPage_Address.Controls.Add(this.textBox_Destination_CNPJ);
+            this.tabPage_Address.Controls.Add(this.label28);
+            this.tabPage_Address.Controls.Add(this.textBox_Source_CNPJ);
             this.tabPage_Address.Controls.Add(this.label26);
             this.tabPage_Address.Controls.Add(this.label25);
             this.tabPage_Address.Controls.Add(this.label24);
@@ -753,10 +761,44 @@ namespace Regresser
             this.tabPage_Address.Text = "Endereço";
             this.tabPage_Address.UseVisualStyleBackColor = true;
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(366, 170);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(34, 15);
+            this.label29.TabIndex = 37;
+            this.label29.Text = "CNPJ";
+            // 
+            // textBox_Destination_CNPJ
+            // 
+            this.textBox_Destination_CNPJ.Location = new System.Drawing.Point(406, 167);
+            this.textBox_Destination_CNPJ.Name = "textBox_Destination_CNPJ";
+            this.textBox_Destination_CNPJ.Size = new System.Drawing.Size(102, 23);
+            this.textBox_Destination_CNPJ.TabIndex = 36;
+            this.textBox_Destination_CNPJ.Text = "12764519000122";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(77, 173);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(34, 15);
+            this.label28.TabIndex = 35;
+            this.label28.Text = "CNPJ";
+            // 
+            // textBox_Source_CNPJ
+            // 
+            this.textBox_Source_CNPJ.Location = new System.Drawing.Point(117, 170);
+            this.textBox_Source_CNPJ.Name = "textBox_Source_CNPJ";
+            this.textBox_Source_CNPJ.Size = new System.Drawing.Size(102, 23);
+            this.textBox_Source_CNPJ.TabIndex = 34;
+            this.textBox_Source_CNPJ.Text = "05257045000160";
+            // 
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(414, 150);
+            this.label26.Location = new System.Drawing.Point(409, 140);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(49, 15);
             this.label26.TabIndex = 33;
@@ -765,7 +807,7 @@ namespace Regresser
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(414, 109);
+            this.label25.Location = new System.Drawing.Point(409, 99);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(20, 15);
             this.label25.TabIndex = 32;
@@ -774,7 +816,7 @@ namespace Regresser
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(411, 67);
+            this.label24.Location = new System.Drawing.Point(406, 57);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(59, 15);
             this.label24.TabIndex = 31;
@@ -784,7 +826,7 @@ namespace Regresser
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(397, 21);
+            this.label20.Location = new System.Drawing.Point(392, 11);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(76, 25);
             this.label20.TabIndex = 30;
@@ -793,7 +835,7 @@ namespace Regresser
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(374, 150);
+            this.label21.Location = new System.Drawing.Point(369, 140);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(31, 15);
             this.label21.TabIndex = 29;
@@ -802,7 +844,7 @@ namespace Regresser
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(361, 67);
+            this.label22.Location = new System.Drawing.Point(356, 57);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(44, 15);
             this.label22.TabIndex = 26;
@@ -811,7 +853,7 @@ namespace Regresser
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(361, 109);
+            this.label23.Location = new System.Drawing.Point(356, 99);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(42, 15);
             this.label23.TabIndex = 27;
@@ -821,7 +863,7 @@ namespace Regresser
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(112, 21);
+            this.label19.Location = new System.Drawing.Point(105, 11);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(75, 25);
             this.label19.TabIndex = 23;
@@ -847,6 +889,38 @@ namespace Regresser
             this.tabPage_Release.Text = "Ordem";
             this.tabPage_Release.UseVisualStyleBackColor = true;
             // 
+            // tabPage_Other
+            // 
+            this.tabPage_Other.Controls.Add(this.checkBox_Toll_Payment);
+            this.tabPage_Other.Controls.Add(this.checkBox_Toll_Calculation);
+            this.tabPage_Other.Location = new System.Drawing.Point(4, 24);
+            this.tabPage_Other.Name = "tabPage_Other";
+            this.tabPage_Other.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage_Other.Size = new System.Drawing.Size(606, 218);
+            this.tabPage_Other.TabIndex = 5;
+            this.tabPage_Other.Text = "Outros";
+            this.tabPage_Other.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_Toll_Payment
+            // 
+            this.checkBox_Toll_Payment.AutoSize = true;
+            this.checkBox_Toll_Payment.Location = new System.Drawing.Point(203, 17);
+            this.checkBox_Toll_Payment.Name = "checkBox_Toll_Payment";
+            this.checkBox_Toll_Payment.Size = new System.Drawing.Size(149, 19);
+            this.checkBox_Toll_Payment.TabIndex = 4;
+            this.checkBox_Toll_Payment.Text = "Pagamento de Pedágio";
+            this.checkBox_Toll_Payment.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_Toll_Calculation
+            // 
+            this.checkBox_Toll_Calculation.AutoSize = true;
+            this.checkBox_Toll_Calculation.Location = new System.Drawing.Point(26, 17);
+            this.checkBox_Toll_Calculation.Name = "checkBox_Toll_Calculation";
+            this.checkBox_Toll_Calculation.Size = new System.Drawing.Size(128, 19);
+            this.checkBox_Toll_Calculation.TabIndex = 3;
+            this.checkBox_Toll_Calculation.Text = "Cálculo de Pedágio";
+            this.checkBox_Toll_Calculation.UseVisualStyleBackColor = true;
+            // 
             // label27
             // 
             this.label27.AutoSize = true;
@@ -862,38 +936,6 @@ namespace Regresser
             this.textBox_Url_WS.Name = "textBox_Url_WS";
             this.textBox_Url_WS.Size = new System.Drawing.Size(538, 23);
             this.textBox_Url_WS.TabIndex = 18;
-            // 
-            // tabPage_Other
-            // 
-            this.tabPage_Other.Controls.Add(this.checkBox_Toll_Payment);
-            this.tabPage_Other.Controls.Add(this.checkBox_Toll_Calculation);
-            this.tabPage_Other.Location = new System.Drawing.Point(4, 24);
-            this.tabPage_Other.Name = "tabPage_Other";
-            this.tabPage_Other.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage_Other.Size = new System.Drawing.Size(606, 218);
-            this.tabPage_Other.TabIndex = 5;
-            this.tabPage_Other.Text = "Outros";
-            this.tabPage_Other.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_Toll_Calculation
-            // 
-            this.checkBox_Toll_Calculation.AutoSize = true;
-            this.checkBox_Toll_Calculation.Location = new System.Drawing.Point(26, 17);
-            this.checkBox_Toll_Calculation.Name = "checkBox_Toll_Calculation";
-            this.checkBox_Toll_Calculation.Size = new System.Drawing.Size(128, 19);
-            this.checkBox_Toll_Calculation.TabIndex = 3;
-            this.checkBox_Toll_Calculation.Text = "Cálculo de Pedágio";
-            this.checkBox_Toll_Calculation.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_Toll_Payment
-            // 
-            this.checkBox_Toll_Payment.AutoSize = true;
-            this.checkBox_Toll_Payment.Location = new System.Drawing.Point(203, 17);
-            this.checkBox_Toll_Payment.Name = "checkBox_Toll_Payment";
-            this.checkBox_Toll_Payment.Size = new System.Drawing.Size(149, 19);
-            this.checkBox_Toll_Payment.TabIndex = 4;
-            this.checkBox_Toll_Payment.Text = "Pagamento de Pedágio";
-            this.checkBox_Toll_Payment.UseVisualStyleBackColor = true;
             // 
             // ShipmentForm
             // 
@@ -1005,5 +1047,9 @@ namespace Regresser
         private System.Windows.Forms.TabPage tabPage_Other;
         private System.Windows.Forms.CheckBox checkBox_Toll_Payment;
         private System.Windows.Forms.CheckBox checkBox_Toll_Calculation;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBox_Destination_CNPJ;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox textBox_Source_CNPJ;
     }
 }

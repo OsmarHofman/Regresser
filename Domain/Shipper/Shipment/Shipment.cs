@@ -19,7 +19,11 @@ namespace Regresser.Domain.Shipper
 
         public string XidSourceLocation { get; set; }
 
+        public string SourceLocationCNPJ { get; set; }
+
         public string XidDestinationLocation { get; set; }
+
+        public string DestinationLocationCNPJ { get; set; }
 
         public string XidTakerLocation { get; set; }
 
@@ -55,7 +59,9 @@ namespace Regresser.Domain.Shipper
                 new TreeNode($"Status de Emissão: {EmissionStatus}"),
                 new TreeNode($"Transportador: {XidCarrier}"),
                 new TreeNode($"Origem: {XidSourceLocation}"),
+                new TreeNode($"CNPJ da Origem: {SourceLocationCNPJ}"),
                 new TreeNode($"Destino: {XidDestinationLocation}"),
+                new TreeNode($"CNPJ do Destino: {DestinationLocationCNPJ}"),
                 new TreeNode($"Tomador: {XidTakerLocation}"),
                 new TreeNode($"Imposto Somado: {AddedTax}"),
                 new TreeNode($"Imposto Incluso: {TaxIncluded}"),

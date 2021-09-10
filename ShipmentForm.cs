@@ -17,6 +17,8 @@ namespace Regresser
 
         private int activeReleaseIndex;
 
+        private int editingRobotIndex = -1;
+
         #endregion
 
         #region Constructor
@@ -41,6 +43,8 @@ namespace Regresser
             InitializeComponent();
 
             SetRobotValues(robot);
+
+            editingRobotIndex = MainForm.robots.IndexOf(robot);
         }
 
         #endregion
@@ -235,9 +239,13 @@ namespace Regresser
 
             var carrierXid = textBox_Carrier_Xid.Text;
 
-            var originLocationXid = textBox_Source_Location_Xid.Text;
+            var sourceLocationXid = textBox_Source_Location_Xid.Text;
+
+            var sourceLocationCNPJ = textBox_Source_CNPJ.Text;
 
             var destinationLocationXid = textBox_Destination_Location_Xid.Text;
+
+            var destinationLocationCNPJ = textBox_Destination_CNPJ.Text;
 
             var takerXid = textBox_Taker_Xid.Text;
 
@@ -261,8 +269,10 @@ namespace Regresser
                 TravelStatus = shipmentTravelStatus,
                 EmissionStatus = shipmentEmissionStatus,
                 XidCarrier = carrierXid,
-                XidSourceLocation = originLocationXid,
+                XidSourceLocation = sourceLocationXid,
+                SourceLocationCNPJ = sourceLocationCNPJ,
                 XidDestinationLocation = destinationLocationXid,
+                DestinationLocationCNPJ = destinationLocationCNPJ,
                 XidTakerLocation = takerXid,
                 DriverXid = driverXid,
                 AddedTax = addedTax,
@@ -314,7 +324,10 @@ namespace Regresser
 
             var jarvis = new Robot("jarvis", jarvisActions);
 
-            MainForm.robots.Add(jarvis);
+            if (editingRobotIndex == -1)
+                MainForm.robots.Add(jarvis);
+            else
+                MainForm.robots[editingRobotIndex] = jarvis;
 
             Close();
         }
