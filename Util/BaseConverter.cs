@@ -30,7 +30,7 @@ namespace Regresser.Util
             if (HasKeys(jo, "UrlWs", "Ctes", "ComplementaryCtes"))
                 return JsonConvert.DeserializeObject<BinoActions>(jo.ToString(), SpecifiedSubclassConversion);
 
-            if (HasKeys(jo, "type", "timeout"))
+            if (HasKeys(jo, "Type", "Timeout"))
                 return JsonConvert.DeserializeObject<UserBoltActions>(jo.ToString(), SpecifiedSubclassConversion);
 
             StringBuilder stringBuilder = new StringBuilder();
@@ -39,7 +39,7 @@ namespace Regresser.Util
                 stringBuilder.Append(item.Path.ToString() + ";");
             }
 
-            throw new NotImplementedException($"Erro ao tentar converter os dados lidos para a estrutura de algum dos robôs com seguintes actions: {stringBuilder}");
+            throw new NotImplementedException($"Erro ao tentar converter os dados lidos para a estrutura de algum dos robôs com seguintes actions: {stringBuilder}\n\n OBS.: Não esqueça de colocar as chaves sempre com camelcase e iniciando em maiuscula, com exceção ao actions (Ex.: Ctes, Shipments, actions,etc).");
         }
 
         private bool HasKeys(JObject jo, params string[] keys)
