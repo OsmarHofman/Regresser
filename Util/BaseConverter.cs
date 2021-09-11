@@ -27,7 +27,7 @@ namespace Regresser.Util
             if (HasKeys(jo, "UrlWs", "Nfes"))
                 return JsonConvert.DeserializeObject<GigibaActions>(jo.ToString(), SpecifiedSubclassConversion);
 
-            if (HasKeys(jo, "UrlWs", "Ctes", "ComplementaryCtes"))
+            if (HasKeys(jo, "UrlWs", "Ctes") || HasKeys(jo, "UrlWs", "Ctes", "ComplementaryCtes"))
                 return JsonConvert.DeserializeObject<BinoActions>(jo.ToString(), SpecifiedSubclassConversion);
 
             if (HasKeys(jo, "Type", "Timeout"))
