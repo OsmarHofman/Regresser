@@ -36,11 +36,11 @@ namespace Regresser
             this.label7 = new System.Windows.Forms.Label();
             this.listBox = new System.Windows.Forms.ListBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox_Nfe_Number = new System.Windows.Forms.TextBox();
+            this.textBox_CTe_Number = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox_Recipient = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox_Issuer = new System.Windows.Forms.TextBox();
+            this.textBox_Emitter = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox_Token = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,21 +51,23 @@ namespace Regresser
             this.button_Save = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage_CTe_Normal = new System.Windows.Forms.TabPage();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.tabPage_CTe_Complementary = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox_CTe_Value = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox_CST_Type = new System.Windows.Forms.ComboBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox_vBC = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.textBox_pICMS = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.textBox_vICMS = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.textBox_pICMS = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.textBox_vBC = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.comboBox_CST_Type = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox_Nfe_Numbers = new System.Windows.Forms.TextBox();
+            this.textBox_Sender = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tabPage_CTe_Complementary = new System.Windows.Forms.TabPage();
+            this.checkBox_Taker = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage_CTe_Normal.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -82,6 +84,7 @@ namespace Regresser
             this.button_Save_Item.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Save_Item.UseVisualStyleBackColor = true;
             this.button_Save_Item.Visible = false;
+            this.button_Save_Item.Click += new System.EventHandler(this.button_Save_Item_Click);
             // 
             // button_Edit_Item
             // 
@@ -94,6 +97,7 @@ namespace Regresser
             this.button_Edit_Item.Text = "Editar Item";
             this.button_Edit_Item.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Edit_Item.UseVisualStyleBackColor = true;
+            this.button_Edit_Item.Click += new System.EventHandler(this.button_Edit_Item_Click);
             // 
             // button_Remove_Item
             // 
@@ -106,6 +110,7 @@ namespace Regresser
             this.button_Remove_Item.Text = "Remover Item";
             this.button_Remove_Item.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Remove_Item.UseVisualStyleBackColor = true;
+            this.button_Remove_Item.Click += new System.EventHandler(this.button_Remove_Item_Click);
             // 
             // button_Add_Item
             // 
@@ -117,6 +122,7 @@ namespace Regresser
             this.button_Add_Item.Text = "Adicionar à Lista";
             this.button_Add_Item.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Add_Item.UseVisualStyleBackColor = true;
+            this.button_Add_Item.Click += new System.EventHandler(this.button_Add_Item_Click);
             // 
             // label7
             // 
@@ -135,6 +141,7 @@ namespace Regresser
             this.listBox.Name = "listBox";
             this.listBox.Size = new System.Drawing.Size(265, 319);
             this.listBox.TabIndex = 56;
+            this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -145,13 +152,13 @@ namespace Regresser
             this.label6.TabIndex = 55;
             this.label6.Text = "Número do CT-e";
             // 
-            // textBox_Nfe_Number
+            // textBox_CTe_Number
             // 
-            this.textBox_Nfe_Number.Enabled = false;
-            this.textBox_Nfe_Number.Location = new System.Drawing.Point(115, 127);
-            this.textBox_Nfe_Number.Name = "textBox_Nfe_Number";
-            this.textBox_Nfe_Number.Size = new System.Drawing.Size(120, 23);
-            this.textBox_Nfe_Number.TabIndex = 54;
+            this.textBox_CTe_Number.Enabled = false;
+            this.textBox_CTe_Number.Location = new System.Drawing.Point(115, 127);
+            this.textBox_CTe_Number.Name = "textBox_CTe_Number";
+            this.textBox_CTe_Number.Size = new System.Drawing.Size(120, 23);
+            this.textBox_CTe_Number.TabIndex = 54;
             // 
             // label4
             // 
@@ -179,13 +186,13 @@ namespace Regresser
             this.label3.TabIndex = 49;
             this.label3.Text = "CNPJ do Emitente";
             // 
-            // textBox_Issuer
+            // textBox_Emitter
             // 
-            this.textBox_Issuer.Enabled = false;
-            this.textBox_Issuer.Location = new System.Drawing.Point(468, 135);
-            this.textBox_Issuer.Name = "textBox_Issuer";
-            this.textBox_Issuer.Size = new System.Drawing.Size(120, 23);
-            this.textBox_Issuer.TabIndex = 48;
+            this.textBox_Emitter.Enabled = false;
+            this.textBox_Emitter.Location = new System.Drawing.Point(468, 135);
+            this.textBox_Emitter.Name = "textBox_Emitter";
+            this.textBox_Emitter.Size = new System.Drawing.Size(120, 23);
+            this.textBox_Emitter.TabIndex = 48;
             // 
             // label2
             // 
@@ -247,6 +254,7 @@ namespace Regresser
             this.button_Cancelar.Text = "Cancelar";
             this.button_Cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Cancelar.UseVisualStyleBackColor = true;
+            this.button_Cancelar.Click += new System.EventHandler(this.button_Cancelar_Click);
             // 
             // button_Save
             // 
@@ -272,15 +280,15 @@ namespace Regresser
             // 
             // tabPage_CTe_Normal
             // 
+            this.tabPage_CTe_Normal.Controls.Add(this.label9);
+            this.tabPage_CTe_Normal.Controls.Add(this.checkBox_Taker);
+            this.tabPage_CTe_Normal.Controls.Add(this.textBox_CTe_Value);
             this.tabPage_CTe_Normal.Controls.Add(this.groupBox1);
-            this.tabPage_CTe_Normal.Controls.Add(this.checkBox1);
             this.tabPage_CTe_Normal.Controls.Add(this.label16);
-            this.tabPage_CTe_Normal.Controls.Add(this.textBox8);
-            this.tabPage_CTe_Normal.Controls.Add(this.textBox1);
+            this.tabPage_CTe_Normal.Controls.Add(this.textBox_Nfe_Numbers);
+            this.tabPage_CTe_Normal.Controls.Add(this.textBox_Sender);
             this.tabPage_CTe_Normal.Controls.Add(this.label8);
             this.tabPage_CTe_Normal.Controls.Add(this.button_Add_Item);
-            this.tabPage_CTe_Normal.Controls.Add(this.button_Save_Item);
-            this.tabPage_CTe_Normal.Controls.Add(this.button_Edit_Item);
             this.tabPage_CTe_Normal.Controls.Add(this.button_Remove_Item);
             this.tabPage_CTe_Normal.Controls.Add(this.textBox_EnterpriseId);
             this.tabPage_CTe_Normal.Controls.Add(this.label1);
@@ -289,11 +297,13 @@ namespace Regresser
             this.tabPage_CTe_Normal.Controls.Add(this.listBox);
             this.tabPage_CTe_Normal.Controls.Add(this.label2);
             this.tabPage_CTe_Normal.Controls.Add(this.label6);
-            this.tabPage_CTe_Normal.Controls.Add(this.textBox_Issuer);
-            this.tabPage_CTe_Normal.Controls.Add(this.textBox_Nfe_Number);
+            this.tabPage_CTe_Normal.Controls.Add(this.textBox_Emitter);
+            this.tabPage_CTe_Normal.Controls.Add(this.textBox_CTe_Number);
             this.tabPage_CTe_Normal.Controls.Add(this.label3);
             this.tabPage_CTe_Normal.Controls.Add(this.textBox_Recipient);
             this.tabPage_CTe_Normal.Controls.Add(this.label4);
+            this.tabPage_CTe_Normal.Controls.Add(this.button_Save_Item);
+            this.tabPage_CTe_Normal.Controls.Add(this.button_Edit_Item);
             this.tabPage_CTe_Normal.Location = new System.Drawing.Point(4, 24);
             this.tabPage_CTe_Normal.Name = "tabPage_CTe_Normal";
             this.tabPage_CTe_Normal.Padding = new System.Windows.Forms.Padding(3);
@@ -302,43 +312,142 @@ namespace Regresser
             this.tabPage_CTe_Normal.Text = "CT-e Normal";
             this.tabPage_CTe_Normal.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // label9
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Checked = true;
-            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox1.Location = new System.Drawing.Point(394, 282);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(158, 19);
-            this.checkBox1.TabIndex = 66;
-            this.checkBox1.Text = "Destinatário é o Tomador";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(31, 174);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(78, 15);
+            this.label9.TabIndex = 69;
+            this.label9.Text = "Valor do CT-e";
+            // 
+            // textBox_CTe_Value
+            // 
+            this.textBox_CTe_Value.Enabled = false;
+            this.textBox_CTe_Value.Location = new System.Drawing.Point(115, 171);
+            this.textBox_CTe_Value.Name = "textBox_CTe_Value";
+            this.textBox_CTe_Value.Size = new System.Drawing.Size(120, 23);
+            this.textBox_CTe_Value.TabIndex = 68;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox_vICMS);
+            this.groupBox1.Controls.Add(this.label19);
+            this.groupBox1.Controls.Add(this.textBox_pICMS);
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.textBox_vBC);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.label17);
+            this.groupBox1.Controls.Add(this.comboBox_CST_Type);
+            this.groupBox1.Location = new System.Drawing.Point(40, 221);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(259, 157);
+            this.groupBox1.TabIndex = 67;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ICMS";
+            // 
+            // textBox_vICMS
+            // 
+            this.textBox_vICMS.Enabled = false;
+            this.textBox_vICMS.Location = new System.Drawing.Point(112, 122);
+            this.textBox_vICMS.Name = "textBox_vICMS";
+            this.textBox_vICMS.Size = new System.Drawing.Size(74, 23);
+            this.textBox_vICMS.TabIndex = 72;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(9, 125);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(97, 15);
+            this.label19.TabIndex = 73;
+            this.label19.Text = "Valor do Imposto";
+            // 
+            // textBox_pICMS
+            // 
+            this.textBox_pICMS.Enabled = false;
+            this.textBox_pICMS.Location = new System.Drawing.Point(112, 89);
+            this.textBox_pICMS.Name = "textBox_pICMS";
+            this.textBox_pICMS.Size = new System.Drawing.Size(74, 23);
+            this.textBox_pICMS.TabIndex = 70;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(54, 92);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(52, 15);
+            this.label18.TabIndex = 71;
+            this.label18.Text = "Alíquota";
+            // 
+            // textBox_vBC
+            // 
+            this.textBox_vBC.Enabled = false;
+            this.textBox_vBC.Location = new System.Drawing.Point(112, 54);
+            this.textBox_vBC.Name = "textBox_vBC";
+            this.textBox_vBC.Size = new System.Drawing.Size(74, 23);
+            this.textBox_vBC.TabIndex = 68;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(76, 22);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(30, 15);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Tipo";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(16, 62);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(90, 15);
+            this.label17.TabIndex = 69;
+            this.label17.Text = "Base de Cálculo";
+            // 
+            // comboBox_CST_Type
+            // 
+            this.comboBox_CST_Type.Enabled = false;
+            this.comboBox_CST_Type.FormattingEnabled = true;
+            this.comboBox_CST_Type.Items.AddRange(new object[] {
+            "ICMS00",
+            "ICMS20",
+            "ICMS45",
+            "ICMS60",
+            "ICMS90",
+            "ICMSOutraUF",
+            "ICMSSN"});
+            this.comboBox_CST_Type.Location = new System.Drawing.Point(112, 19);
+            this.comboBox_CST_Type.Name = "comboBox_CST_Type";
+            this.comboBox_CST_Type.Size = new System.Drawing.Size(121, 23);
+            this.comboBox_CST_Type.TabIndex = 0;
             // 
             // label16
             // 
-            this.label16.Location = new System.Drawing.Point(13, 166);
+            this.label16.Location = new System.Drawing.Point(366, 278);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(96, 46);
             this.label16.TabIndex = 65;
             this.label16.Text = "Número(s) da(s) Nota(s): ";
             // 
-            // textBox8
+            // textBox_Nfe_Numbers
             // 
-            this.textBox8.Enabled = false;
-            this.textBox8.Location = new System.Drawing.Point(115, 166);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.PlaceholderText = "13;14;15;...";
-            this.textBox8.Size = new System.Drawing.Size(120, 46);
-            this.textBox8.TabIndex = 64;
+            this.textBox_Nfe_Numbers.Enabled = false;
+            this.textBox_Nfe_Numbers.Location = new System.Drawing.Point(468, 278);
+            this.textBox_Nfe_Numbers.Multiline = true;
+            this.textBox_Nfe_Numbers.Name = "textBox_Nfe_Numbers";
+            this.textBox_Nfe_Numbers.PlaceholderText = "13;14;15;...";
+            this.textBox_Nfe_Numbers.Size = new System.Drawing.Size(120, 46);
+            this.textBox_Nfe_Numbers.TabIndex = 64;
             // 
-            // textBox1
+            // textBox_Sender
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(468, 184);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 23);
-            this.textBox1.TabIndex = 62;
+            this.textBox_Sender.Enabled = false;
+            this.textBox_Sender.Location = new System.Drawing.Point(468, 184);
+            this.textBox_Sender.Name = "textBox_Sender";
+            this.textBox_Sender.Size = new System.Drawing.Size(120, 23);
+            this.textBox_Sender.TabIndex = 62;
             // 
             // label8
             // 
@@ -359,98 +468,18 @@ namespace Regresser
             this.tabPage_CTe_Complementary.Text = "CT-e Complementar";
             this.tabPage_CTe_Complementary.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // checkBox_Taker
             // 
-            this.groupBox1.Controls.Add(this.textBox_vICMS);
-            this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.textBox_pICMS);
-            this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.textBox_vBC);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label17);
-            this.groupBox1.Controls.Add(this.comboBox_CST_Type);
-            this.groupBox1.Location = new System.Drawing.Point(40, 221);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(259, 157);
-            this.groupBox1.TabIndex = 67;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ICMS";
-            // 
-            // comboBox_CST_Type
-            // 
-            this.comboBox_CST_Type.FormattingEnabled = true;
-            this.comboBox_CST_Type.Items.AddRange(new object[] {
-            "ICMS00",
-            "ICMS20",
-            "ICMS45",
-            "ICMS60",
-            "ICMS90",
-            "ICMSOutraUF",
-            "ICMSSN"});
-            this.comboBox_CST_Type.Location = new System.Drawing.Point(112, 19);
-            this.comboBox_CST_Type.Name = "comboBox_CST_Type";
-            this.comboBox_CST_Type.Size = new System.Drawing.Size(121, 23);
-            this.comboBox_CST_Type.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(76, 22);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(30, 15);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Tipo";
-            // 
-            // textBox_vBC
-            // 
-            this.textBox_vBC.Enabled = false;
-            this.textBox_vBC.Location = new System.Drawing.Point(112, 54);
-            this.textBox_vBC.Name = "textBox_vBC";
-            this.textBox_vBC.Size = new System.Drawing.Size(74, 23);
-            this.textBox_vBC.TabIndex = 68;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(16, 62);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(90, 15);
-            this.label17.TabIndex = 69;
-            this.label17.Text = "Base de Cálculo";
-            // 
-            // textBox_pICMS
-            // 
-            this.textBox_pICMS.Enabled = false;
-            this.textBox_pICMS.Location = new System.Drawing.Point(112, 89);
-            this.textBox_pICMS.Name = "textBox_pICMS";
-            this.textBox_pICMS.Size = new System.Drawing.Size(74, 23);
-            this.textBox_pICMS.TabIndex = 70;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(54, 92);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(52, 15);
-            this.label18.TabIndex = 71;
-            this.label18.Text = "Alíquota";
-            // 
-            // textBox_vICMS
-            // 
-            this.textBox_vICMS.Enabled = false;
-            this.textBox_vICMS.Location = new System.Drawing.Point(112, 122);
-            this.textBox_vICMS.Name = "textBox_vICMS";
-            this.textBox_vICMS.Size = new System.Drawing.Size(74, 23);
-            this.textBox_vICMS.TabIndex = 72;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(9, 125);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(97, 15);
-            this.label19.TabIndex = 73;
-            this.label19.Text = "Valor do Imposto";
+            this.checkBox_Taker.AutoSize = true;
+            this.checkBox_Taker.Checked = true;
+            this.checkBox_Taker.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_Taker.Enabled = false;
+            this.checkBox_Taker.Location = new System.Drawing.Point(430, 342);
+            this.checkBox_Taker.Name = "checkBox_Taker";
+            this.checkBox_Taker.Size = new System.Drawing.Size(158, 19);
+            this.checkBox_Taker.TabIndex = 66;
+            this.checkBox_Taker.Text = "Destinatário é o Tomador";
+            this.checkBox_Taker.UseVisualStyleBackColor = true;
             // 
             // CTeForm
             // 
@@ -462,7 +491,10 @@ namespace Regresser
             this.Controls.Add(this.label27);
             this.Controls.Add(this.button_Save);
             this.Controls.Add(this.textBox_Url_WS);
+            this.MaximumSize = new System.Drawing.Size(1049, 577);
+            this.MinimumSize = new System.Drawing.Size(1049, 577);
             this.Name = "CTeForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CTeForm";
             this.tabControl1.ResumeLayout(false);
             this.tabPage_CTe_Normal.ResumeLayout(false);
@@ -483,11 +515,11 @@ namespace Regresser
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox_Nfe_Number;
+        private System.Windows.Forms.TextBox textBox_CTe_Number;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox_Recipient;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox_Issuer;
+        private System.Windows.Forms.TextBox textBox_Emitter;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox_Token;
         private System.Windows.Forms.Label label1;
@@ -499,11 +531,11 @@ namespace Regresser
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage_CTe_Normal;
         private System.Windows.Forms.TabPage tabPage_CTe_Complementary;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox_Sender;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textBox_Nfe_Numbers;
+        private System.Windows.Forms.CheckBox checkBox_Taker;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox comboBox_CST_Type;
@@ -513,5 +545,7 @@ namespace Regresser
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox textBox_vBC;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox textBox_CTe_Value;
     }
 }

@@ -305,6 +305,8 @@ namespace Regresser
             this.Controls.Add(this.label16);
             this.Controls.Add(this.button_Cancelar);
             this.Controls.Add(this.button_Save);
+            this.MaximumSize = new System.Drawing.Size(987, 360);
+            this.MinimumSize = new System.Drawing.Size(987, 360);
             this.Name = "NFeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "NFeForm";

@@ -325,7 +325,8 @@ namespace Regresser
 
         private void cTeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            CTeForm cteForm = new CTeForm();
+            cteForm.ShowDialog();
         }
     }
 }

@@ -8,10 +8,9 @@ namespace Regresser.Domain.Shipper
 {
     public class Icms
     {
+        public string IcmsType { get; set; }
 
-        public ICMSType IcmsType { get; set; }
-
-        public string CST { get; set; }
+        public string CST { get { return GetCSTByICMSType(); } set { CST = value; } }
 
         public decimal? vBC { get; set; }
 
@@ -34,6 +33,19 @@ namespace Regresser.Domain.Shipper
         public decimal? vICMSOutraUF { get; set; }
 
         public decimal? indSN { get; set; }
+
+        public Icms(string IcmsTypeValue, string baseCalculation, string aliquot, string taxValue)
+        {
+            var invalidICMS = !IsICMSTypeCorrect(IcmsTypeValue);
+
+            if(invalidICMS)
+                throw new NotImplementedException($"ICMS: {IcmsTypeValue} não é válido!");
+
+            IcmsType = IcmsTypeValue;
+            vBC = decimal.Parse(baseCalculation);
+            pICMS = decimal.Parse(aliquot);
+            vICMS = decimal.Parse(taxValue);
+        }
 
         public TreeNode ToStringAsTreeNodes()
         {
@@ -72,6 +84,43 @@ namespace Regresser.Domain.Shipper
 
 
             return new TreeNode("ICMS", treeNodes.ToArray());
+        }
+
+        private bool IsICMSTypeCorrect(string value)
+        {
+            return value == "ICMS00" ||
+               value == "ICMS20" ||
+               value == "ICMS45" ||
+               value == "ICMS60" ||
+               value == "ICMS90" ||
+               value == "ICMSOutraUF" ||
+               value == "ICMSSN";
+        }
+
+        private string GetCSTByICMSType()
+        {
+            switch (IcmsType)
+            {
+                case "ICMS00":
+                    return "00";
+
+                case "ICMS20":
+                    return "20";
+
+                case "ICMS45":
+                    return "40";
+
+                case "ICMS60":
+                    return "60";
+
+                case "ICMS90":
+                case "ICMSOutraUF":
+                case "ICMSSN":
+                    return "90";
+
+                default:
+                    return null;
+            }
         }
     }
 }
