@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -11,9 +12,27 @@ namespace Regresser
 {
     public partial class TimeoutForm : Form
     {
+        private int editingRobotIndex = -1;
+
         public TimeoutForm()
         {
             InitializeComponent();
+        }
+
+        public TimeoutForm(Robot robot)
+        {
+            InitializeComponent();
+
+            SetRobotValues(robot);
+
+            editingRobotIndex = MainForm.robots.IndexOf(robot);
+        }
+
+        private void SetRobotValues(Robot robot)
+        {
+            var userBoltActions = robot.actions.First() as UserBoltActions;
+
+            textBox_Valor_Timeout.Text = (userBoltActions.timeout / 1000).ToString();
         }
 
         private void button_Cancelar_Click(object sender, EventArgs e)
@@ -39,8 +58,11 @@ namespace Regresser
                 }
             };
 
-            MainForm.robots.Add(userbolt);
-            this.Close();
+            if (editingRobotIndex == -1)
+                MainForm.robots.Add(userbolt);
+            else
+                MainForm.robots[editingRobotIndex] = userbolt;
+            Close();
         }
     }
 }

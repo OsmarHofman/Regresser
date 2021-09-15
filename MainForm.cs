@@ -65,6 +65,10 @@ namespace Regresser
                     form = new ShipmentForm(robot);
                     break;
 
+                case "userbolt":
+                    form = new TimeoutForm(robot);
+                    break;
+
                 default:
                     MessageBox.Show("Tela não encontrada para editar requisição selecionada!");
                     return;
