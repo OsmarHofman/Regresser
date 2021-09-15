@@ -12,15 +12,35 @@ namespace Regresser
 {
     public partial class NFeForm : Form
     {
-        private List<Nfe> nfes;
+        private List<Nfe> nfes = new List<Nfe>();
 
         private bool isCreating;
+
+        private int editingRobotIndex = -1;
 
         public NFeForm()
         {
             InitializeComponent();
+        }
 
-            nfes = new List<Nfe>();
+        public NFeForm(Robot robot)
+        {
+            InitializeComponent();
+
+            SetRobotValues(robot);
+
+            editingRobotIndex = MainForm.robots.IndexOf(robot);
+        }
+
+        private void SetRobotValues(Robot robot)
+        {
+            var gigibaActions = robot.actions.First() as GigibaActions;
+
+            textBox_Url_WS.Text = gigibaActions.UrlWs;
+
+            nfes = gigibaActions.Nfes;
+            foreach (var nfe in nfes)
+                listBox.Items.Add($"Nota de Número: {nfe.Number}");
         }
 
         private void ClearFields()
@@ -65,11 +85,14 @@ namespace Regresser
 
                 var gigiba = new Robot("gigiba", gigibaActions);
 
-                MainForm.robots.Add(gigiba);
+                if (editingRobotIndex == -1)
+                    MainForm.robots.Add(gigiba);
+                else
+                    MainForm.robots[editingRobotIndex] = gigiba;
 
                 Close();
             }
-            
+
         }
 
         private void listBox_SelectedIndexChanged(object sender, EventArgs e)

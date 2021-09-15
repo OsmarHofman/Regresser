@@ -69,6 +69,10 @@ namespace Regresser
                     form = new TimeoutForm(robot);
                     break;
 
+                case "gigiba":
+                    form = new NFeForm(robot);
+                    break;
+
                 default:
                     MessageBox.Show("Tela não encontrada para editar requisição selecionada!");
                     return;
