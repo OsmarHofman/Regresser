@@ -172,7 +172,8 @@ namespace Regresser
                 if (result == DialogResult.No) return;
             }
 
-            openFileDialog.InitialDirectory = @"C:\git.nddigital";
+            //TODO: Deixar para somente C:\
+            openFileDialog.InitialDirectory = @"C:\git.nddigital\JSONs";
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
                 var fileStream = openFileDialog.OpenFile();
@@ -194,7 +195,6 @@ namespace Regresser
                     RefreshRobotLabels();
 
                     button_Send.Enabled = true;
-
                 }
                 catch (IOException ioe)
                 {
@@ -211,6 +211,14 @@ namespace Regresser
                 catch (Exception exp)
                 {
                     MessageBox.Show($"Erro: {exp.Message}");
+                }
+                finally
+                {
+                    reader.Close();
+
+                    fileStream.Close();
+
+                    openFileDialog.Reset();
                 }
 
             }
@@ -263,6 +271,8 @@ namespace Regresser
                     }
 
                 }
+
+                saveFileDialog_JSON.Reset();
             }
             else
                 MessageBox.Show("Nenhuma requisição para ser salva!");

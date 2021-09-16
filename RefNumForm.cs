@@ -45,7 +45,7 @@ namespace Regresser
             {
                 textBox_Refnum_Key.Text = editRefNum.RefnumKey;
                 textBox_Refnum_Value.Text = editRefNum.RefnumValue;
-                Refnum.RemoveFromRefnumList(refNums,editRefNum.RefnumKey);
+                Refnum.RemoveFromRefnumList(refNums, editRefNum.RefnumKey);
 
                 this.isEditing = true;
             }
@@ -63,7 +63,10 @@ namespace Regresser
             {
                 try
                 {
-                    this.refNums.Add(new Refnum(textBox_Refnum_Key.Text, textBox_Refnum_Value.Text));
+                    if (refNums == null)
+                        refNums = new List<Refnum>();
+
+                    refNums.Add(new Refnum(textBox_Refnum_Key.Text, textBox_Refnum_Value.Text));
 
                     if (string.IsNullOrEmpty(releaseXid))
                         ShipmentForm.shipmentRefnums = this.refNums;

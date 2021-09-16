@@ -34,6 +34,7 @@ namespace Regresser
             this.embarqueToolStripMenuItem_Shipment = new System.Windows.Forms.ToolStripMenuItem();
             this.timeoutToolStripMenuItem_Timeout = new System.Windows.Forms.ToolStripMenuItem();
             this.nFeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cTeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.divider = new System.Windows.Forms.Label();
             this.button_Remove = new System.Windows.Forms.Button();
             this.button_Move_Up = new System.Windows.Forms.Button();
@@ -48,7 +49,6 @@ namespace Regresser
             this.button_Save_JSON = new System.Windows.Forms.Button();
             this.saveFileDialog_JSON = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.cTeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -61,28 +61,35 @@ namespace Regresser
             this.nFeToolStripMenuItem,
             this.cTeToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip1";
-            this.contextMenuStrip.Size = new System.Drawing.Size(181, 114);
+            this.contextMenuStrip.Size = new System.Drawing.Size(129, 92);
             // 
             // embarqueToolStripMenuItem_Shipment
             // 
             this.embarqueToolStripMenuItem_Shipment.Name = "embarqueToolStripMenuItem_Shipment";
-            this.embarqueToolStripMenuItem_Shipment.Size = new System.Drawing.Size(180, 22);
+            this.embarqueToolStripMenuItem_Shipment.Size = new System.Drawing.Size(128, 22);
             this.embarqueToolStripMenuItem_Shipment.Text = "Embarque";
             this.embarqueToolStripMenuItem_Shipment.Click += new System.EventHandler(this.embarqueToolStripMenuItem_Shipment_Click);
             // 
             // timeoutToolStripMenuItem_Timeout
             // 
             this.timeoutToolStripMenuItem_Timeout.Name = "timeoutToolStripMenuItem_Timeout";
-            this.timeoutToolStripMenuItem_Timeout.Size = new System.Drawing.Size(180, 22);
+            this.timeoutToolStripMenuItem_Timeout.Size = new System.Drawing.Size(128, 22);
             this.timeoutToolStripMenuItem_Timeout.Text = "Timeout";
             this.timeoutToolStripMenuItem_Timeout.Click += new System.EventHandler(this.timeoutToolStripMenuItem_Timeout_Click);
             // 
             // nFeToolStripMenuItem
             // 
             this.nFeToolStripMenuItem.Name = "nFeToolStripMenuItem";
-            this.nFeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nFeToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.nFeToolStripMenuItem.Text = "NF-e";
             this.nFeToolStripMenuItem.Click += new System.EventHandler(this.nFeToolStripMenuItem_Click);
+            // 
+            // cTeToolStripMenuItem
+            // 
+            this.cTeToolStripMenuItem.Name = "cTeToolStripMenuItem";
+            this.cTeToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.cTeToolStripMenuItem.Text = "CT-e";
+            this.cTeToolStripMenuItem.Click += new System.EventHandler(this.cTeToolStripMenuItem_Click);
             // 
             // divider
             // 
@@ -247,17 +254,6 @@ namespace Regresser
             this.saveFileDialog_JSON.DefaultExt = "json";
             this.saveFileDialog_JSON.FileName = "requisicoes";
             this.saveFileDialog_JSON.Filter = "Arquivos JSON (*.json)|*.json|Todos os arquivos(*.*)|*.*";
-            // 
-            // openFileDialog
-            // 
-            this.openFileDialog.FileName = "openFileDialog1";
-            // 
-            // cTeToolStripMenuItem
-            // 
-            this.cTeToolStripMenuItem.Name = "cTeToolStripMenuItem";
-            this.cTeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.cTeToolStripMenuItem.Text = "CT-e";
-            this.cTeToolStripMenuItem.Click += new System.EventHandler(this.cTeToolStripMenuItem_Click);
             // 
             // MainForm
             // 
