@@ -10,7 +10,7 @@ namespace Regresser.Domain.Shipper
     {
         public string IcmsType { get; set; }
 
-        public string CST { get { return GetCSTByICMSType(); } set { CST = value; } }
+        public string CST { get; set; }
 
         public decimal? vBC { get; set; }
 
@@ -34,14 +34,17 @@ namespace Regresser.Domain.Shipper
 
         public decimal? indSN { get; set; }
 
+        public Icms() { }
+
         public Icms(string IcmsTypeValue, string baseCalculation, string aliquot, string taxValue)
         {
             var invalidICMS = !IsICMSTypeCorrect(IcmsTypeValue);
 
-            if(invalidICMS)
+            if (invalidICMS)
                 throw new NotImplementedException($"ICMS: {IcmsTypeValue} não é válido!");
 
             IcmsType = IcmsTypeValue;
+            CST = GetCSTByICMSType();
             vBC = decimal.Parse(baseCalculation);
             pICMS = decimal.Parse(aliquot);
             vICMS = decimal.Parse(taxValue);
