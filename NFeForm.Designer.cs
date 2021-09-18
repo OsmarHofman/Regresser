@@ -64,6 +64,7 @@ namespace Regresser
             this.button_Cancelar.Text = "Cancelar";
             this.button_Cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Cancelar.UseVisualStyleBackColor = true;
+            this.button_Cancelar.Click += new System.EventHandler(this.button_Cancelar_Click);
             // 
             // button_Save
             // 

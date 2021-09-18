@@ -71,7 +71,11 @@ namespace Regresser
 
             textBox_Source_Location_Xid.Text = shipment.XidSourceLocation;
 
+            textBox_Source_CNPJ.Text = shipment.SourceLocationCNPJ;
+
             textBox_Destination_Location_Xid.Text = shipment.XidDestinationLocation;
+
+            textBox_Destination_CNPJ.Text = shipment.DestinationLocationCNPJ;
 
             textBox_Taker_Xid.Text = shipment.XidTakerLocation;
 
