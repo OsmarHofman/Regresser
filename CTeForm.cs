@@ -192,7 +192,7 @@ namespace Regresser
                 textBox_Normal_Nfe_Numbers.Text = nfeNumbers;
 
                 var icms = cte.Icms;
-                comboBox_Normal_CST_Type.Text = icms.IcmsType;
+                comboBox_Normal_CST_Type.Text = icms.Type;
                 textBox_Normal_vBC.Text = icms.vBC.ToString();
                 textBox_Normal_pICMS.Text = icms.pICMS.ToString();
                 textBox_Normal_vICMS.Text = icms.vICMS.ToString();
@@ -346,7 +346,7 @@ namespace Regresser
                 textBox_Compl_Nfe_Numbers.Text = nfeNumbers;
 
                 var icms = cteComplementary.Icms;
-                comboBox_Compl_CST_Type.Text = icms.IcmsType;
+                comboBox_Compl_CST_Type.Text = icms.Type;
                 textBox_Compl_vBC.Text = icms.vBC.ToString();
                 textBox_Compl_pICMS.Text = icms.pICMS.ToString();
                 textBox_Compl_vICMS.Text = icms.vICMS.ToString();

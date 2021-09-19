@@ -38,7 +38,7 @@ namespace Regresser.Domain.Shipper
                 $"Token: {Token}; EnterpriseId: {EnterpriseId}. ";
         }
 
-        public TreeNode ToStringAsTreeNodes()
+        public virtual TreeNode ToStringAsTreeNodes()
         {
             var treeNodes = new List<TreeNode>
             {

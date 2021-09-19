@@ -95,11 +95,6 @@ namespace Regresser
             contextMenuStrip.Show(Cursor.Position.X, Cursor.Position.Y);
         }
 
-        private void listBox_Actions_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void button_Move_Up_Click(object sender, EventArgs e)
         {
             if (treeView_Actions.SelectedNode != null)

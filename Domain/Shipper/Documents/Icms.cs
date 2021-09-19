@@ -8,7 +8,7 @@ namespace Regresser.Domain.Shipper
 {
     public class Icms
     {
-        public string IcmsType { get; set; }
+        public string Type { get; set; }
 
         public string CST { get; set; }
 
@@ -43,7 +43,7 @@ namespace Regresser.Domain.Shipper
             if (invalidICMS)
                 throw new NotImplementedException($"ICMS: {IcmsTypeValue} não é válido!");
 
-            IcmsType = IcmsTypeValue;
+            Type = IcmsTypeValue;
             CST = GetCSTByICMSType();
             vBC = decimal.Parse(baseCalculation);
             pICMS = decimal.Parse(aliquot);
@@ -54,7 +54,7 @@ namespace Regresser.Domain.Shipper
         {
             var treeNodes = new List<TreeNode>
             {
-                new TreeNode($"Tipo do ICMS: {IcmsType}"),
+                new TreeNode($"Tipo do ICMS: {Type}"),
                 new TreeNode($"CST: {CST}"),
             };
 
@@ -102,7 +102,7 @@ namespace Regresser.Domain.Shipper
 
         private string GetCSTByICMSType()
         {
-            switch (IcmsType)
+            switch (Type)
             {
                 case "ICMS00":
                     return "00";

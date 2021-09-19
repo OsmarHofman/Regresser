@@ -28,6 +28,9 @@ namespace Regresser.Domain.RobotsActions
 
             foreach (var cte in Ctes) treeNodes.Add(cte.ToStringAsTreeNodes());
 
+            foreach (var cteCompl in ComplementaryCtes) treeNodes.Add(cteCompl.ToStringAsTreeNodes());
+
+
             return new TreeNode("Actions", treeNodes.ToArray());
         }
     }
