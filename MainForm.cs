@@ -73,6 +73,10 @@ namespace Regresser
                     form = new NFeForm(robot);
                     break;
 
+                case "bino":
+                    form = new CTeForm(robot);
+                    break;
+
                 default:
                     MessageBox.Show("Tela não encontrada para editar requisição selecionada!");
                     return;

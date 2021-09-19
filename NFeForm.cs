@@ -28,8 +28,6 @@ namespace Regresser
             InitializeComponent();
 
             SetRobotValues(robot);
-
-            editingRobotIndex = MainForm.robots.IndexOf(robot);
         }
 
         private void SetRobotValues(Robot robot)
@@ -41,6 +39,8 @@ namespace Regresser
             nfes = gigibaActions.Nfes;
             foreach (var nfe in nfes)
                 listBox.Items.Add($"Nota de Número: {nfe.Number}");
+
+            editingRobotIndex = MainForm.robots.IndexOf(robot);
         }
 
         private void ClearFields()

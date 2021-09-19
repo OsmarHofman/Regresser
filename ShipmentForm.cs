@@ -43,8 +43,6 @@ namespace Regresser
             InitializeComponent();
 
             SetRobotValues(robot);
-
-            editingRobotIndex = MainForm.robots.IndexOf(robot);
         }
 
         #endregion
@@ -129,6 +127,8 @@ namespace Regresser
             }
 
             InsertReleases();
+
+            editingRobotIndex = MainForm.robots.IndexOf(robot);
         }
 
         private void InsertShipmentRefNums()

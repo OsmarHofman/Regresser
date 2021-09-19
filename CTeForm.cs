@@ -22,9 +22,37 @@ namespace Regresser
 
         private bool isCreatingCTeCompl;
 
+        private int editingRobotIndex = -1;
+
         public CTeForm()
         {
             InitializeComponent();
+        }
+
+        public CTeForm(Robot robot)
+        {
+            InitializeComponent();
+
+            SetRobotValues(robot);
+        }
+
+        private void SetRobotValues(Robot robot)
+        {
+            var binoActions = robot.actions.First() as BinoActions;
+
+            textBox_Url_WS.Text = binoActions.UrlWs;
+
+            ctes = binoActions.Ctes;
+
+            foreach (var cte in ctes)
+                listBox_CTe_Normal.Items.Add($"CT-e de Número: {cte.Number}");
+
+            complCtes = binoActions.ComplementaryCtes;
+
+            foreach (var complCte in complCtes)
+                listBox_CTe_Compl.Items.Add($"CT-e Complementar de Número: {complCte.Number}");
+
+            editingRobotIndex = MainForm.robots.IndexOf(robot);
         }
 
         private void button_Save_Click(object sender, EventArgs e)
@@ -44,7 +72,10 @@ namespace Regresser
 
                 var bino = new Robot("bino", binoActions);
 
-                MainForm.robots.Add(bino);
+                if (editingRobotIndex == -1)
+                    MainForm.robots.Add(bino);
+                else
+                    MainForm.robots[editingRobotIndex] = bino;
 
                 Close();
             }
@@ -215,8 +246,8 @@ namespace Regresser
             textBox_Compl_Recipient.Enabled = !textBox_Compl_Recipient.Enabled;
             checkBox_Compl_Taker.Enabled = !checkBox_Compl_Taker.Enabled;
             textBox_CTe_Compl_Number.Enabled = !textBox_CTe_Compl_Number.Enabled;
-            textBox_Compl_Nfe_Numbers.Enabled = !textBox_Compl_Nfe_Numbers.Enabled;
             textBox_CTe_Compl_Value.Enabled = !textBox_CTe_Compl_Value.Enabled;
+            textBox_Compl_Link_Normal.Enabled = !textBox_Compl_Link_Normal.Enabled;
             comboBox_Compl_CST_Type.Enabled = !comboBox_Compl_CST_Type.Enabled;
             textBox_Compl_vBC.Enabled = !textBox_Compl_vBC.Enabled;
             textBox_Compl_pICMS.Enabled = !textBox_Compl_pICMS.Enabled;
@@ -238,7 +269,7 @@ namespace Regresser
             textBox_Compl_Sender.Clear();
             textBox_Compl_Recipient.Clear();
             textBox_CTe_Compl_Number.Clear();
-            textBox_Compl_Nfe_Numbers.Clear();
+            textBox_Compl_Link_Normal.Clear();
             textBox_CTe_Compl_Value.Clear();
             textBox_Compl_vBC.Clear();
             textBox_Compl_pICMS.Clear();
@@ -257,9 +288,6 @@ namespace Regresser
 
         private void button_Compl_Save_Item_Click(object sender, EventArgs e)
         {
-            var nfeNumbers = new List<string>();
-            nfeNumbers.AddRange(textBox_Compl_Nfe_Numbers.Text.Split(";"));
-
             Icms icms;
 
             try
@@ -280,7 +308,6 @@ namespace Regresser
                 Sender = textBox_Compl_Sender.Text,
                 Recipient = textBox_Compl_Recipient.Text,
                 RecipientIsTaker = checkBox_Compl_Taker.Checked,
-                NfeNumbers = nfeNumbers,
                 Value = decimal.Parse(textBox_CTe_Compl_Value.Text),
                 Number = textBox_CTe_Compl_Number.Text,
                 Icms = icms,
@@ -341,9 +368,6 @@ namespace Regresser
                 textBox_Compl_Sender.Text = cteComplementary.Sender;
                 textBox_Compl_Recipient.Text = cteComplementary.Recipient;
                 checkBox_Compl_Taker.Checked = cteComplementary.RecipientIsTaker;
-
-                var nfeNumbers = String.Join(";", cteComplementary.NfeNumbers);
-                textBox_Compl_Nfe_Numbers.Text = nfeNumbers;
 
                 var icms = cteComplementary.Icms;
                 comboBox_Compl_CST_Type.Text = icms.Type;

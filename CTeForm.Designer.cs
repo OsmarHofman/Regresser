@@ -82,8 +82,6 @@ namespace Regresser
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.comboBox_Compl_CST_Type = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.textBox_Compl_Nfe_Numbers = new System.Windows.Forms.TextBox();
             this.textBox_Compl_Sender = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.button_Compl_Add_Item = new System.Windows.Forms.Button();
@@ -515,8 +513,6 @@ namespace Regresser
             this.tabPage_CTe_Complementary.Controls.Add(this.checkBox_Compl_Taker);
             this.tabPage_CTe_Complementary.Controls.Add(this.textBox_CTe_Compl_Value);
             this.tabPage_CTe_Complementary.Controls.Add(this.groupBox2);
-            this.tabPage_CTe_Complementary.Controls.Add(this.label15);
-            this.tabPage_CTe_Complementary.Controls.Add(this.textBox_Compl_Nfe_Numbers);
             this.tabPage_CTe_Complementary.Controls.Add(this.textBox_Compl_Sender);
             this.tabPage_CTe_Complementary.Controls.Add(this.label20);
             this.tabPage_CTe_Complementary.Controls.Add(this.button_Compl_Add_Item);
@@ -546,7 +542,7 @@ namespace Regresser
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(332, 123);
+            this.label28.Location = new System.Drawing.Point(332, 126);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(129, 15);
             this.label28.TabIndex = 95;
@@ -555,7 +551,7 @@ namespace Regresser
             // textBox_Compl_Link_Normal
             // 
             this.textBox_Compl_Link_Normal.Enabled = false;
-            this.textBox_Compl_Link_Normal.Location = new System.Drawing.Point(467, 120);
+            this.textBox_Compl_Link_Normal.Location = new System.Drawing.Point(467, 123);
             this.textBox_Compl_Link_Normal.Name = "textBox_Compl_Link_Normal";
             this.textBox_Compl_Link_Normal.Size = new System.Drawing.Size(120, 23);
             this.textBox_Compl_Link_Normal.TabIndex = 94;
@@ -575,7 +571,7 @@ namespace Regresser
             this.checkBox_Compl_Taker.Checked = true;
             this.checkBox_Compl_Taker.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_Compl_Taker.Enabled = false;
-            this.checkBox_Compl_Taker.Location = new System.Drawing.Point(429, 363);
+            this.checkBox_Compl_Taker.Location = new System.Drawing.Point(385, 314);
             this.checkBox_Compl_Taker.Name = "checkBox_Compl_Taker";
             this.checkBox_Compl_Taker.Size = new System.Drawing.Size(158, 19);
             this.checkBox_Compl_Taker.TabIndex = 90;
@@ -684,28 +680,10 @@ namespace Regresser
             this.comboBox_Compl_CST_Type.Size = new System.Drawing.Size(121, 23);
             this.comboBox_Compl_CST_Type.TabIndex = 0;
             // 
-            // label15
-            // 
-            this.label15.Location = new System.Drawing.Point(365, 299);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(96, 46);
-            this.label15.TabIndex = 89;
-            this.label15.Text = "Número(s) da(s) Nota(s): ";
-            // 
-            // textBox_Compl_Nfe_Numbers
-            // 
-            this.textBox_Compl_Nfe_Numbers.Enabled = false;
-            this.textBox_Compl_Nfe_Numbers.Location = new System.Drawing.Point(467, 299);
-            this.textBox_Compl_Nfe_Numbers.Multiline = true;
-            this.textBox_Compl_Nfe_Numbers.Name = "textBox_Compl_Nfe_Numbers";
-            this.textBox_Compl_Nfe_Numbers.PlaceholderText = "13;14;15;...";
-            this.textBox_Compl_Nfe_Numbers.Size = new System.Drawing.Size(120, 46);
-            this.textBox_Compl_Nfe_Numbers.TabIndex = 88;
-            // 
             // textBox_Compl_Sender
             // 
             this.textBox_Compl_Sender.Enabled = false;
-            this.textBox_Compl_Sender.Location = new System.Drawing.Point(467, 205);
+            this.textBox_Compl_Sender.Location = new System.Drawing.Point(467, 208);
             this.textBox_Compl_Sender.Name = "textBox_Compl_Sender";
             this.textBox_Compl_Sender.Size = new System.Drawing.Size(120, 23);
             this.textBox_Compl_Sender.TabIndex = 86;
@@ -713,7 +691,7 @@ namespace Regresser
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(350, 208);
+            this.label20.Location = new System.Drawing.Point(350, 211);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(111, 15);
             this.label20.TabIndex = 87;
@@ -809,7 +787,7 @@ namespace Regresser
             // textBox_Compl_Emitter
             // 
             this.textBox_Compl_Emitter.Enabled = false;
-            this.textBox_Compl_Emitter.Location = new System.Drawing.Point(467, 162);
+            this.textBox_Compl_Emitter.Location = new System.Drawing.Point(467, 165);
             this.textBox_Compl_Emitter.Name = "textBox_Compl_Emitter";
             this.textBox_Compl_Emitter.Size = new System.Drawing.Size(120, 23);
             this.textBox_Compl_Emitter.TabIndex = 74;
@@ -825,7 +803,7 @@ namespace Regresser
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(360, 167);
+            this.label25.Location = new System.Drawing.Point(360, 170);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(101, 15);
             this.label25.TabIndex = 75;
@@ -834,7 +812,7 @@ namespace Regresser
             // textBox_Compl_Recipient
             // 
             this.textBox_Compl_Recipient.Enabled = false;
-            this.textBox_Compl_Recipient.Location = new System.Drawing.Point(467, 256);
+            this.textBox_Compl_Recipient.Location = new System.Drawing.Point(467, 259);
             this.textBox_Compl_Recipient.Name = "textBox_Compl_Recipient";
             this.textBox_Compl_Recipient.Size = new System.Drawing.Size(120, 23);
             this.textBox_Compl_Recipient.TabIndex = 76;
@@ -842,7 +820,7 @@ namespace Regresser
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(344, 259);
+            this.label26.Location = new System.Drawing.Point(344, 262);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(117, 15);
             this.label26.TabIndex = 77;
@@ -956,8 +934,6 @@ namespace Regresser
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox comboBox_Compl_CST_Type;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox textBox_Compl_Nfe_Numbers;
         private System.Windows.Forms.TextBox textBox_Compl_Sender;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Button button_Compl_Add_Item;

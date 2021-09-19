@@ -24,8 +24,6 @@ namespace Regresser
             InitializeComponent();
 
             SetRobotValues(robot);
-
-            editingRobotIndex = MainForm.robots.IndexOf(robot);
         }
 
         private void SetRobotValues(Robot robot)
@@ -33,6 +31,8 @@ namespace Regresser
             var userBoltActions = robot.actions.First() as UserBoltActions;
 
             textBox_Valor_Timeout.Text = (userBoltActions.timeout / 1000).ToString();
+
+            editingRobotIndex = MainForm.robots.IndexOf(robot);
         }
 
         private void button_Cancelar_Click(object sender, EventArgs e)
