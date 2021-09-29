@@ -345,5 +345,11 @@ namespace Regresser
             CTeForm cteForm = new CTeForm();
             cteForm.ShowDialog();
         }
+
+        private void validaçãoNoBancoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DBAForm dBAForm = new DBAForm();
+            dBAForm.ShowDialog();
+        }
     }
 }
