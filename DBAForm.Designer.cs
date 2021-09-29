@@ -55,15 +55,15 @@ namespace Regresser
             // 
             // textBox_Server_IP
             // 
-            this.textBox_Server_IP.Location = new System.Drawing.Point(124, 22);
+            this.textBox_Server_IP.Location = new System.Drawing.Point(173, 20);
             this.textBox_Server_IP.Name = "textBox_Server_IP";
-            this.textBox_Server_IP.Size = new System.Drawing.Size(140, 23);
+            this.textBox_Server_IP.Size = new System.Drawing.Size(220, 23);
             this.textBox_Server_IP.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(38, 25);
+            this.label1.Location = new System.Drawing.Point(87, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 15);
             this.label1.TabIndex = 3;
@@ -71,15 +71,15 @@ namespace Regresser
             // 
             // textBox_DB_User
             // 
-            this.textBox_DB_User.Location = new System.Drawing.Point(124, 64);
+            this.textBox_DB_User.Location = new System.Drawing.Point(173, 62);
             this.textBox_DB_User.Name = "textBox_DB_User";
-            this.textBox_DB_User.Size = new System.Drawing.Size(140, 23);
+            this.textBox_DB_User.Size = new System.Drawing.Size(220, 23);
             this.textBox_DB_User.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(18, 67);
+            this.label2.Location = new System.Drawing.Point(67, 65);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 15);
             this.label2.TabIndex = 5;
@@ -88,7 +88,7 @@ namespace Regresser
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 109);
+            this.label3.Location = new System.Drawing.Point(67, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(92, 15);
             this.label3.TabIndex = 6;
@@ -96,24 +96,24 @@ namespace Regresser
             // 
             // maskedTextBox_DB_Password
             // 
-            this.maskedTextBox_DB_Password.Location = new System.Drawing.Point(124, 106);
+            this.maskedTextBox_DB_Password.Location = new System.Drawing.Point(173, 104);
             this.maskedTextBox_DB_Password.Name = "maskedTextBox_DB_Password";
             this.maskedTextBox_DB_Password.PasswordChar = '*';
-            this.maskedTextBox_DB_Password.Size = new System.Drawing.Size(100, 23);
+            this.maskedTextBox_DB_Password.Size = new System.Drawing.Size(220, 23);
             this.maskedTextBox_DB_Password.TabIndex = 7;
             // 
             // textBox_MonitoringContext
             // 
-            this.textBox_MonitoringContext.Location = new System.Drawing.Point(439, 69);
+            this.textBox_MonitoringContext.Location = new System.Drawing.Point(567, 65);
             this.textBox_MonitoringContext.Name = "textBox_MonitoringContext";
-            this.textBox_MonitoringContext.Size = new System.Drawing.Size(140, 23);
+            this.textBox_MonitoringContext.Size = new System.Drawing.Size(235, 23);
             this.textBox_MonitoringContext.TabIndex = 10;
             this.textBox_MonitoringContext.Text = "ShipperMonitoring";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(314, 72);
+            this.label4.Location = new System.Drawing.Point(442, 68);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(119, 15);
             this.label4.TabIndex = 11;
@@ -121,16 +121,16 @@ namespace Regresser
             // 
             // textBox_ShipperContext
             // 
-            this.textBox_ShipperContext.Location = new System.Drawing.Point(439, 27);
+            this.textBox_ShipperContext.Location = new System.Drawing.Point(567, 23);
             this.textBox_ShipperContext.Name = "textBox_ShipperContext";
-            this.textBox_ShipperContext.Size = new System.Drawing.Size(140, 23);
+            this.textBox_ShipperContext.Size = new System.Drawing.Size(235, 23);
             this.textBox_ShipperContext.TabIndex = 8;
             this.textBox_ShipperContext.Text = "Shipper";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(334, 30);
+            this.label5.Location = new System.Drawing.Point(462, 26);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 15);
             this.label5.TabIndex = 9;
@@ -138,16 +138,16 @@ namespace Regresser
             // 
             // textBox_PaymentContext
             // 
-            this.textBox_PaymentContext.Location = new System.Drawing.Point(439, 111);
+            this.textBox_PaymentContext.Location = new System.Drawing.Point(567, 107);
             this.textBox_PaymentContext.Name = "textBox_PaymentContext";
-            this.textBox_PaymentContext.Size = new System.Drawing.Size(140, 23);
+            this.textBox_PaymentContext.Size = new System.Drawing.Size(235, 23);
             this.textBox_PaymentContext.TabIndex = 12;
             this.textBox_PaymentContext.Text = "ShipperPayment";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(327, 114);
+            this.label6.Location = new System.Drawing.Point(455, 110);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(106, 15);
             this.label6.TabIndex = 13;
@@ -158,13 +158,14 @@ namespace Regresser
             this.textBox_Query.Location = new System.Drawing.Point(18, 176);
             this.textBox_Query.Multiline = true;
             this.textBox_Query.Name = "textBox_Query";
-            this.textBox_Query.Size = new System.Drawing.Size(561, 264);
+            this.textBox_Query.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.textBox_Query.Size = new System.Drawing.Size(526, 264);
             this.textBox_Query.TabIndex = 14;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(38, 158);
+            this.label7.Location = new System.Drawing.Point(31, 158);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(57, 15);
             this.label7.TabIndex = 15;
@@ -173,42 +174,44 @@ namespace Regresser
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(652, 158);
+            this.label8.Location = new System.Drawing.Point(595, 158);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 15);
+            this.label8.Size = new System.Drawing.Size(94, 15);
             this.label8.TabIndex = 16;
-            this.label8.Text = "Valores à validar";
+            this.label8.Text = "Valores à validar:";
             // 
             // listBox
             // 
             this.listBox.FormattingEnabled = true;
             this.listBox.ItemHeight = 15;
-            this.listBox.Location = new System.Drawing.Point(634, 176);
+            this.listBox.Location = new System.Drawing.Point(577, 176);
             this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(343, 199);
+            this.listBox.Size = new System.Drawing.Size(343, 214);
             this.listBox.TabIndex = 17;
             // 
             // button_Cancelar
             // 
             this.button_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Cancelar.Location = new System.Drawing.Point(622, 505);
+            this.button_Cancelar.Location = new System.Drawing.Point(598, 486);
             this.button_Cancelar.Name = "button_Cancelar";
             this.button_Cancelar.Size = new System.Drawing.Size(105, 38);
             this.button_Cancelar.TabIndex = 19;
             this.button_Cancelar.Text = "Cancelar";
             this.button_Cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Cancelar.UseVisualStyleBackColor = true;
+            this.button_Cancelar.Click += new System.EventHandler(this.button_Cancelar_Click);
             // 
             // button_Save
             // 
             this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Save.Location = new System.Drawing.Point(439, 505);
+            this.button_Save.Location = new System.Drawing.Point(415, 486);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(105, 38);
             this.button_Save.TabIndex = 18;
             this.button_Save.Text = "Salvar";
             this.button_Save.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Save.UseVisualStyleBackColor = true;
+            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             // 
             // label16
             // 
@@ -224,41 +227,44 @@ namespace Regresser
             // button_Add
             // 
             this.button_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Add.Location = new System.Drawing.Point(643, 393);
+            this.button_Add.Location = new System.Drawing.Point(589, 406);
             this.button_Add.Name = "button_Add";
-            this.button_Add.Size = new System.Drawing.Size(105, 38);
+            this.button_Add.Size = new System.Drawing.Size(100, 34);
             this.button_Add.TabIndex = 21;
             this.button_Add.Text = "Adicionar";
             this.button_Add.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Add.UseVisualStyleBackColor = true;
+            this.button_Add.Click += new System.EventHandler(this.button_Add_Click);
             // 
             // button_Edit
             // 
             this.button_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Edit.Location = new System.Drawing.Point(754, 393);
+            this.button_Edit.Location = new System.Drawing.Point(700, 406);
             this.button_Edit.Name = "button_Edit";
-            this.button_Edit.Size = new System.Drawing.Size(105, 38);
+            this.button_Edit.Size = new System.Drawing.Size(100, 34);
             this.button_Edit.TabIndex = 22;
             this.button_Edit.Text = "Editar";
             this.button_Edit.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Edit.UseVisualStyleBackColor = true;
+            this.button_Edit.Click += new System.EventHandler(this.button_Edit_Click);
             // 
             // button_Remove
             // 
             this.button_Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Remove.Location = new System.Drawing.Point(865, 393);
+            this.button_Remove.Location = new System.Drawing.Point(811, 406);
             this.button_Remove.Name = "button_Remove";
-            this.button_Remove.Size = new System.Drawing.Size(105, 38);
+            this.button_Remove.Size = new System.Drawing.Size(100, 34);
             this.button_Remove.TabIndex = 23;
             this.button_Remove.Text = "Remover";
             this.button_Remove.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Remove.UseVisualStyleBackColor = true;
+            this.button_Remove.Click += new System.EventHandler(this.button_Remove_Click);
             // 
             // DBAForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1009, 553);
+            this.ClientSize = new System.Drawing.Size(940, 535);
             this.Controls.Add(this.button_Remove);
             this.Controls.Add(this.button_Edit);
             this.Controls.Add(this.button_Add);
@@ -281,11 +287,10 @@ namespace Regresser
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_Server_IP);
             this.Controls.Add(this.label1);
-            this.MaximumSize = new System.Drawing.Size(1025, 592);
-            this.MinimumSize = new System.Drawing.Size(1025, 592);
             this.Name = "DBAForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DBAForm";
+            this.Activated += new System.EventHandler(this.DBAForm_Activated);
             this.ResumeLayout(false);
             this.PerformLayout();
 
