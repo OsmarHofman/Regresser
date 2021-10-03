@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
@@ -21,6 +22,40 @@ namespace Regresser
             InitializeComponent();
             results = new List<DBAResult>();
         }
+
+        public DBAForm(Robot robot)
+        {
+            InitializeComponent();
+            results = new List<DBAResult>();
+
+            SetRobotValues(robot);
+        }
+
+        private void SetRobotValues(Robot robot)
+        {
+            var dbaActions = robot.actions.First() as DBAActions;
+
+            textBox_Server_IP.Text = dbaActions.Server;
+
+            textBox_DB_User.Text = dbaActions.ServerUser;
+
+            textBox_DB_Password.Text = dbaActions.ServerPassword;
+
+            textBox_ShipperContext.Text = dbaActions.ShipperContext;
+
+            textBox_MonitoringContext.Text = dbaActions.MonitoringContext;
+
+            textBox_PaymentContext.Text = dbaActions.PaymentContext;
+
+            textBox_Query.Text = dbaActions.QueryString;
+
+            results = dbaActions.Results;
+
+            InsertResults();
+
+            editingRobotIndex = MainForm.robots.IndexOf(robot);
+        }
+
 
         private void InsertResults()
         {
@@ -73,7 +108,7 @@ namespace Regresser
                 {
                     Server = textBox_Server_IP.Text,
                     ServerUser = textBox_DB_User.Text,
-                    ServerPassword = maskedTextBox_DB_Password.Text,
+                    ServerPassword = textBox_DB_Password.Text,
                     ShipperContext = textBox_ShipperContext.Text,
                     MonitoringContext = textBox_MonitoringContext.Text,
                     PaymentContext = textBox_PaymentContext.Text,

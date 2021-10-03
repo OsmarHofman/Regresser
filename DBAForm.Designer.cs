@@ -34,7 +34,6 @@ namespace Regresser
             this.textBox_DB_User = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.maskedTextBox_DB_Password = new System.Windows.Forms.MaskedTextBox();
             this.textBox_MonitoringContext = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.textBox_ShipperContext = new System.Windows.Forms.TextBox();
@@ -51,6 +50,7 @@ namespace Regresser
             this.button_Add = new System.Windows.Forms.Button();
             this.button_Edit = new System.Windows.Forms.Button();
             this.button_Remove = new System.Windows.Forms.Button();
+            this.textBox_DB_Password = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox_Server_IP
@@ -93,14 +93,6 @@ namespace Regresser
             this.label3.Size = new System.Drawing.Size(92, 15);
             this.label3.TabIndex = 6;
             this.label3.Text = "Senha do Banco";
-            // 
-            // maskedTextBox_DB_Password
-            // 
-            this.maskedTextBox_DB_Password.Location = new System.Drawing.Point(173, 104);
-            this.maskedTextBox_DB_Password.Name = "maskedTextBox_DB_Password";
-            this.maskedTextBox_DB_Password.PasswordChar = '*';
-            this.maskedTextBox_DB_Password.Size = new System.Drawing.Size(220, 23);
-            this.maskedTextBox_DB_Password.TabIndex = 7;
             // 
             // textBox_MonitoringContext
             // 
@@ -260,11 +252,19 @@ namespace Regresser
             this.button_Remove.UseVisualStyleBackColor = true;
             this.button_Remove.Click += new System.EventHandler(this.button_Remove_Click);
             // 
+            // textBox_DB_Password
+            // 
+            this.textBox_DB_Password.Location = new System.Drawing.Point(173, 104);
+            this.textBox_DB_Password.Name = "textBox_DB_Password";
+            this.textBox_DB_Password.Size = new System.Drawing.Size(220, 23);
+            this.textBox_DB_Password.TabIndex = 24;
+            // 
             // DBAForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(940, 535);
+            this.Controls.Add(this.textBox_DB_Password);
             this.Controls.Add(this.button_Remove);
             this.Controls.Add(this.button_Edit);
             this.Controls.Add(this.button_Add);
@@ -281,7 +281,6 @@ namespace Regresser
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox_ShipperContext);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.maskedTextBox_DB_Password);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBox_DB_User);
             this.Controls.Add(this.label2);
@@ -303,7 +302,6 @@ namespace Regresser
         private System.Windows.Forms.TextBox textBox_DB_User;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox_DB_Password;
         private System.Windows.Forms.TextBox textBox_MonitoringContext;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox_ShipperContext;
@@ -320,5 +318,6 @@ namespace Regresser
         private System.Windows.Forms.Button button_Add;
         private System.Windows.Forms.Button button_Edit;
         private System.Windows.Forms.Button button_Remove;
+        private System.Windows.Forms.TextBox textBox_DB_Password;
     }
 }
