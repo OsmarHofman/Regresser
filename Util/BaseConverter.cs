@@ -33,6 +33,9 @@ namespace Regresser.Util
             if (HasKeys(jo, "Type", "Timeout"))
                 return JsonConvert.DeserializeObject<UserBoltActions>(jo.ToString(), SpecifiedSubclassConversion);
 
+            if (HasKeys(jo, "Server"))
+                return JsonConvert.DeserializeObject<DBAActions>(jo.ToString(), SpecifiedSubclassConversion);
+
             StringBuilder stringBuilder = new StringBuilder();
             foreach (var item in jo.Children())
             {

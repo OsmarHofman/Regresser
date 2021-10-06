@@ -77,6 +77,10 @@ namespace Regresser
                     form = new CTeForm(robot);
                     break;
 
+                case "dba":
+                    form = new DBAForm(robot);
+                    break;
+
                 default:
                     MessageBox.Show("Tela não encontrada para editar requisição selecionada!");
                     return;
@@ -344,6 +348,12 @@ namespace Regresser
         {
             CTeForm cteForm = new CTeForm();
             cteForm.ShowDialog();
+        }
+
+        private void validaçãoNoBancoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DBAForm dBAForm = new DBAForm();
+            dBAForm.ShowDialog();
         }
     }
 }

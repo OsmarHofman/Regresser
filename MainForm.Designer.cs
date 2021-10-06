@@ -49,6 +49,7 @@ namespace Regresser
             this.button_Save_JSON = new System.Windows.Forms.Button();
             this.saveFileDialog_JSON = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
+            this.validaçãoNoBancoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -59,35 +60,36 @@ namespace Regresser
             this.embarqueToolStripMenuItem_Shipment,
             this.timeoutToolStripMenuItem_Timeout,
             this.nFeToolStripMenuItem,
-            this.cTeToolStripMenuItem});
+            this.cTeToolStripMenuItem,
+            this.validaçãoNoBancoToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip1";
-            this.contextMenuStrip.Size = new System.Drawing.Size(129, 92);
+            this.contextMenuStrip.Size = new System.Drawing.Size(181, 136);
             // 
             // embarqueToolStripMenuItem_Shipment
             // 
             this.embarqueToolStripMenuItem_Shipment.Name = "embarqueToolStripMenuItem_Shipment";
-            this.embarqueToolStripMenuItem_Shipment.Size = new System.Drawing.Size(128, 22);
+            this.embarqueToolStripMenuItem_Shipment.Size = new System.Drawing.Size(177, 22);
             this.embarqueToolStripMenuItem_Shipment.Text = "Embarque";
             this.embarqueToolStripMenuItem_Shipment.Click += new System.EventHandler(this.embarqueToolStripMenuItem_Shipment_Click);
             // 
             // timeoutToolStripMenuItem_Timeout
             // 
             this.timeoutToolStripMenuItem_Timeout.Name = "timeoutToolStripMenuItem_Timeout";
-            this.timeoutToolStripMenuItem_Timeout.Size = new System.Drawing.Size(128, 22);
+            this.timeoutToolStripMenuItem_Timeout.Size = new System.Drawing.Size(177, 22);
             this.timeoutToolStripMenuItem_Timeout.Text = "Timeout";
             this.timeoutToolStripMenuItem_Timeout.Click += new System.EventHandler(this.timeoutToolStripMenuItem_Timeout_Click);
             // 
             // nFeToolStripMenuItem
             // 
             this.nFeToolStripMenuItem.Name = "nFeToolStripMenuItem";
-            this.nFeToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.nFeToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.nFeToolStripMenuItem.Text = "NF-e";
             this.nFeToolStripMenuItem.Click += new System.EventHandler(this.nFeToolStripMenuItem_Click);
             // 
             // cTeToolStripMenuItem
             // 
             this.cTeToolStripMenuItem.Name = "cTeToolStripMenuItem";
-            this.cTeToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
+            this.cTeToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.cTeToolStripMenuItem.Text = "CT-e";
             this.cTeToolStripMenuItem.Click += new System.EventHandler(this.cTeToolStripMenuItem_Click);
             // 
@@ -255,6 +257,13 @@ namespace Regresser
             this.saveFileDialog_JSON.FileName = "requisicoes";
             this.saveFileDialog_JSON.Filter = "Arquivos JSON (*.json)|*.json|Todos os arquivos(*.*)|*.*";
             // 
+            // validaçãoNoBancoToolStripMenuItem
+            // 
+            this.validaçãoNoBancoToolStripMenuItem.Name = "validaçãoNoBancoToolStripMenuItem";
+            this.validaçãoNoBancoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.validaçãoNoBancoToolStripMenuItem.Text = "Validação no Banco";
+            this.validaçãoNoBancoToolStripMenuItem.Click += new System.EventHandler(this.validaçãoNoBancoToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -298,6 +307,7 @@ namespace Regresser
         private System.Windows.Forms.Button button_Clone;
         private System.Windows.Forms.Button button_Edit;
         private System.Windows.Forms.ToolStripMenuItem cTeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem validaçãoNoBancoToolStripMenuItem;
     }
 }
 
