@@ -113,7 +113,8 @@ namespace Regresser
             this.button_Normal_Save_Item.Location = new System.Drawing.Point(331, 25);
             this.button_Normal_Save_Item.Name = "button_Normal_Save_Item";
             this.button_Normal_Save_Item.Size = new System.Drawing.Size(105, 38);
-            this.button_Normal_Save_Item.TabIndex = 61;
+            this.button_Normal_Save_Item.TabIndex = 14;
+            this.button_Normal_Save_Item.TabStop = false;
             this.button_Normal_Save_Item.Text = "Salvar Item";
             this.button_Normal_Save_Item.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Normal_Save_Item.UseVisualStyleBackColor = true;
@@ -192,12 +193,12 @@ namespace Regresser
             this.textBox_CTe_Normal_Number.Location = new System.Drawing.Point(115, 127);
             this.textBox_CTe_Normal_Number.Name = "textBox_CTe_Normal_Number";
             this.textBox_CTe_Normal_Number.Size = new System.Drawing.Size(120, 23);
-            this.textBox_CTe_Normal_Number.TabIndex = 54;
+            this.textBox_CTe_Normal_Number.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(345, 238);
+            this.label4.Location = new System.Drawing.Point(345, 236);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(117, 15);
             this.label4.TabIndex = 51;
@@ -206,10 +207,11 @@ namespace Regresser
             // textBox_Normal_Recipient
             // 
             this.textBox_Normal_Recipient.Enabled = false;
-            this.textBox_Normal_Recipient.Location = new System.Drawing.Point(468, 235);
+            this.textBox_Normal_Recipient.Location = new System.Drawing.Point(468, 233);
             this.textBox_Normal_Recipient.Name = "textBox_Normal_Recipient";
+            this.textBox_Normal_Recipient.PlaceholderText = "12764519000125";
             this.textBox_Normal_Recipient.Size = new System.Drawing.Size(120, 23);
-            this.textBox_Normal_Recipient.TabIndex = 50;
+            this.textBox_Normal_Recipient.TabIndex = 6;
             // 
             // label3
             // 
@@ -225,8 +227,9 @@ namespace Regresser
             this.textBox_Normal_Emitter.Enabled = false;
             this.textBox_Normal_Emitter.Location = new System.Drawing.Point(468, 135);
             this.textBox_Normal_Emitter.Name = "textBox_Normal_Emitter";
+            this.textBox_Normal_Emitter.PlaceholderText = "00720785000177";
             this.textBox_Normal_Emitter.Size = new System.Drawing.Size(120, 23);
-            this.textBox_Normal_Emitter.TabIndex = 48;
+            this.textBox_Normal_Emitter.TabIndex = 4;
             // 
             // label2
             // 
@@ -243,7 +246,7 @@ namespace Regresser
             this.textBox_Normal_Token.Location = new System.Drawing.Point(468, 86);
             this.textBox_Normal_Token.Name = "textBox_Normal_Token";
             this.textBox_Normal_Token.Size = new System.Drawing.Size(220, 23);
-            this.textBox_Normal_Token.TabIndex = 46;
+            this.textBox_Normal_Token.TabIndex = 3;
             // 
             // label1
             // 
@@ -260,12 +263,13 @@ namespace Regresser
             this.textBox_Normal_EnterpriseId.Location = new System.Drawing.Point(115, 85);
             this.textBox_Normal_EnterpriseId.Name = "textBox_Normal_EnterpriseId";
             this.textBox_Normal_EnterpriseId.Size = new System.Drawing.Size(220, 23);
-            this.textBox_Normal_EnterpriseId.TabIndex = 44;
+            this.textBox_Normal_EnterpriseId.TabIndex = 0;
             // 
             // textBox_Url_WS
             // 
             this.textBox_Url_WS.Location = new System.Drawing.Point(229, 23);
             this.textBox_Url_WS.Name = "textBox_Url_WS";
+            this.textBox_Url_WS.PlaceholderText = "http://191.239.245.232:9999/tmsExchangeMessage/TMSExchangeMessage.asmx";
             this.textBox_Url_WS.Size = new System.Drawing.Size(564, 23);
             this.textBox_Url_WS.TabIndex = 43;
             // 
@@ -364,7 +368,7 @@ namespace Regresser
             this.checkBox_Normal_Taker.Location = new System.Drawing.Point(430, 342);
             this.checkBox_Normal_Taker.Name = "checkBox_Normal_Taker";
             this.checkBox_Normal_Taker.Size = new System.Drawing.Size(158, 19);
-            this.checkBox_Normal_Taker.TabIndex = 66;
+            this.checkBox_Normal_Taker.TabIndex = 8;
             this.checkBox_Normal_Taker.Text = "Destinatário é o Tomador";
             this.checkBox_Normal_Taker.UseVisualStyleBackColor = true;
             // 
@@ -373,8 +377,9 @@ namespace Regresser
             this.textBox_CTe_Normal_Value.Enabled = false;
             this.textBox_CTe_Normal_Value.Location = new System.Drawing.Point(115, 171);
             this.textBox_CTe_Normal_Value.Name = "textBox_CTe_Normal_Value";
+            this.textBox_CTe_Normal_Value.PlaceholderText = "900,50";
             this.textBox_CTe_Normal_Value.Size = new System.Drawing.Size(120, 23);
-            this.textBox_CTe_Normal_Value.TabIndex = 68;
+            this.textBox_CTe_Normal_Value.TabIndex = 2;
             // 
             // groupBox1
             // 
@@ -398,8 +403,9 @@ namespace Regresser
             this.textBox_Normal_vICMS.Enabled = false;
             this.textBox_Normal_vICMS.Location = new System.Drawing.Point(112, 122);
             this.textBox_Normal_vICMS.Name = "textBox_Normal_vICMS";
+            this.textBox_Normal_vICMS.PlaceholderText = "90,05";
             this.textBox_Normal_vICMS.Size = new System.Drawing.Size(74, 23);
-            this.textBox_Normal_vICMS.TabIndex = 72;
+            this.textBox_Normal_vICMS.TabIndex = 12;
             // 
             // label19
             // 
@@ -415,8 +421,9 @@ namespace Regresser
             this.textBox_Normal_pICMS.Enabled = false;
             this.textBox_Normal_pICMS.Location = new System.Drawing.Point(112, 89);
             this.textBox_Normal_pICMS.Name = "textBox_Normal_pICMS";
+            this.textBox_Normal_pICMS.PlaceholderText = "10";
             this.textBox_Normal_pICMS.Size = new System.Drawing.Size(74, 23);
-            this.textBox_Normal_pICMS.TabIndex = 70;
+            this.textBox_Normal_pICMS.TabIndex = 11;
             // 
             // label18
             // 
@@ -432,8 +439,9 @@ namespace Regresser
             this.textBox_Normal_vBC.Enabled = false;
             this.textBox_Normal_vBC.Location = new System.Drawing.Point(112, 54);
             this.textBox_Normal_vBC.Name = "textBox_Normal_vBC";
+            this.textBox_Normal_vBC.PlaceholderText = "900,50";
             this.textBox_Normal_vBC.Size = new System.Drawing.Size(74, 23);
-            this.textBox_Normal_vBC.TabIndex = 68;
+            this.textBox_Normal_vBC.TabIndex = 10;
             // 
             // label5
             // 
@@ -447,7 +455,7 @@ namespace Regresser
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(16, 62);
+            this.label17.Location = new System.Drawing.Point(16, 58);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(90, 15);
             this.label17.TabIndex = 69;
@@ -468,7 +476,7 @@ namespace Regresser
             this.comboBox_Normal_CST_Type.Location = new System.Drawing.Point(112, 19);
             this.comboBox_Normal_CST_Type.Name = "comboBox_Normal_CST_Type";
             this.comboBox_Normal_CST_Type.Size = new System.Drawing.Size(121, 23);
-            this.comboBox_Normal_CST_Type.TabIndex = 0;
+            this.comboBox_Normal_CST_Type.TabIndex = 9;
             // 
             // label16
             // 
@@ -486,15 +494,16 @@ namespace Regresser
             this.textBox_Normal_Nfe_Numbers.Name = "textBox_Normal_Nfe_Numbers";
             this.textBox_Normal_Nfe_Numbers.PlaceholderText = "13;14;15;...";
             this.textBox_Normal_Nfe_Numbers.Size = new System.Drawing.Size(120, 46);
-            this.textBox_Normal_Nfe_Numbers.TabIndex = 64;
+            this.textBox_Normal_Nfe_Numbers.TabIndex = 7;
             // 
             // textBox_Normal_Sender
             // 
             this.textBox_Normal_Sender.Enabled = false;
             this.textBox_Normal_Sender.Location = new System.Drawing.Point(468, 184);
             this.textBox_Normal_Sender.Name = "textBox_Normal_Sender";
+            this.textBox_Normal_Sender.PlaceholderText = "05257045000160";
             this.textBox_Normal_Sender.Size = new System.Drawing.Size(120, 23);
-            this.textBox_Normal_Sender.TabIndex = 62;
+            this.textBox_Normal_Sender.TabIndex = 5;
             // 
             // label8
             // 
@@ -542,11 +551,11 @@ namespace Regresser
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(332, 126);
+            this.label28.Location = new System.Drawing.Point(315, 126);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(129, 15);
+            this.label28.Size = new System.Drawing.Size(146, 15);
             this.label28.TabIndex = 95;
-            this.label28.Text = "CT-e Normal à vincular";
+            this.label28.Text = "Nº CT-e Normal à vincular";
             // 
             // textBox_Compl_Link_Normal
             // 
@@ -554,7 +563,7 @@ namespace Regresser
             this.textBox_Compl_Link_Normal.Location = new System.Drawing.Point(467, 123);
             this.textBox_Compl_Link_Normal.Name = "textBox_Compl_Link_Normal";
             this.textBox_Compl_Link_Normal.Size = new System.Drawing.Size(120, 23);
-            this.textBox_Compl_Link_Normal.TabIndex = 94;
+            this.textBox_Compl_Link_Normal.TabIndex = 34;
             // 
             // label10
             // 
@@ -574,7 +583,7 @@ namespace Regresser
             this.checkBox_Compl_Taker.Location = new System.Drawing.Point(385, 314);
             this.checkBox_Compl_Taker.Name = "checkBox_Compl_Taker";
             this.checkBox_Compl_Taker.Size = new System.Drawing.Size(158, 19);
-            this.checkBox_Compl_Taker.TabIndex = 90;
+            this.checkBox_Compl_Taker.TabIndex = 38;
             this.checkBox_Compl_Taker.Text = "Destinatário é o Tomador";
             this.checkBox_Compl_Taker.UseVisualStyleBackColor = true;
             // 
@@ -583,8 +592,9 @@ namespace Regresser
             this.textBox_CTe_Compl_Value.Enabled = false;
             this.textBox_CTe_Compl_Value.Location = new System.Drawing.Point(150, 164);
             this.textBox_CTe_Compl_Value.Name = "textBox_CTe_Compl_Value";
+            this.textBox_CTe_Compl_Value.PlaceholderText = "200,7";
             this.textBox_CTe_Compl_Value.Size = new System.Drawing.Size(120, 23);
-            this.textBox_CTe_Compl_Value.TabIndex = 92;
+            this.textBox_CTe_Compl_Value.TabIndex = 32;
             // 
             // groupBox2
             // 
@@ -608,8 +618,9 @@ namespace Regresser
             this.textBox_Compl_vICMS.Enabled = false;
             this.textBox_Compl_vICMS.Location = new System.Drawing.Point(112, 122);
             this.textBox_Compl_vICMS.Name = "textBox_Compl_vICMS";
+            this.textBox_Compl_vICMS.PlaceholderText = "20,07";
             this.textBox_Compl_vICMS.Size = new System.Drawing.Size(74, 23);
-            this.textBox_Compl_vICMS.TabIndex = 72;
+            this.textBox_Compl_vICMS.TabIndex = 42;
             // 
             // label11
             // 
@@ -625,8 +636,9 @@ namespace Regresser
             this.textBox_Compl_pICMS.Enabled = false;
             this.textBox_Compl_pICMS.Location = new System.Drawing.Point(112, 89);
             this.textBox_Compl_pICMS.Name = "textBox_Compl_pICMS";
+            this.textBox_Compl_pICMS.PlaceholderText = "10";
             this.textBox_Compl_pICMS.Size = new System.Drawing.Size(74, 23);
-            this.textBox_Compl_pICMS.TabIndex = 70;
+            this.textBox_Compl_pICMS.TabIndex = 41;
             // 
             // label12
             // 
@@ -642,8 +654,9 @@ namespace Regresser
             this.textBox_Compl_vBC.Enabled = false;
             this.textBox_Compl_vBC.Location = new System.Drawing.Point(112, 54);
             this.textBox_Compl_vBC.Name = "textBox_Compl_vBC";
+            this.textBox_Compl_vBC.PlaceholderText = "200,7";
             this.textBox_Compl_vBC.Size = new System.Drawing.Size(74, 23);
-            this.textBox_Compl_vBC.TabIndex = 68;
+            this.textBox_Compl_vBC.TabIndex = 40;
             // 
             // label13
             // 
@@ -678,15 +691,16 @@ namespace Regresser
             this.comboBox_Compl_CST_Type.Location = new System.Drawing.Point(112, 19);
             this.comboBox_Compl_CST_Type.Name = "comboBox_Compl_CST_Type";
             this.comboBox_Compl_CST_Type.Size = new System.Drawing.Size(121, 23);
-            this.comboBox_Compl_CST_Type.TabIndex = 0;
+            this.comboBox_Compl_CST_Type.TabIndex = 39;
             // 
             // textBox_Compl_Sender
             // 
             this.textBox_Compl_Sender.Enabled = false;
             this.textBox_Compl_Sender.Location = new System.Drawing.Point(467, 208);
             this.textBox_Compl_Sender.Name = "textBox_Compl_Sender";
+            this.textBox_Compl_Sender.PlaceholderText = "05257045000160";
             this.textBox_Compl_Sender.Size = new System.Drawing.Size(120, 23);
-            this.textBox_Compl_Sender.TabIndex = 86;
+            this.textBox_Compl_Sender.TabIndex = 36;
             // 
             // label20
             // 
@@ -728,7 +742,7 @@ namespace Regresser
             this.textBox_Compl_EnterpriseId.Location = new System.Drawing.Point(150, 79);
             this.textBox_Compl_EnterpriseId.Name = "textBox_Compl_EnterpriseId";
             this.textBox_Compl_EnterpriseId.Size = new System.Drawing.Size(220, 23);
-            this.textBox_Compl_EnterpriseId.TabIndex = 70;
+            this.textBox_Compl_EnterpriseId.TabIndex = 30;
             // 
             // label21
             // 
@@ -754,7 +768,7 @@ namespace Regresser
             this.textBox_Compl_Token.Location = new System.Drawing.Point(467, 79);
             this.textBox_Compl_Token.Name = "textBox_Compl_Token";
             this.textBox_Compl_Token.Size = new System.Drawing.Size(220, 23);
-            this.textBox_Compl_Token.TabIndex = 72;
+            this.textBox_Compl_Token.TabIndex = 33;
             // 
             // listBox_CTe_Compl
             // 
@@ -789,8 +803,9 @@ namespace Regresser
             this.textBox_Compl_Emitter.Enabled = false;
             this.textBox_Compl_Emitter.Location = new System.Drawing.Point(467, 165);
             this.textBox_Compl_Emitter.Name = "textBox_Compl_Emitter";
+            this.textBox_Compl_Emitter.PlaceholderText = "00720785000177";
             this.textBox_Compl_Emitter.Size = new System.Drawing.Size(120, 23);
-            this.textBox_Compl_Emitter.TabIndex = 74;
+            this.textBox_Compl_Emitter.TabIndex = 35;
             // 
             // textBox_CTe_Compl_Number
             // 
@@ -798,7 +813,7 @@ namespace Regresser
             this.textBox_CTe_Compl_Number.Location = new System.Drawing.Point(150, 120);
             this.textBox_CTe_Compl_Number.Name = "textBox_CTe_Compl_Number";
             this.textBox_CTe_Compl_Number.Size = new System.Drawing.Size(120, 23);
-            this.textBox_CTe_Compl_Number.TabIndex = 78;
+            this.textBox_CTe_Compl_Number.TabIndex = 31;
             // 
             // label25
             // 
@@ -814,8 +829,9 @@ namespace Regresser
             this.textBox_Compl_Recipient.Enabled = false;
             this.textBox_Compl_Recipient.Location = new System.Drawing.Point(467, 259);
             this.textBox_Compl_Recipient.Name = "textBox_Compl_Recipient";
+            this.textBox_Compl_Recipient.PlaceholderText = "12764519000125";
             this.textBox_Compl_Recipient.Size = new System.Drawing.Size(120, 23);
-            this.textBox_Compl_Recipient.TabIndex = 76;
+            this.textBox_Compl_Recipient.TabIndex = 37;
             // 
             // label26
             // 
@@ -832,7 +848,8 @@ namespace Regresser
             this.button_Compl_Save_Item.Location = new System.Drawing.Point(330, 18);
             this.button_Compl_Save_Item.Name = "button_Compl_Save_Item";
             this.button_Compl_Save_Item.Size = new System.Drawing.Size(105, 38);
-            this.button_Compl_Save_Item.TabIndex = 85;
+            this.button_Compl_Save_Item.TabIndex = 43;
+            this.button_Compl_Save_Item.TabStop = false;
             this.button_Compl_Save_Item.Text = "Salvar Item";
             this.button_Compl_Save_Item.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Compl_Save_Item.UseVisualStyleBackColor = true;

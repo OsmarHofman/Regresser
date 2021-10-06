@@ -35,73 +35,73 @@ namespace Regresser
             this.label27 = new System.Windows.Forms.Label();
             this.textBox_Url_WS = new System.Windows.Forms.TextBox();
             this.tabPage_Release = new System.Windows.Forms.TabPage();
-            this.button_Edit_Release_Xid = new System.Windows.Forms.Button();
-            this.button_Remove_Release_Xid = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.button_Add_Release_Xid = new System.Windows.Forms.Button();
-            this.button_Add_Release_Refnum = new System.Windows.Forms.Button();
-            this.listBox_Release_Refnums = new System.Windows.Forms.ListBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.button_Edit_Release_Refnum = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.listBox_Release_Xids = new System.Windows.Forms.ListBox();
             this.button_Remove_Release_Refnum = new System.Windows.Forms.Button();
+            this.listBox_Release_Xids = new System.Windows.Forms.ListBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.button_Edit_Release_Refnum = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.listBox_Release_Refnums = new System.Windows.Forms.ListBox();
+            this.button_Add_Release_Refnum = new System.Windows.Forms.Button();
+            this.button_Add_Release_Xid = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button_Remove_Release_Xid = new System.Windows.Forms.Button();
+            this.button_Edit_Release_Xid = new System.Windows.Forms.Button();
             this.tabPage_Participants = new System.Windows.Forms.TabPage();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox_Source_CNPJ = new System.Windows.Forms.TextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.comboBox_UF = new System.Windows.Forms.ComboBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.maskedTextBox_IBGE = new System.Windows.Forms.MaskedTextBox();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox_Destination_CNPJ = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox_Source_Location_Xid = new System.Windows.Forms.TextBox();
-            this.textBox_Destination_Location_Xid = new System.Windows.Forms.TextBox();
-            this.textBox_City = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.textBox_City = new System.Windows.Forms.TextBox();
+            this.textBox_Destination_Location_Xid = new System.Windows.Forms.TextBox();
+            this.textBox_Source_Location_Xid = new System.Windows.Forms.TextBox();
+            this.textBox_Destination_CNPJ = new System.Windows.Forms.TextBox();
+            this.textBox_Source_CNPJ = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.maskedTextBox_IBGE = new System.Windows.Forms.MaskedTextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.comboBox_UF = new System.Windows.Forms.ComboBox();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
             this.tabPage_Shipment_Refnum = new System.Windows.Forms.TabPage();
-            this.button_Add_Shipment_Refnum = new System.Windows.Forms.Button();
-            this.listBox_Shipment_Refnums = new System.Windows.Forms.ListBox();
-            this.button_Edit_Shipment_Refnum = new System.Windows.Forms.Button();
             this.button_Remove_Shipment_Refnum = new System.Windows.Forms.Button();
+            this.button_Edit_Shipment_Refnum = new System.Windows.Forms.Button();
+            this.listBox_Shipment_Refnums = new System.Windows.Forms.ListBox();
+            this.button_Add_Shipment_Refnum = new System.Windows.Forms.Button();
             this.tabPage_Shipment_Cost = new System.Windows.Forms.TabPage();
-            this.checkBox_Tax_Included = new System.Windows.Forms.CheckBox();
-            this.checkBox_Added_Tax = new System.Windows.Forms.CheckBox();
-            this.dataGridView_Shipment_Costs = new System.Windows.Forms.DataGridView();
-            this.AcessorialCostXid = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AllocatedCost = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.CostValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CostType = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.dataGridView_Shipment_Costs = new System.Windows.Forms.DataGridView();
+            this.CostType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.CostValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.AllocatedCost = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.AcessorialCostXid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.checkBox_Added_Tax = new System.Windows.Forms.CheckBox();
+            this.checkBox_Tax_Included = new System.Windows.Forms.CheckBox();
             this.tabPage_Planning = new System.Windows.Forms.TabPage();
-            this.textBox_Shipment_DomainName = new System.Windows.Forms.TextBox();
-            this.comboBox_Travel_Status = new System.Windows.Forms.ComboBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox_Carrier_Xid = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox_Shipment_Number = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBox_Emission_Status = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox_Taker_Xid = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.textBox_Driver_Xid = new System.Windows.Forms.TextBox();
-            this.checkBox_Toll_Calculation = new System.Windows.Forms.CheckBox();
             this.checkBox_Toll_Payment = new System.Windows.Forms.CheckBox();
+            this.checkBox_Toll_Calculation = new System.Windows.Forms.CheckBox();
+            this.textBox_Driver_Xid = new System.Windows.Forms.TextBox();
+            this.textBox_Taker_Xid = new System.Windows.Forms.TextBox();
+            this.textBox_Shipment_Number = new System.Windows.Forms.TextBox();
+            this.textBox_Carrier_Xid = new System.Windows.Forms.TextBox();
+            this.textBox_Shipment_DomainName = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox_Emission_Status = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.comboBox_Travel_Status = new System.Windows.Forms.ComboBox();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPage_Release.SuspendLayout();
             this.tabPage_Participants.SuspendLayout();
@@ -183,52 +183,73 @@ namespace Regresser
             this.tabPage_Release.Text = "Ordem";
             this.tabPage_Release.UseVisualStyleBackColor = true;
             // 
-            // button_Edit_Release_Xid
+            // button_Remove_Release_Refnum
             // 
-            this.button_Edit_Release_Xid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Edit_Release_Xid.Location = new System.Drawing.Point(143, 143);
-            this.button_Edit_Release_Xid.Name = "button_Edit_Release_Xid";
-            this.button_Edit_Release_Xid.Size = new System.Drawing.Size(52, 26);
-            this.button_Edit_Release_Xid.TabIndex = 9;
-            this.button_Edit_Release_Xid.Text = "Editar";
-            this.button_Edit_Release_Xid.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button_Edit_Release_Xid.UseVisualStyleBackColor = true;
-            this.button_Edit_Release_Xid.Click += new System.EventHandler(this.button_Edit_Release_Xid_Click);
+            this.button_Remove_Release_Refnum.Enabled = false;
+            this.button_Remove_Release_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Remove_Release_Refnum.Location = new System.Drawing.Point(486, 143);
+            this.button_Remove_Release_Refnum.Name = "button_Remove_Release_Refnum";
+            this.button_Remove_Release_Refnum.Size = new System.Drawing.Size(65, 26);
+            this.button_Remove_Release_Refnum.TabIndex = 13;
+            this.button_Remove_Release_Refnum.Text = "Remover";
+            this.button_Remove_Release_Refnum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Remove_Release_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Remove_Release_Refnum.UseVisualStyleBackColor = true;
+            this.button_Remove_Release_Refnum.Click += new System.EventHandler(this.button_Remove_Release_Refnum_Click);
             // 
-            // button_Remove_Release_Xid
+            // listBox_Release_Xids
             // 
-            this.button_Remove_Release_Xid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Remove_Release_Xid.Location = new System.Drawing.Point(205, 143);
-            this.button_Remove_Release_Xid.Name = "button_Remove_Release_Xid";
-            this.button_Remove_Release_Xid.Size = new System.Drawing.Size(65, 26);
-            this.button_Remove_Release_Xid.TabIndex = 10;
-            this.button_Remove_Release_Xid.Text = "Remover";
-            this.button_Remove_Release_Xid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Remove_Release_Xid.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button_Remove_Release_Xid.UseVisualStyleBackColor = true;
-            this.button_Remove_Release_Xid.Click += new System.EventHandler(this.button_Remove_Release_Xid_Click);
+            this.listBox_Release_Xids.FormattingEnabled = true;
+            this.listBox_Release_Xids.ItemHeight = 15;
+            this.listBox_Release_Xids.Items.AddRange(new object[] {
+            "1"});
+            this.listBox_Release_Xids.Location = new System.Drawing.Point(51, 43);
+            this.listBox_Release_Xids.Name = "listBox_Release_Xids";
+            this.listBox_Release_Xids.Size = new System.Drawing.Size(229, 94);
+            this.listBox_Release_Xids.TabIndex = 1;
+            this.listBox_Release_Xids.SelectedIndexChanged += new System.EventHandler(this.listBox_Release_Xids_SelectedIndexChanged);
             // 
-            // label13
+            // label14
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(116, 25);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(80, 15);
-            this.label13.TabIndex = 2;
-            this.label13.Text = "Xid da Ordem";
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(388, 25);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(110, 15);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Refnums da Ordem";
             // 
-            // button_Add_Release_Xid
+            // button_Edit_Release_Refnum
             // 
-            this.button_Add_Release_Xid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Add_Release_Xid.Location = new System.Drawing.Point(61, 143);
-            this.button_Add_Release_Xid.Name = "button_Add_Release_Xid";
-            this.button_Add_Release_Xid.Size = new System.Drawing.Size(70, 26);
-            this.button_Add_Release_Xid.TabIndex = 8;
-            this.button_Add_Release_Xid.Text = "Adicionar";
-            this.button_Add_Release_Xid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Add_Release_Xid.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button_Add_Release_Xid.UseVisualStyleBackColor = true;
-            this.button_Add_Release_Xid.Click += new System.EventHandler(this.button_Add_Release_Xid_Click);
+            this.button_Edit_Release_Refnum.Enabled = false;
+            this.button_Edit_Release_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Edit_Release_Refnum.Location = new System.Drawing.Point(424, 143);
+            this.button_Edit_Release_Refnum.Name = "button_Edit_Release_Refnum";
+            this.button_Edit_Release_Refnum.Size = new System.Drawing.Size(52, 26);
+            this.button_Edit_Release_Refnum.TabIndex = 12;
+            this.button_Edit_Release_Refnum.Text = "Editar";
+            this.button_Edit_Release_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Edit_Release_Refnum.UseVisualStyleBackColor = true;
+            this.button_Edit_Release_Refnum.Click += new System.EventHandler(this.button_Edit_Release_Refnum_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label15.Location = new System.Drawing.Point(306, -6);
+            this.label15.MinimumSize = new System.Drawing.Size(0, 200);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(2, 200);
+            this.label15.TabIndex = 4;
+            // 
+            // listBox_Release_Refnums
+            // 
+            this.listBox_Release_Refnums.FormattingEnabled = true;
+            this.listBox_Release_Refnums.ItemHeight = 15;
+            this.listBox_Release_Refnums.Location = new System.Drawing.Point(333, 43);
+            this.listBox_Release_Refnums.Name = "listBox_Release_Refnums";
+            this.listBox_Release_Refnums.Size = new System.Drawing.Size(226, 94);
+            this.listBox_Release_Refnums.TabIndex = 0;
+            this.listBox_Release_Refnums.SelectedIndexChanged += new System.EventHandler(this.listBox_Release_Refnums_SelectedIndexChanged);
             // 
             // button_Add_Release_Refnum
             // 
@@ -244,73 +265,52 @@ namespace Regresser
             this.button_Add_Release_Refnum.UseVisualStyleBackColor = true;
             this.button_Add_Release_Refnum.Click += new System.EventHandler(this.button_Add_Release_Refnum_Click);
             // 
-            // listBox_Release_Refnums
+            // button_Add_Release_Xid
             // 
-            this.listBox_Release_Refnums.FormattingEnabled = true;
-            this.listBox_Release_Refnums.ItemHeight = 15;
-            this.listBox_Release_Refnums.Location = new System.Drawing.Point(333, 43);
-            this.listBox_Release_Refnums.Name = "listBox_Release_Refnums";
-            this.listBox_Release_Refnums.Size = new System.Drawing.Size(226, 94);
-            this.listBox_Release_Refnums.TabIndex = 0;
-            this.listBox_Release_Refnums.SelectedIndexChanged += new System.EventHandler(this.listBox_Release_Refnums_SelectedIndexChanged);
+            this.button_Add_Release_Xid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Add_Release_Xid.Location = new System.Drawing.Point(61, 143);
+            this.button_Add_Release_Xid.Name = "button_Add_Release_Xid";
+            this.button_Add_Release_Xid.Size = new System.Drawing.Size(70, 26);
+            this.button_Add_Release_Xid.TabIndex = 8;
+            this.button_Add_Release_Xid.Text = "Adicionar";
+            this.button_Add_Release_Xid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Add_Release_Xid.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Add_Release_Xid.UseVisualStyleBackColor = true;
+            this.button_Add_Release_Xid.Click += new System.EventHandler(this.button_Add_Release_Xid_Click);
             // 
-            // label15
+            // label13
             // 
-            this.label15.AutoSize = true;
-            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label15.Location = new System.Drawing.Point(306, -6);
-            this.label15.MinimumSize = new System.Drawing.Size(0, 200);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(2, 200);
-            this.label15.TabIndex = 4;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(116, 25);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(80, 15);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Xid da Ordem";
             // 
-            // button_Edit_Release_Refnum
+            // button_Remove_Release_Xid
             // 
-            this.button_Edit_Release_Refnum.Enabled = false;
-            this.button_Edit_Release_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Edit_Release_Refnum.Location = new System.Drawing.Point(424, 143);
-            this.button_Edit_Release_Refnum.Name = "button_Edit_Release_Refnum";
-            this.button_Edit_Release_Refnum.Size = new System.Drawing.Size(52, 26);
-            this.button_Edit_Release_Refnum.TabIndex = 12;
-            this.button_Edit_Release_Refnum.Text = "Editar";
-            this.button_Edit_Release_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button_Edit_Release_Refnum.UseVisualStyleBackColor = true;
-            this.button_Edit_Release_Refnum.Click += new System.EventHandler(this.button_Edit_Release_Refnum_Click);
+            this.button_Remove_Release_Xid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Remove_Release_Xid.Location = new System.Drawing.Point(205, 143);
+            this.button_Remove_Release_Xid.Name = "button_Remove_Release_Xid";
+            this.button_Remove_Release_Xid.Size = new System.Drawing.Size(65, 26);
+            this.button_Remove_Release_Xid.TabIndex = 10;
+            this.button_Remove_Release_Xid.Text = "Remover";
+            this.button_Remove_Release_Xid.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Remove_Release_Xid.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Remove_Release_Xid.UseVisualStyleBackColor = true;
+            this.button_Remove_Release_Xid.Click += new System.EventHandler(this.button_Remove_Release_Xid_Click);
             // 
-            // label14
+            // button_Edit_Release_Xid
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(388, 25);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(110, 15);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Refnums da Ordem";
-            // 
-            // listBox_Release_Xids
-            // 
-            this.listBox_Release_Xids.FormattingEnabled = true;
-            this.listBox_Release_Xids.ItemHeight = 15;
-            this.listBox_Release_Xids.Items.AddRange(new object[] {
-            "1"});
-            this.listBox_Release_Xids.Location = new System.Drawing.Point(51, 43);
-            this.listBox_Release_Xids.Name = "listBox_Release_Xids";
-            this.listBox_Release_Xids.Size = new System.Drawing.Size(229, 94);
-            this.listBox_Release_Xids.TabIndex = 1;
-            this.listBox_Release_Xids.SelectedIndexChanged += new System.EventHandler(this.listBox_Release_Xids_SelectedIndexChanged);
-            // 
-            // button_Remove_Release_Refnum
-            // 
-            this.button_Remove_Release_Refnum.Enabled = false;
-            this.button_Remove_Release_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Remove_Release_Refnum.Location = new System.Drawing.Point(486, 143);
-            this.button_Remove_Release_Refnum.Name = "button_Remove_Release_Refnum";
-            this.button_Remove_Release_Refnum.Size = new System.Drawing.Size(65, 26);
-            this.button_Remove_Release_Refnum.TabIndex = 13;
-            this.button_Remove_Release_Refnum.Text = "Remover";
-            this.button_Remove_Release_Refnum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Remove_Release_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button_Remove_Release_Refnum.UseVisualStyleBackColor = true;
-            this.button_Remove_Release_Refnum.Click += new System.EventHandler(this.button_Remove_Release_Refnum_Click);
+            this.button_Edit_Release_Xid.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Edit_Release_Xid.Location = new System.Drawing.Point(143, 143);
+            this.button_Edit_Release_Xid.Name = "button_Edit_Release_Xid";
+            this.button_Edit_Release_Xid.Size = new System.Drawing.Size(52, 26);
+            this.button_Edit_Release_Xid.TabIndex = 9;
+            this.button_Edit_Release_Xid.Text = "Editar";
+            this.button_Edit_Release_Xid.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Edit_Release_Xid.UseVisualStyleBackColor = true;
+            this.button_Edit_Release_Xid.Click += new System.EventHandler(this.button_Edit_Release_Xid_Click);
             // 
             // tabPage_Participants
             // 
@@ -342,23 +342,47 @@ namespace Regresser
             this.tabPage_Participants.Text = "Participantes";
             this.tabPage_Participants.UseVisualStyleBackColor = true;
             // 
-            // label22
+            // label19
             // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(344, 58);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(63, 15);
-            this.label22.TabIndex = 26;
-            this.label22.Text = "Cidade/UF";
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label19.Location = new System.Drawing.Point(91, 12);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(75, 25);
+            this.label19.TabIndex = 23;
+            this.label19.Text = "Origem";
             // 
-            // label21
+            // textBox_City
             // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(379, 92);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(31, 15);
-            this.label21.TabIndex = 29;
-            this.label21.Text = "IBGE";
+            this.textBox_City.Location = new System.Drawing.Point(91, 55);
+            this.textBox_City.Name = "textBox_City";
+            this.textBox_City.Size = new System.Drawing.Size(100, 23);
+            this.textBox_City.TabIndex = 16;
+            this.textBox_City.Text = "São Paulo";
+            // 
+            // textBox_Destination_Location_Xid
+            // 
+            this.textBox_Destination_Location_Xid.Location = new System.Drawing.Point(413, 126);
+            this.textBox_Destination_Location_Xid.Name = "textBox_Destination_Location_Xid";
+            this.textBox_Destination_Location_Xid.Size = new System.Drawing.Size(152, 23);
+            this.textBox_Destination_Location_Xid.TabIndex = 41;
+            this.textBox_Destination_Location_Xid.Text = "CUS-6429-18171";
+            // 
+            // textBox_Source_Location_Xid
+            // 
+            this.textBox_Source_Location_Xid.Location = new System.Drawing.Point(91, 126);
+            this.textBox_Source_Location_Xid.Name = "textBox_Source_Location_Xid";
+            this.textBox_Source_Location_Xid.Size = new System.Drawing.Size(152, 23);
+            this.textBox_Source_Location_Xid.TabIndex = 39;
+            this.textBox_Source_Location_Xid.Text = "ORG-8027-30018";
+            // 
+            // textBox_Destination_CNPJ
+            // 
+            this.textBox_Destination_CNPJ.Location = new System.Drawing.Point(416, 163);
+            this.textBox_Destination_CNPJ.Name = "textBox_Destination_CNPJ";
+            this.textBox_Destination_CNPJ.Size = new System.Drawing.Size(102, 23);
+            this.textBox_Destination_CNPJ.TabIndex = 36;
+            this.textBox_Destination_CNPJ.Text = "12764519000125";
             // 
             // textBox_Source_CNPJ
             // 
@@ -368,33 +392,88 @@ namespace Regresser
             this.textBox_Source_CNPJ.TabIndex = 34;
             this.textBox_Source_CNPJ.Text = "05257045000160";
             // 
-            // label20
+            // label7
             // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label20.Location = new System.Drawing.Point(416, 12);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(76, 25);
-            this.label20.TabIndex = 30;
-            this.label20.Text = "Destino";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(356, 129);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(51, 15);
+            this.label7.TabIndex = 40;
+            this.label7.Text = "Xid Filial";
             // 
-            // label28
+            // label9
             // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(51, 166);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(34, 15);
-            this.label28.TabIndex = 35;
-            this.label28.Text = "CNPJ";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(22, 58);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 15);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Cidade/UF";
             // 
-            // label24
+            // label10
             // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(413, 58);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(59, 15);
-            this.label24.TabIndex = 31;
-            this.label24.Text = "São Paulo";
+            this.label10.AutoSize = true;
+            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label10.Location = new System.Drawing.Point(298, 0);
+            this.label10.MaximumSize = new System.Drawing.Size(2, 0);
+            this.label10.MinimumSize = new System.Drawing.Size(2, 220);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(2, 220);
+            this.label10.TabIndex = 19;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(376, 166);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(34, 15);
+            this.label29.TabIndex = 37;
+            this.label29.Text = "CNPJ";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(34, 129);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(51, 15);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "Xid Filial";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(54, 92);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(31, 15);
+            this.label11.TabIndex = 22;
+            this.label11.Text = "IBGE";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(416, 92);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(49, 15);
+            this.label26.TabIndex = 33;
+            this.label26.Text = "3550308";
+            // 
+            // maskedTextBox_IBGE
+            // 
+            this.maskedTextBox_IBGE.Location = new System.Drawing.Point(91, 89);
+            this.maskedTextBox_IBGE.Mask = "0000000";
+            this.maskedTextBox_IBGE.Name = "maskedTextBox_IBGE";
+            this.maskedTextBox_IBGE.Size = new System.Drawing.Size(61, 23);
+            this.maskedTextBox_IBGE.TabIndex = 11;
+            this.maskedTextBox_IBGE.Text = "3550308";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(478, 58);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(20, 15);
+            this.label25.TabIndex = 32;
+            this.label25.Text = "SP";
             // 
             // comboBox_UF
             // 
@@ -434,130 +513,51 @@ namespace Regresser
             this.comboBox_UF.TabIndex = 20;
             this.comboBox_UF.Text = "SP";
             // 
-            // label25
+            // label24
             // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(478, 58);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(20, 15);
-            this.label25.TabIndex = 32;
-            this.label25.Text = "SP";
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(413, 58);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(59, 15);
+            this.label24.TabIndex = 31;
+            this.label24.Text = "São Paulo";
             // 
-            // maskedTextBox_IBGE
+            // label28
             // 
-            this.maskedTextBox_IBGE.Location = new System.Drawing.Point(91, 89);
-            this.maskedTextBox_IBGE.Mask = "0000000";
-            this.maskedTextBox_IBGE.Name = "maskedTextBox_IBGE";
-            this.maskedTextBox_IBGE.Size = new System.Drawing.Size(61, 23);
-            this.maskedTextBox_IBGE.TabIndex = 11;
-            this.maskedTextBox_IBGE.Text = "3550308";
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(51, 166);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(34, 15);
+            this.label28.TabIndex = 35;
+            this.label28.Text = "CNPJ";
             // 
-            // label26
+            // label20
             // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(416, 92);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(49, 15);
-            this.label26.TabIndex = 33;
-            this.label26.Text = "3550308";
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label20.Location = new System.Drawing.Point(416, 12);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(76, 25);
+            this.label20.TabIndex = 30;
+            this.label20.Text = "Destino";
             // 
-            // label11
+            // label21
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(54, 92);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(31, 15);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "IBGE";
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(379, 92);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(31, 15);
+            this.label21.TabIndex = 29;
+            this.label21.Text = "IBGE";
             // 
-            // textBox_Destination_CNPJ
+            // label22
             // 
-            this.textBox_Destination_CNPJ.Location = new System.Drawing.Point(416, 163);
-            this.textBox_Destination_CNPJ.Name = "textBox_Destination_CNPJ";
-            this.textBox_Destination_CNPJ.Size = new System.Drawing.Size(102, 23);
-            this.textBox_Destination_CNPJ.TabIndex = 36;
-            this.textBox_Destination_CNPJ.Text = "12764519000122";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(34, 129);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(51, 15);
-            this.label6.TabIndex = 38;
-            this.label6.Text = "Xid Filial";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(376, 166);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(34, 15);
-            this.label29.TabIndex = 37;
-            this.label29.Text = "CNPJ";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label10.Location = new System.Drawing.Point(298, 0);
-            this.label10.MaximumSize = new System.Drawing.Size(2, 0);
-            this.label10.MinimumSize = new System.Drawing.Size(2, 220);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(2, 220);
-            this.label10.TabIndex = 19;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(22, 58);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(63, 15);
-            this.label9.TabIndex = 17;
-            this.label9.Text = "Cidade/UF";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(356, 129);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 15);
-            this.label7.TabIndex = 40;
-            this.label7.Text = "Xid Filial";
-            // 
-            // textBox_Source_Location_Xid
-            // 
-            this.textBox_Source_Location_Xid.Location = new System.Drawing.Point(91, 126);
-            this.textBox_Source_Location_Xid.Name = "textBox_Source_Location_Xid";
-            this.textBox_Source_Location_Xid.Size = new System.Drawing.Size(152, 23);
-            this.textBox_Source_Location_Xid.TabIndex = 39;
-            this.textBox_Source_Location_Xid.Text = "ORG-8027-30018";
-            // 
-            // textBox_Destination_Location_Xid
-            // 
-            this.textBox_Destination_Location_Xid.Location = new System.Drawing.Point(413, 126);
-            this.textBox_Destination_Location_Xid.Name = "textBox_Destination_Location_Xid";
-            this.textBox_Destination_Location_Xid.Size = new System.Drawing.Size(152, 23);
-            this.textBox_Destination_Location_Xid.TabIndex = 41;
-            this.textBox_Destination_Location_Xid.Text = "CUS-6429-18171";
-            // 
-            // textBox_City
-            // 
-            this.textBox_City.Location = new System.Drawing.Point(91, 55);
-            this.textBox_City.Name = "textBox_City";
-            this.textBox_City.Size = new System.Drawing.Size(100, 23);
-            this.textBox_City.TabIndex = 16;
-            this.textBox_City.Text = "São Paulo";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label19.Location = new System.Drawing.Point(91, 12);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(75, 25);
-            this.label19.TabIndex = 23;
-            this.label19.Text = "Origem";
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(344, 58);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(63, 15);
+            this.label22.TabIndex = 26;
+            this.label22.Text = "Cidade/UF";
             // 
             // tabPage_Shipment_Refnum
             // 
@@ -572,28 +572,19 @@ namespace Regresser
             this.tabPage_Shipment_Refnum.Text = "Refnum";
             this.tabPage_Shipment_Refnum.UseVisualStyleBackColor = true;
             // 
-            // button_Add_Shipment_Refnum
+            // button_Remove_Shipment_Refnum
             // 
-            this.button_Add_Shipment_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Add_Shipment_Refnum.Location = new System.Drawing.Point(344, 45);
-            this.button_Add_Shipment_Refnum.Name = "button_Add_Shipment_Refnum";
-            this.button_Add_Shipment_Refnum.Size = new System.Drawing.Size(70, 26);
-            this.button_Add_Shipment_Refnum.TabIndex = 15;
-            this.button_Add_Shipment_Refnum.Text = "Adicionar";
-            this.button_Add_Shipment_Refnum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Add_Shipment_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button_Add_Shipment_Refnum.UseVisualStyleBackColor = true;
-            this.button_Add_Shipment_Refnum.Click += new System.EventHandler(this.button_Add_Shipment_Refnum_Click);
-            // 
-            // listBox_Shipment_Refnums
-            // 
-            this.listBox_Shipment_Refnums.FormattingEnabled = true;
-            this.listBox_Shipment_Refnums.ItemHeight = 15;
-            this.listBox_Shipment_Refnums.Location = new System.Drawing.Point(112, 19);
-            this.listBox_Shipment_Refnums.Name = "listBox_Shipment_Refnums";
-            this.listBox_Shipment_Refnums.Size = new System.Drawing.Size(226, 184);
-            this.listBox_Shipment_Refnums.TabIndex = 14;
-            this.listBox_Shipment_Refnums.SelectedIndexChanged += new System.EventHandler(this.listBox_Shipment_Refnums_SelectedIndexChanged);
+            this.button_Remove_Shipment_Refnum.Enabled = false;
+            this.button_Remove_Shipment_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Remove_Shipment_Refnum.Location = new System.Drawing.Point(348, 154);
+            this.button_Remove_Shipment_Refnum.Name = "button_Remove_Shipment_Refnum";
+            this.button_Remove_Shipment_Refnum.Size = new System.Drawing.Size(65, 26);
+            this.button_Remove_Shipment_Refnum.TabIndex = 17;
+            this.button_Remove_Shipment_Refnum.Text = "Remover";
+            this.button_Remove_Shipment_Refnum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Remove_Shipment_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Remove_Shipment_Refnum.UseVisualStyleBackColor = true;
+            this.button_Remove_Shipment_Refnum.Click += new System.EventHandler(this.button_Remove_Shipment_Refnum_Click);
             // 
             // button_Edit_Shipment_Refnum
             // 
@@ -608,19 +599,28 @@ namespace Regresser
             this.button_Edit_Shipment_Refnum.UseVisualStyleBackColor = true;
             this.button_Edit_Shipment_Refnum.Click += new System.EventHandler(this.button_Edit_Shipment_Refnum_Click);
             // 
-            // button_Remove_Shipment_Refnum
+            // listBox_Shipment_Refnums
             // 
-            this.button_Remove_Shipment_Refnum.Enabled = false;
-            this.button_Remove_Shipment_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Remove_Shipment_Refnum.Location = new System.Drawing.Point(348, 154);
-            this.button_Remove_Shipment_Refnum.Name = "button_Remove_Shipment_Refnum";
-            this.button_Remove_Shipment_Refnum.Size = new System.Drawing.Size(65, 26);
-            this.button_Remove_Shipment_Refnum.TabIndex = 17;
-            this.button_Remove_Shipment_Refnum.Text = "Remover";
-            this.button_Remove_Shipment_Refnum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_Remove_Shipment_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.button_Remove_Shipment_Refnum.UseVisualStyleBackColor = true;
-            this.button_Remove_Shipment_Refnum.Click += new System.EventHandler(this.button_Remove_Shipment_Refnum_Click);
+            this.listBox_Shipment_Refnums.FormattingEnabled = true;
+            this.listBox_Shipment_Refnums.ItemHeight = 15;
+            this.listBox_Shipment_Refnums.Location = new System.Drawing.Point(112, 19);
+            this.listBox_Shipment_Refnums.Name = "listBox_Shipment_Refnums";
+            this.listBox_Shipment_Refnums.Size = new System.Drawing.Size(226, 184);
+            this.listBox_Shipment_Refnums.TabIndex = 14;
+            this.listBox_Shipment_Refnums.SelectedIndexChanged += new System.EventHandler(this.listBox_Shipment_Refnums_SelectedIndexChanged);
+            // 
+            // button_Add_Shipment_Refnum
+            // 
+            this.button_Add_Shipment_Refnum.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_Add_Shipment_Refnum.Location = new System.Drawing.Point(344, 45);
+            this.button_Add_Shipment_Refnum.Name = "button_Add_Shipment_Refnum";
+            this.button_Add_Shipment_Refnum.Size = new System.Drawing.Size(70, 26);
+            this.button_Add_Shipment_Refnum.TabIndex = 15;
+            this.button_Add_Shipment_Refnum.Text = "Adicionar";
+            this.button_Add_Shipment_Refnum.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_Add_Shipment_Refnum.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.button_Add_Shipment_Refnum.UseVisualStyleBackColor = true;
+            this.button_Add_Shipment_Refnum.Click += new System.EventHandler(this.button_Add_Shipment_Refnum_Click);
             // 
             // tabPage_Shipment_Cost
             // 
@@ -639,25 +639,37 @@ namespace Regresser
             this.tabPage_Shipment_Cost.Text = "Custo";
             this.tabPage_Shipment_Cost.UseVisualStyleBackColor = true;
             // 
-            // checkBox_Tax_Included
+            // textBox3
             // 
-            this.checkBox_Tax_Included.AutoSize = true;
-            this.checkBox_Tax_Included.Location = new System.Drawing.Point(474, 30);
-            this.checkBox_Tax_Included.Name = "checkBox_Tax_Included";
-            this.checkBox_Tax_Included.Size = new System.Drawing.Size(111, 19);
-            this.checkBox_Tax_Included.TabIndex = 2;
-            this.checkBox_Tax_Included.Text = "Imposto Incluso";
-            this.checkBox_Tax_Included.UseVisualStyleBackColor = true;
+            this.textBox3.Location = new System.Drawing.Point(525, 122);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(69, 23);
+            this.textBox3.TabIndex = 9;
             // 
-            // checkBox_Added_Tax
+            // textBox2
             // 
-            this.checkBox_Added_Tax.AutoSize = true;
-            this.checkBox_Added_Tax.Location = new System.Drawing.Point(474, 75);
-            this.checkBox_Added_Tax.Name = "checkBox_Added_Tax";
-            this.checkBox_Added_Tax.Size = new System.Drawing.Size(117, 19);
-            this.checkBox_Added_Tax.TabIndex = 3;
-            this.checkBox_Added_Tax.Text = "Imposto Somado";
-            this.checkBox_Added_Tax.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(525, 172);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(69, 23);
+            this.textBox2.TabIndex = 5;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(454, 125);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(65, 15);
+            this.label17.TabIndex = 8;
+            this.label17.Text = "Advalorem";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(492, 175);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(27, 15);
+            this.label12.TabIndex = 6;
+            this.label12.Text = "Gris";
             // 
             // dataGridView_Shipment_Costs
             // 
@@ -674,21 +686,6 @@ namespace Regresser
             this.dataGridView_Shipment_Costs.Size = new System.Drawing.Size(442, 206);
             this.dataGridView_Shipment_Costs.TabIndex = 4;
             // 
-            // AcessorialCostXid
-            // 
-            this.AcessorialCostXid.HeaderText = "Xid do Custo Acessório";
-            this.AcessorialCostXid.Name = "AcessorialCostXid";
-            // 
-            // AllocatedCost
-            // 
-            this.AllocatedCost.HeaderText = "Custo Alocado";
-            this.AllocatedCost.Name = "AllocatedCost";
-            // 
-            // CostValue
-            // 
-            this.CostValue.HeaderText = "Valor";
-            this.CostValue.Name = "CostValue";
-            // 
             // CostType
             // 
             this.CostType.HeaderText = "Tipo do Custo";
@@ -697,37 +694,40 @@ namespace Regresser
             "Acessório"});
             this.CostType.Name = "CostType";
             // 
-            // textBox2
+            // CostValue
             // 
-            this.textBox2.Location = new System.Drawing.Point(525, 172);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(69, 23);
-            this.textBox2.TabIndex = 5;
+            this.CostValue.HeaderText = "Valor";
+            this.CostValue.Name = "CostValue";
             // 
-            // label12
+            // AllocatedCost
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(492, 175);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(27, 15);
-            this.label12.TabIndex = 6;
-            this.label12.Text = "Gris";
+            this.AllocatedCost.HeaderText = "Custo Alocado";
+            this.AllocatedCost.Name = "AllocatedCost";
             // 
-            // label17
+            // AcessorialCostXid
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(454, 125);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(65, 15);
-            this.label17.TabIndex = 8;
-            this.label17.Text = "Advalorem";
+            this.AcessorialCostXid.HeaderText = "Xid do Custo Acessório";
+            this.AcessorialCostXid.Name = "AcessorialCostXid";
             // 
-            // textBox3
+            // checkBox_Added_Tax
             // 
-            this.textBox3.Location = new System.Drawing.Point(525, 122);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(69, 23);
-            this.textBox3.TabIndex = 9;
+            this.checkBox_Added_Tax.AutoSize = true;
+            this.checkBox_Added_Tax.Location = new System.Drawing.Point(474, 75);
+            this.checkBox_Added_Tax.Name = "checkBox_Added_Tax";
+            this.checkBox_Added_Tax.Size = new System.Drawing.Size(117, 19);
+            this.checkBox_Added_Tax.TabIndex = 3;
+            this.checkBox_Added_Tax.Text = "Imposto Somado";
+            this.checkBox_Added_Tax.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_Tax_Included
+            // 
+            this.checkBox_Tax_Included.AutoSize = true;
+            this.checkBox_Tax_Included.Location = new System.Drawing.Point(474, 30);
+            this.checkBox_Tax_Included.Name = "checkBox_Tax_Included";
+            this.checkBox_Tax_Included.Size = new System.Drawing.Size(111, 19);
+            this.checkBox_Tax_Included.TabIndex = 2;
+            this.checkBox_Tax_Included.Text = "Imposto Incluso";
+            this.checkBox_Tax_Included.UseVisualStyleBackColor = true;
             // 
             // tabPage_Planning
             // 
@@ -755,70 +755,40 @@ namespace Regresser
             this.tabPage_Planning.Text = "Planejamento";
             this.tabPage_Planning.UseVisualStyleBackColor = true;
             // 
-            // textBox_Shipment_DomainName
+            // checkBox_Toll_Payment
             // 
-            this.textBox_Shipment_DomainName.Location = new System.Drawing.Point(155, 26);
-            this.textBox_Shipment_DomainName.Name = "textBox_Shipment_DomainName";
-            this.textBox_Shipment_DomainName.Size = new System.Drawing.Size(140, 23);
-            this.textBox_Shipment_DomainName.TabIndex = 0;
-            this.textBox_Shipment_DomainName.Text = "EMBDEV";
+            this.checkBox_Toll_Payment.AutoSize = true;
+            this.checkBox_Toll_Payment.Location = new System.Drawing.Point(429, 181);
+            this.checkBox_Toll_Payment.Name = "checkBox_Toll_Payment";
+            this.checkBox_Toll_Payment.Size = new System.Drawing.Size(149, 19);
+            this.checkBox_Toll_Payment.TabIndex = 19;
+            this.checkBox_Toll_Payment.Text = "Pagamento de Pedágio";
+            this.checkBox_Toll_Payment.UseVisualStyleBackColor = true;
             // 
-            // comboBox_Travel_Status
+            // checkBox_Toll_Calculation
             // 
-            this.comboBox_Travel_Status.FormattingEnabled = true;
-            this.comboBox_Travel_Status.Items.AddRange(new object[] {
-            "PLANEJADO",
-            "INICIADO",
-            "EMBARCADO"});
-            this.comboBox_Travel_Status.Location = new System.Drawing.Point(155, 111);
-            this.comboBox_Travel_Status.Name = "comboBox_Travel_Status";
-            this.comboBox_Travel_Status.Size = new System.Drawing.Size(140, 23);
-            this.comboBox_Travel_Status.TabIndex = 4;
-            this.comboBox_Travel_Status.Text = "PLANEJADO";
+            this.checkBox_Toll_Calculation.AutoSize = true;
+            this.checkBox_Toll_Calculation.Location = new System.Drawing.Point(429, 153);
+            this.checkBox_Toll_Calculation.Name = "checkBox_Toll_Calculation";
+            this.checkBox_Toll_Calculation.Size = new System.Drawing.Size(128, 19);
+            this.checkBox_Toll_Calculation.TabIndex = 18;
+            this.checkBox_Toll_Calculation.Text = "Cálculo de Pedágio";
+            this.checkBox_Toll_Calculation.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // textBox_Driver_Xid
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(349, 72);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 15);
-            this.label8.TabIndex = 11;
-            this.label8.Text = "Xid Tomador";
+            this.textBox_Driver_Xid.Location = new System.Drawing.Point(429, 111);
+            this.textBox_Driver_Xid.Name = "textBox_Driver_Xid";
+            this.textBox_Driver_Xid.Size = new System.Drawing.Size(152, 23);
+            this.textBox_Driver_Xid.TabIndex = 17;
             // 
-            // label2
+            // textBox_Taker_Xid
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Nº Shipment";
-            // 
-            // textBox_Carrier_Xid
-            // 
-            this.textBox_Carrier_Xid.Location = new System.Drawing.Point(429, 26);
-            this.textBox_Carrier_Xid.Name = "textBox_Carrier_Xid";
-            this.textBox_Carrier_Xid.Size = new System.Drawing.Size(152, 23);
-            this.textBox_Carrier_Xid.TabIndex = 12;
-            this.textBox_Carrier_Xid.Text = "CAR-12521";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(323, 29);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 15);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Xid Transportador";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 114);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(98, 15);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Status da Viagem";
+            this.textBox_Taker_Xid.Location = new System.Drawing.Point(429, 69);
+            this.textBox_Taker_Xid.Name = "textBox_Taker_Xid";
+            this.textBox_Taker_Xid.Size = new System.Drawing.Size(152, 23);
+            this.textBox_Taker_Xid.TabIndex = 15;
+            this.textBox_Taker_Xid.Text = "ORG-8027-30018";
             // 
             // textBox_Shipment_Number
             // 
@@ -828,14 +798,39 @@ namespace Regresser
             this.textBox_Shipment_Number.TabIndex = 2;
             this.textBox_Shipment_Number.Text = "1";
             // 
-            // label4
+            // textBox_Carrier_Xid
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 157);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Status da Emissão";
+            this.textBox_Carrier_Xid.Location = new System.Drawing.Point(429, 26);
+            this.textBox_Carrier_Xid.Name = "textBox_Carrier_Xid";
+            this.textBox_Carrier_Xid.Size = new System.Drawing.Size(152, 23);
+            this.textBox_Carrier_Xid.TabIndex = 12;
+            this.textBox_Carrier_Xid.Text = "CAR-12521";
+            // 
+            // textBox_Shipment_DomainName
+            // 
+            this.textBox_Shipment_DomainName.Location = new System.Drawing.Point(155, 26);
+            this.textBox_Shipment_DomainName.Name = "textBox_Shipment_DomainName";
+            this.textBox_Shipment_DomainName.Size = new System.Drawing.Size(140, 23);
+            this.textBox_Shipment_DomainName.TabIndex = 0;
+            this.textBox_Shipment_DomainName.Text = "EMBDEV";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(345, 114);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(78, 15);
+            this.label18.TabIndex = 16;
+            this.label18.Text = "Xid Motorista";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(11, 29);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(138, 15);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Shipment Domain Name";
             // 
             // comboBox_Emission_Status
             // 
@@ -849,58 +844,63 @@ namespace Regresser
             this.comboBox_Emission_Status.TabIndex = 6;
             this.comboBox_Emission_Status.Text = "PRE_EMISSAO_ENVIADA";
             // 
-            // label1
+            // label4
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 29);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Shipment Domain Name";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(51, 157);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 15);
+            this.label4.TabIndex = 7;
+            this.label4.Text = "Status da Emissão";
             // 
-            // textBox_Taker_Xid
+            // label3
             // 
-            this.textBox_Taker_Xid.Location = new System.Drawing.Point(429, 69);
-            this.textBox_Taker_Xid.Name = "textBox_Taker_Xid";
-            this.textBox_Taker_Xid.Size = new System.Drawing.Size(152, 23);
-            this.textBox_Taker_Xid.TabIndex = 15;
-            this.textBox_Taker_Xid.Text = "ORG-8027-30018";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(51, 114);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(98, 15);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Status da Viagem";
             // 
-            // label18
+            // label5
             // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(345, 114);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(78, 15);
-            this.label18.TabIndex = 16;
-            this.label18.Text = "Xid Motorista";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(323, 29);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 15);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Xid Transportador";
             // 
-            // textBox_Driver_Xid
+            // label2
             // 
-            this.textBox_Driver_Xid.Location = new System.Drawing.Point(429, 111);
-            this.textBox_Driver_Xid.Name = "textBox_Driver_Xid";
-            this.textBox_Driver_Xid.Size = new System.Drawing.Size(152, 23);
-            this.textBox_Driver_Xid.TabIndex = 17;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(74, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 15);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Nº Shipment";
             // 
-            // checkBox_Toll_Calculation
+            // label8
             // 
-            this.checkBox_Toll_Calculation.AutoSize = true;
-            this.checkBox_Toll_Calculation.Location = new System.Drawing.Point(429, 153);
-            this.checkBox_Toll_Calculation.Name = "checkBox_Toll_Calculation";
-            this.checkBox_Toll_Calculation.Size = new System.Drawing.Size(128, 19);
-            this.checkBox_Toll_Calculation.TabIndex = 18;
-            this.checkBox_Toll_Calculation.Text = "Cálculo de Pedágio";
-            this.checkBox_Toll_Calculation.UseVisualStyleBackColor = true;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(349, 72);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(74, 15);
+            this.label8.TabIndex = 11;
+            this.label8.Text = "Xid Tomador";
             // 
-            // checkBox_Toll_Payment
+            // comboBox_Travel_Status
             // 
-            this.checkBox_Toll_Payment.AutoSize = true;
-            this.checkBox_Toll_Payment.Location = new System.Drawing.Point(429, 181);
-            this.checkBox_Toll_Payment.Name = "checkBox_Toll_Payment";
-            this.checkBox_Toll_Payment.Size = new System.Drawing.Size(149, 19);
-            this.checkBox_Toll_Payment.TabIndex = 19;
-            this.checkBox_Toll_Payment.Text = "Pagamento de Pedágio";
-            this.checkBox_Toll_Payment.UseVisualStyleBackColor = true;
+            this.comboBox_Travel_Status.FormattingEnabled = true;
+            this.comboBox_Travel_Status.Items.AddRange(new object[] {
+            "PLANEJADO",
+            "INICIADO",
+            "EMBARCADO"});
+            this.comboBox_Travel_Status.Location = new System.Drawing.Point(155, 111);
+            this.comboBox_Travel_Status.Name = "comboBox_Travel_Status";
+            this.comboBox_Travel_Status.Size = new System.Drawing.Size(140, 23);
+            this.comboBox_Travel_Status.TabIndex = 4;
+            this.comboBox_Travel_Status.Text = "PLANEJADO";
             // 
             // tabControl
             // 

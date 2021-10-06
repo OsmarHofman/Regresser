@@ -44,13 +44,15 @@ namespace Regresser
 
             ctes = binoActions.Ctes;
 
-            foreach (var cte in ctes)
-                listBox_CTe_Normal.Items.Add($"CT-e de Número: {cte.Number}");
+            if (ctes != null)
+                foreach (var cte in ctes)
+                    listBox_CTe_Normal.Items.Add($"CT-e de Número: {cte.Number}");
 
             complCtes = binoActions.ComplementaryCtes;
 
-            foreach (var complCte in complCtes)
-                listBox_CTe_Compl.Items.Add($"CT-e Complementar de Número: {complCte.Number}");
+            if (complCtes != null)
+                foreach (var complCte in complCtes)
+                    listBox_CTe_Compl.Items.Add($"CT-e Complementar de Número: {complCte.Number}");
 
             editingRobotIndex = MainForm.robots.IndexOf(robot);
         }
@@ -62,10 +64,10 @@ namespace Regresser
             {
                 var actions = new BinoActions { UrlWs = textBox_Url_WS.Text };
 
-                if (ctes.Any())
+                if (ctes != null)
                     actions.Ctes = ctes;
 
-                if (complCtes.Any())
+                if (complCtes != null)
                     actions.ComplementaryCtes = complCtes;
 
                 List<Actions> binoActions = new List<Actions> { actions };
@@ -127,11 +129,25 @@ namespace Regresser
             comboBox_Normal_CST_Type.SelectedIndex = 0;
             checkBox_Normal_Taker.Checked = true;
         }
+        private void UseNormalPlaceHolderValues()
+        {
+            textBox_CTe_Normal_Value.Text = textBox_CTe_Normal_Value.PlaceholderText;
+            textBox_Normal_vBC.Text = textBox_Normal_vBC.PlaceholderText;
+            textBox_Normal_pICMS.Text = textBox_Normal_pICMS.PlaceholderText;
+            textBox_Normal_vICMS.Text = textBox_Normal_vICMS.PlaceholderText;
+            textBox_Normal_Emitter.Text = textBox_Normal_Emitter.PlaceholderText;
+            textBox_Normal_Sender.Text = textBox_Normal_Sender.PlaceholderText;
+            textBox_Normal_Recipient.Text = textBox_Normal_Recipient.PlaceholderText;
+            if (string.IsNullOrEmpty(textBox_Url_WS.Text))
+                textBox_Url_WS.Text = textBox_Url_WS.PlaceholderText;
+        }
 
         private void button_Add_Item_Click(object sender, EventArgs e)
         {
             isCreatingCTeNormal = true;
             ToggleFields();
+            UseNormalPlaceHolderValues();
+            textBox_Normal_EnterpriseId.Focus();
         }
 
         private void button_Save_Item_Click(object sender, EventArgs e)
@@ -282,6 +298,21 @@ namespace Regresser
         {
             isCreatingCTeCompl = true;
             ToggleComplFields();
+            UseComplPlaceHolderValues();
+            textBox_Compl_EnterpriseId.Focus();
+        }
+
+        private void UseComplPlaceHolderValues()
+        {
+            textBox_CTe_Compl_Value.Text = textBox_CTe_Compl_Value.PlaceholderText;
+            textBox_Compl_vBC.Text = textBox_Compl_vBC.PlaceholderText;
+            textBox_Compl_pICMS.Text = textBox_Compl_pICMS.PlaceholderText;
+            textBox_Compl_vICMS.Text = textBox_Compl_vICMS.PlaceholderText;
+            textBox_Compl_Emitter.Text = textBox_Compl_Emitter.PlaceholderText;
+            textBox_Compl_Sender.Text = textBox_Compl_Sender.PlaceholderText;
+            textBox_Compl_Recipient.Text = textBox_Compl_Recipient.PlaceholderText;
+            if (string.IsNullOrEmpty(textBox_Url_WS.Text))
+                textBox_Url_WS.Text = textBox_Url_WS.PlaceholderText;
         }
 
         #endregion
