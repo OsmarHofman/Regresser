@@ -93,6 +93,7 @@ namespace Regresser
             // 
             this.textBox_Url_WS.Location = new System.Drawing.Point(108, 17);
             this.textBox_Url_WS.Name = "textBox_Url_WS";
+            this.textBox_Url_WS.PlaceholderText = "http://191.239.245.232:9999/tmsExchangeMessage/TMSExchangeMessage.asmx";
             this.textBox_Url_WS.Size = new System.Drawing.Size(564, 23);
             this.textBox_Url_WS.TabIndex = 20;
             // 
@@ -153,6 +154,7 @@ namespace Regresser
             this.textBox_Issuer.Enabled = false;
             this.textBox_Issuer.Location = new System.Drawing.Point(451, 164);
             this.textBox_Issuer.Name = "textBox_Issuer";
+            this.textBox_Issuer.PlaceholderText = "05257045000160";
             this.textBox_Issuer.Size = new System.Drawing.Size(120, 23);
             this.textBox_Issuer.TabIndex = 25;
             // 
@@ -170,6 +172,7 @@ namespace Regresser
             this.textBox_Recipient.Enabled = false;
             this.textBox_Recipient.Location = new System.Drawing.Point(451, 208);
             this.textBox_Recipient.Name = "textBox_Recipient";
+            this.textBox_Recipient.PlaceholderText = "12764519000125";
             this.textBox_Recipient.Size = new System.Drawing.Size(120, 23);
             this.textBox_Recipient.TabIndex = 27;
             // 

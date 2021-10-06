@@ -70,10 +70,21 @@ namespace Regresser
             button_Save_Item.Visible = !button_Save_Item.Visible;
         }
 
+        private void UsePlaceHolderValues()
+        {
+            textBox_Release.Text = "EMBDEV.";
+            textBox_Issuer.Text = textBox_Issuer.PlaceholderText;
+            textBox_Recipient.Text = textBox_Recipient.PlaceholderText;
+            if (string.IsNullOrEmpty(textBox_Url_WS.Text))
+                textBox_Url_WS.Text = textBox_Url_WS.PlaceholderText;
+        }
+
         private void button_Add_Item_Click(object sender, EventArgs e)
         {
             isCreating = true;
             ToggleFields();
+            UsePlaceHolderValues();
+            textBox_EnterpriseId.Focus();
         }
 
         private void button_Save_Click(object sender, EventArgs e)

@@ -59,6 +59,7 @@ namespace Regresser
             this.textBox_Server_IP.Name = "textBox_Server_IP";
             this.textBox_Server_IP.Size = new System.Drawing.Size(220, 23);
             this.textBox_Server_IP.TabIndex = 2;
+            this.textBox_Server_IP.Text = "191.238.220.133";
             // 
             // label1
             // 
@@ -75,6 +76,7 @@ namespace Regresser
             this.textBox_DB_User.Name = "textBox_DB_User";
             this.textBox_DB_User.Size = new System.Drawing.Size(220, 23);
             this.textBox_DB_User.TabIndex = 4;
+            this.textBox_DB_User.Text = "sa";
             // 
             // label2
             // 
@@ -258,6 +260,7 @@ namespace Regresser
             this.textBox_DB_Password.Name = "textBox_DB_Password";
             this.textBox_DB_Password.Size = new System.Drawing.Size(220, 23);
             this.textBox_DB_Password.TabIndex = 24;
+            this.textBox_DB_Password.Text = "321";
             // 
             // DBAForm
             // 
