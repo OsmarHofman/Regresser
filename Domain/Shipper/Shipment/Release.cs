@@ -12,6 +12,19 @@ namespace Regresser.Domain.Shipper
 
         public List<Refnum> ReleaseRefnums { get; set; }
 
+        public Release(string releaseXid)
+        {
+            ReleaseXid = releaseXid;
+            ReleaseRefnums = new List<Refnum>();
+        }
+
+        public Release(string releaseDomainName, string releaseXid, List<Refnum> releaseRefnums)
+        {
+            ReleaseDomainName = releaseDomainName;
+            ReleaseXid = releaseXid;
+            ReleaseRefnums = releaseRefnums;
+        }
+
         public TreeNode ToStringAsTreeNodes()
         {
             var treeNodes = new List<TreeNode>();

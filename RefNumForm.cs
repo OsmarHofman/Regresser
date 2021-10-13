@@ -29,7 +29,7 @@ namespace Regresser
             this.refNums = refNums;
         }
 
-        public RefNumForm(ReleaseRefnum releaseRefnum, Refnum editRefNum = null)
+        public RefNumForm(Release releaseRefnum, Refnum editRefNum = null)
         {
             InitializeComponent();
 
@@ -71,7 +71,7 @@ namespace Regresser
                     if (string.IsNullOrEmpty(releaseXid))
                         ShipmentForm.shipmentRefnums = this.refNums;
                     else
-                        ShipmentForm.releaseRefnums.Find(x => x.ReleaseXid == this.releaseXid).ReleaseRefnums = this.refNums;
+                        ShipmentForm.releases.Find(x => x.ReleaseXid == this.releaseXid).ReleaseRefnums = this.refNums;
 
                     Close();
                 }

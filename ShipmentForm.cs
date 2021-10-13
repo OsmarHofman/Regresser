@@ -13,7 +13,7 @@ namespace Regresser
 
         public static List<Refnum> shipmentRefnums;
 
-        public static List<ReleaseRefnum> releaseRefnums;
+        public static List<Release> releases;
 
         private int activeReleaseIndex;
 
@@ -33,9 +33,7 @@ namespace Regresser
 
             InsertShipmentRefNums();
 
-            releaseRefnums = new List<ReleaseRefnum>();
-            var defaultReleaseRefnum = new ReleaseRefnum("1");
-            releaseRefnums.Add(defaultReleaseRefnum);
+            releases = new List<Release> { new Release("1") };
         }
 
         public ShipmentForm(Robot robot)
@@ -118,13 +116,7 @@ namespace Regresser
                     cost.AccessorialCostXid);
             }
 
-            releaseRefnums = new List<ReleaseRefnum>();
-
-            foreach (var release in shipment.Releases)
-            {
-                var releaseRefnum = new ReleaseRefnum(release.ReleaseXid, release.ReleaseRefnums);
-                releaseRefnums.Add(releaseRefnum);
-            }
+            releases = shipment.Releases;
 
             InsertReleases();
 
@@ -153,7 +145,7 @@ namespace Regresser
         {
             listBox_Release_Xids.Items.Clear();
 
-            foreach (var refNum in releaseRefnums) listBox_Release_Xids.Items.Add(refNum.ReleaseXid);
+            foreach (var release in releases) listBox_Release_Xids.Items.Add(release.ReleaseXid);
         }
 
         private void InsertReleaseRefNums()
@@ -162,11 +154,11 @@ namespace Regresser
 
             if (listBox_Release_Xids.SelectedItem != null)
             {
-                var specificReleaseRefnums = GetReleaseRefnumByXid(listBox_Release_Xids.SelectedItem.ToString());
+                var specificReleaseRefnums = GetReleaseRefnumsByXid(listBox_Release_Xids.SelectedItem.ToString());
 
-                if (specificReleaseRefnums.ReleaseRefnums != null)
+                if (specificReleaseRefnums != null)
                 {
-                    foreach (var refNum in specificReleaseRefnums.ReleaseRefnums)
+                    foreach (var refNum in specificReleaseRefnums)
                     {
                         var refNumText = string.Join(" - ", refNum.RefnumKey, refNum.RefnumValue);
                         listBox_Release_Refnums.Items.Add(refNumText);
@@ -176,7 +168,7 @@ namespace Regresser
             }
         }
 
-        private ReleaseRefnum GetReleaseRefnumByXid(string releaseXid) => releaseRefnums.Find(x => x.ReleaseXid == releaseXid);
+        private List<Refnum> GetReleaseRefnumsByXid(string releaseXid) => releases.Find(x => x.ReleaseXid == releaseXid).ReleaseRefnums;
 
         private string[] GetSelectedRefnum(ListBox listBox) => listBox.SelectedItem.ToString().Split(" - ");
 
@@ -206,19 +198,19 @@ namespace Regresser
 
         private List<Release> GenerateReleases(string domainName)
         {
-            if (!releaseRefnums.Any())
+            if (!ShipmentForm.releases.Any())
                 return null;
 
             var releases = new List<Release>();
 
-            foreach (var refnum in releaseRefnums)
+            foreach (var refnum in ShipmentForm.releases)
             {
                 var release = new Release
-                {
-                    ReleaseDomainName = domainName,
-                    ReleaseXid = refnum.ReleaseXid,
-                    ReleaseRefnums = (refnum.ReleaseRefnums != null && refnum.ReleaseRefnums.Any()) ? refnum.ReleaseRefnums : null
-                };
+                (
+                    domainName,
+                    refnum.ReleaseXid,
+                    (refnum.ReleaseRefnums != null && refnum.ReleaseRefnums.Any()) ? refnum.ReleaseRefnums : null
+                );
 
                 releases.Add(release);
             }
@@ -376,7 +368,7 @@ namespace Regresser
         private void button_Add_Release_Refnum_Click(object sender, EventArgs e)
         {
             activeReleaseIndex = listBox_Release_Xids.SelectedIndex;
-            RefNumForm refNumForm = new RefNumForm(GetReleaseRefnumByXid(listBox_Release_Xids.SelectedItem.ToString()));
+            RefNumForm refNumForm = new RefNumForm(GetReleaseRefnumsByXid(listBox_Release_Xids.SelectedItem.ToString()));
             refNumForm.ShowDialog();
         }
 
@@ -392,7 +384,7 @@ namespace Regresser
             {
                 activeReleaseIndex = listBox_Release_Xids.SelectedIndex;
 
-                var releaseRefnum = GetReleaseRefnumByXid(listBox_Release_Xids.SelectedItem.ToString());
+                var releaseRefnum = GetReleaseRefnumsByXid(listBox_Release_Xids.SelectedItem.ToString());
 
                 Refnum refnum = new Refnum(GetSelectedRefnum(listBox_Release_Refnums)[0], GetSelectedRefnum(listBox_Release_Refnums)[1]);
 
@@ -409,8 +401,8 @@ namespace Regresser
         {
             var refNumKey = GetSelectedRefnum(listBox_Release_Refnums)[0];
             listBox_Release_Refnums.Items.RemoveAt(listBox_Release_Refnums.SelectedIndex);
-            var releaseRefnums = GetReleaseRefnumByXid(listBox_Release_Xids.SelectedItem.ToString());
-            Refnum.RemoveFromRefnumList(releaseRefnums.ReleaseRefnums, refNumKey);
+            var releaseRefnums = GetReleaseRefnumsByXid(listBox_Release_Xids.SelectedItem.ToString());
+            Refnum.RemoveFromRefnumList(releaseRefnums, refNumKey);
         }
 
         private void button_Add_Release_Xid_Click(object sender, EventArgs e)
@@ -425,7 +417,7 @@ namespace Regresser
         {
             activeReleaseIndex = listBox_Release_Xids.SelectedIndex;
 
-            var release = releaseRefnums.Find(x => x.ReleaseXid == listBox_Release_Xids.SelectedItem.ToString());
+            var release = releases.Find(x => x.ReleaseXid == listBox_Release_Xids.SelectedItem.ToString());
 
             ReleaseXidForm releaseXidForm = new ReleaseXidForm(release);
             releaseXidForm.ShowDialog();
@@ -435,10 +427,10 @@ namespace Regresser
 
         private void button_Remove_Release_Xid_Click(object sender, EventArgs e)
         {
-            var releaseRefnumToDelete = releaseRefnums.Find(x => x.ReleaseXid == listBox_Release_Xids.SelectedItem.ToString());
+            var releaseRefnumToDelete = releases.Find(x => x.ReleaseXid == listBox_Release_Xids.SelectedItem.ToString());
 
             listBox_Release_Xids.Items.RemoveAt(listBox_Release_Xids.SelectedIndex);
-            releaseRefnums.Remove(releaseRefnumToDelete);
+            releases.Remove(releaseRefnumToDelete);
         }
     }
 }

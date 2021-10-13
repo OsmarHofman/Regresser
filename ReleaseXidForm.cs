@@ -14,18 +14,18 @@ namespace Regresser
 
         private bool isEditing = false;
 
-        private ReleaseRefnum releaseRefNum;
+        private Release release;
 
         public ReleaseXidForm()
         {
             InitializeComponent();
         }
 
-        public ReleaseXidForm(ReleaseRefnum release)
+        public ReleaseXidForm(Release release)
         {
             InitializeComponent();
 
-            releaseRefNum = release;
+            this.release = release;
             textBox_Release_Xid.Text = release.ReleaseXid;
             isEditing = true;
         }
@@ -37,8 +37,8 @@ namespace Regresser
 
             if (!string.IsNullOrEmpty(textBox_Release_Xid.Text))
             {
-                if (isEditing) releaseRefNum.ReleaseXid = textBox_Release_Xid.Text;
-                else ShipmentForm.releaseRefnums.Add(new ReleaseRefnum(textBox_Release_Xid.Text));
+                if (isEditing) release.ReleaseXid = textBox_Release_Xid.Text;
+                else ShipmentForm.releases.Add(new Release(textBox_Release_Xid.Text));
                 Close();
             }
         }

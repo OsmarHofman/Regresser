@@ -281,11 +281,11 @@ namespace Regresser
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(116, 25);
+            this.label13.Location = new System.Drawing.Point(143, 25);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(80, 15);
+            this.label13.Size = new System.Drawing.Size(45, 15);
             this.label13.TabIndex = 2;
-            this.label13.Text = "Xid da Ordem";
+            this.label13.Text = "Ordens";
             // 
             // button_Remove_Release_Xid
             // 
