@@ -51,8 +51,6 @@ namespace Regresser
         {
             var jarvisActions = robot.actions.First() as JarvisActions;
 
-            textBox_Url_WS.Text = jarvisActions.UrlWs;
-
             var shipment = jarvisActions.Shipments.Single();
 
             textBox_Shipment_DomainName.Text = shipment.ShipmentDomainName;
@@ -322,7 +320,6 @@ namespace Regresser
             {
                 new JarvisActions
                 {
-                    UrlWs = textBox_Url_WS.Text,
                     Shipments = new List<Shipment> { shipment },
                 }
             };

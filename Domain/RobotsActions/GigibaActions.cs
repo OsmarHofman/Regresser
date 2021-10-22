@@ -14,12 +14,12 @@ namespace Regresser.Domain.RobotsActions
 
         public override string ToString()
         {
-            return $"{Nfes.First()} Url do Ws: {UrlWs}.";
+            return $"{Nfes.First()}.";
         }
 
         public override TreeNode ToStringAsTreeNodes()
         {
-            var treeNodes = new List<TreeNode> { new TreeNode($"Url do WS: {UrlWs}") };
+            var treeNodes = new List<TreeNode>();
 
             foreach (var nfe in Nfes) treeNodes.Add(nfe.ToStringAsTreeNodes());
 

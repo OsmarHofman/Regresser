@@ -19,12 +19,12 @@ namespace Regresser.Domain.RobotsActions
             var ctesLabel = (Ctes.Any()) ? Ctes.First().ToString() : "";
             var complementaryCtesLabel = (ComplementaryCtes.Any()) ? ComplementaryCtes.First().ToString() : "";
 
-            return $"{ctesLabel}{complementaryCtesLabel}Url do Ws: {UrlWs}.";
+            return $"{ctesLabel}{complementaryCtesLabel}.";
         }
 
         public override TreeNode ToStringAsTreeNodes()
         {
-            var treeNodes = new List<TreeNode> { new TreeNode($"Url do WS: {UrlWs}") };
+            var treeNodes = new List<TreeNode>();
 
             if (Ctes != null)
                 foreach (var cte in Ctes) treeNodes.Add(cte.ToStringAsTreeNodes());

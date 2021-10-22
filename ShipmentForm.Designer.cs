@@ -32,8 +32,6 @@ namespace Regresser
             this.label16 = new System.Windows.Forms.Label();
             this.button_Save = new System.Windows.Forms.Button();
             this.button_Cancelar = new System.Windows.Forms.Button();
-            this.label27 = new System.Windows.Forms.Label();
-            this.textBox_Url_WS = new System.Windows.Forms.TextBox();
             this.tabPage_Release = new System.Windows.Forms.TabPage();
             this.button_Remove_Release_Refnum = new System.Windows.Forms.Button();
             this.listBox_Release_Xids = new System.Windows.Forms.ListBox();
@@ -116,7 +114,7 @@ namespace Regresser
             // 
             this.label16.AutoSize = true;
             this.label16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label16.Location = new System.Drawing.Point(-28, 301);
+            this.label16.Location = new System.Drawing.Point(-28, 263);
             this.label16.MaximumSize = new System.Drawing.Size(0, 2);
             this.label16.MinimumSize = new System.Drawing.Size(700, 2);
             this.label16.Name = "label16";
@@ -126,7 +124,7 @@ namespace Regresser
             // button_Save
             // 
             this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Save.Location = new System.Drawing.Point(156, 316);
+            this.button_Save.Location = new System.Drawing.Point(156, 278);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(105, 38);
             this.button_Save.TabIndex = 14;
@@ -138,7 +136,7 @@ namespace Regresser
             // button_Cancelar
             // 
             this.button_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Cancelar.Location = new System.Drawing.Point(339, 316);
+            this.button_Cancelar.Location = new System.Drawing.Point(339, 278);
             this.button_Cancelar.Name = "button_Cancelar";
             this.button_Cancelar.Size = new System.Drawing.Size(105, 38);
             this.button_Cancelar.TabIndex = 15;
@@ -146,22 +144,6 @@ namespace Regresser
             this.button_Cancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.button_Cancelar.UseVisualStyleBackColor = true;
             this.button_Cancelar.Click += new System.EventHandler(this.button_Cancelar_Click);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(16, 18);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(62, 15);
-            this.label27.TabIndex = 17;
-            this.label27.Text = "Url do WS:";
-            // 
-            // textBox_Url_WS
-            // 
-            this.textBox_Url_WS.Location = new System.Drawing.Point(84, 15);
-            this.textBox_Url_WS.Name = "textBox_Url_WS";
-            this.textBox_Url_WS.Size = new System.Drawing.Size(538, 23);
-            this.textBox_Url_WS.TabIndex = 18;
             // 
             // tabPage_Release
             // 
@@ -909,7 +891,7 @@ namespace Regresser
             this.tabControl.Controls.Add(this.tabPage_Shipment_Refnum);
             this.tabControl.Controls.Add(this.tabPage_Participants);
             this.tabControl.Controls.Add(this.tabPage_Release);
-            this.tabControl.Location = new System.Drawing.Point(12, 48);
+            this.tabControl.Location = new System.Drawing.Point(12, 10);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(614, 246);
@@ -919,16 +901,16 @@ namespace Regresser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 362);
+            this.ClientSize = new System.Drawing.Size(634, 327);
             this.ControlBox = false;
-            this.Controls.Add(this.textBox_Url_WS);
-            this.Controls.Add(this.label27);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.button_Cancelar);
             this.Controls.Add(this.button_Save);
             this.Controls.Add(this.label16);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(650, 366);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(650, 366);
             this.Name = "ShipmentForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Embarque - Jarvis";
@@ -953,8 +935,6 @@ namespace Regresser
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Button button_Save;
         private System.Windows.Forms.Button button_Cancelar;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox textBox_Url_WS;
         private System.Windows.Forms.TabPage tabPage_Release;
         private System.Windows.Forms.Button button_Remove_Release_Refnum;
         private System.Windows.Forms.ListBox listBox_Release_Xids;

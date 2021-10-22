@@ -34,8 +34,6 @@ namespace Regresser
         {
             var gigibaActions = robot.actions.First() as GigibaActions;
 
-            textBox_Url_WS.Text = gigibaActions.UrlWs;
-
             nfes = gigibaActions.Nfes;
             foreach (var nfe in nfes)
                 listBox.Items.Add($"Nota de Número: {nfe.Number}");
@@ -75,8 +73,6 @@ namespace Regresser
             textBox_Release.Text = "EMBDEV.";
             textBox_Issuer.Text = textBox_Issuer.PlaceholderText;
             textBox_Recipient.Text = textBox_Recipient.PlaceholderText;
-            if (string.IsNullOrEmpty(textBox_Url_WS.Text))
-                textBox_Url_WS.Text = textBox_Url_WS.PlaceholderText;
         }
 
         private void button_Add_Item_Click(object sender, EventArgs e)
@@ -92,7 +88,7 @@ namespace Regresser
             if (!nfes.Any()) MessageBox.Show("Não há NF-es a serem salvas!");
             else
             {
-                List<Actions> gigibaActions = new List<Actions> { new GigibaActions { UrlWs = textBox_Url_WS.Text, Nfes = nfes } };
+                List<Actions> gigibaActions = new List<Actions> { new GigibaActions { Nfes = nfes } };
 
                 var gigiba = new Robot("gigiba", gigibaActions);
 

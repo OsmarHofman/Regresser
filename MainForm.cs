@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
+using Regresser.Domain.RobotsActions;
 
 namespace Regresser
 {
@@ -89,8 +90,91 @@ namespace Regresser
             form.ShowDialog();
         }
 
+        private void SetUrlWsOnRobots()
+        {
+            foreach (var robot in robots)
+            {
+                switch (robot.RobotName)
+                {
+                    case "jarvis":
+                        var jarvis = robot.actions.First() as JarvisActions;
+
+                        jarvis.UrlWs = textBox_Url_WS.Text;
+
+                        break;
+
+                    case "gigiba":
+
+                        var gigiba = robot.actions.First() as GigibaActions;
+
+                        gigiba.UrlWs = textBox_Url_WS.Text;
+
+                        break;
+
+                    case "bino":
+                        var bino = robot.actions.First() as BinoActions;
+
+                        bino.UrlWs = textBox_Url_WS.Text;
+
+                        break;
+                }
+            }
+        }
+
+        private void SetUrlWsOnScreen()
+        {
+            foreach (var robot in robots)
+            {
+                switch (robot.RobotName)
+                {
+                    case "jarvis":
+                        var jarvis = robot.actions.First() as JarvisActions;
+
+                        textBox_Url_WS.Text = jarvis.UrlWs;
+
+                        return;
+
+                    case "gigiba":
+
+                        var gigiba = robot.actions.First() as GigibaActions;
+
+                        gigiba.UrlWs = textBox_Url_WS.Text;
+
+                        return;
+
+
+                    case "bino":
+                        var bino = robot.actions.First() as BinoActions;
+
+                        bino.UrlWs = textBox_Url_WS.Text;
+
+                        return;
+                }
+            }
+        }
+
+        public bool RobotsNeedsUrlWs()
+        {
+            foreach (var robot in robots)
+            {
+                if (robot.RobotName == "jarvis" ||
+                    robot.RobotName == "gigiba" ||
+                    robot.RobotName == "bino") return true;
+            }
+
+            return false;
+        }
+
         private void button_Send_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(textBox_Url_WS.Text))
+            {
+                MessageBox.Show("Preencha a URL do WS!");
+                return;
+            }
+
+            SetUrlWsOnRobots();
+
             var response = Robot.SendActions(robots);
 
             MessageBox.Show("Enviado aos robozinhos!");
@@ -193,7 +277,10 @@ namespace Regresser
                     });
 
                     MessageBox.Show("Arquivo carregado com sucesso!");
+
                     robots = convertedRobots;
+
+                    SetUrlWsOnScreen();
 
                     RefreshRobotLabels();
 
@@ -252,6 +339,12 @@ namespace Regresser
 
         private void button_Save_JSON_Click(object sender, EventArgs e)
         {
+            if (RobotsNeedsUrlWs() &&
+                string.IsNullOrEmpty(textBox_Url_WS.Text))
+            {
+                MessageBox.Show("Preencha a URL do WS!");
+                return;
+            }
 
             if (robots.Any())
             {
@@ -261,6 +354,8 @@ namespace Regresser
                 {
                     try
                     {
+                        SetUrlWsOnRobots();
+
                         var json = JsonConvert.SerializeObject(robots,
                             new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
@@ -274,8 +369,6 @@ namespace Regresser
                     }
 
                 }
-
-                saveFileDialog_JSON.Reset();
             }
             else
                 MessageBox.Show("Nenhuma requisição para ser salva!");

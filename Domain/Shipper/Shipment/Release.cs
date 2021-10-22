@@ -14,6 +14,8 @@ namespace Regresser.Domain.Shipper
 
         public List<Refnum> ReleaseRefnums { get; set; }
 
+        public Release() { }
+
         public Release(string releaseXid)
         {
             ReleaseXid = releaseXid;

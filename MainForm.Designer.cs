@@ -35,12 +35,15 @@ namespace Regresser
             this.timeoutToolStripMenuItem_Timeout = new System.Windows.Forms.ToolStripMenuItem();
             this.nFeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cTeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.validaçãoNoBancoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.divider = new System.Windows.Forms.Label();
             this.button_Remove = new System.Windows.Forms.Button();
             this.button_Move_Up = new System.Windows.Forms.Button();
             this.button_Move_Down = new System.Windows.Forms.Button();
             this.button_Add = new System.Windows.Forms.Button();
             this.panel = new System.Windows.Forms.Panel();
+            this.textBox_Url_WS = new System.Windows.Forms.TextBox();
+            this.label27 = new System.Windows.Forms.Label();
             this.button_Edit = new System.Windows.Forms.Button();
             this.button_Clone = new System.Windows.Forms.Button();
             this.treeView_Actions = new System.Windows.Forms.TreeView();
@@ -49,7 +52,6 @@ namespace Regresser
             this.button_Save_JSON = new System.Windows.Forms.Button();
             this.saveFileDialog_JSON = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.validaçãoNoBancoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip.SuspendLayout();
             this.panel.SuspendLayout();
             this.SuspendLayout();
@@ -63,7 +65,7 @@ namespace Regresser
             this.cTeToolStripMenuItem,
             this.validaçãoNoBancoToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip1";
-            this.contextMenuStrip.Size = new System.Drawing.Size(181, 136);
+            this.contextMenuStrip.Size = new System.Drawing.Size(178, 114);
             // 
             // embarqueToolStripMenuItem_Shipment
             // 
@@ -93,6 +95,13 @@ namespace Regresser
             this.cTeToolStripMenuItem.Text = "CT-e";
             this.cTeToolStripMenuItem.Click += new System.EventHandler(this.cTeToolStripMenuItem_Click);
             // 
+            // validaçãoNoBancoToolStripMenuItem
+            // 
+            this.validaçãoNoBancoToolStripMenuItem.Name = "validaçãoNoBancoToolStripMenuItem";
+            this.validaçãoNoBancoToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.validaçãoNoBancoToolStripMenuItem.Text = "Validação no Banco";
+            this.validaçãoNoBancoToolStripMenuItem.Click += new System.EventHandler(this.validaçãoNoBancoToolStripMenuItem_Click);
+            // 
             // divider
             // 
             this.divider.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -108,7 +117,7 @@ namespace Regresser
             this.button_Remove.Enabled = false;
             this.button_Remove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Remove.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Remove.Location = new System.Drawing.Point(372, 416);
+            this.button_Remove.Location = new System.Drawing.Point(372, 426);
             this.button_Remove.Name = "button_Remove";
             this.button_Remove.Size = new System.Drawing.Size(105, 40);
             this.button_Remove.TabIndex = 4;
@@ -122,7 +131,7 @@ namespace Regresser
             this.button_Move_Up.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Move_Up.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_Move_Up.Image = global::Regresser.Properties.Resources.upload;
-            this.button_Move_Up.Location = new System.Drawing.Point(483, 416);
+            this.button_Move_Up.Location = new System.Drawing.Point(483, 426);
             this.button_Move_Up.Name = "button_Move_Up";
             this.button_Move_Up.Size = new System.Drawing.Size(89, 40);
             this.button_Move_Up.TabIndex = 5;
@@ -138,7 +147,7 @@ namespace Regresser
             this.button_Move_Down.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Move_Down.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_Move_Down.Image = global::Regresser.Properties.Resources.download;
-            this.button_Move_Down.Location = new System.Drawing.Point(578, 416);
+            this.button_Move_Down.Location = new System.Drawing.Point(578, 426);
             this.button_Move_Down.Name = "button_Move_Down";
             this.button_Move_Down.Size = new System.Drawing.Size(89, 40);
             this.button_Move_Down.TabIndex = 6;
@@ -153,7 +162,7 @@ namespace Regresser
             this.button_Add.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Add.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_Add.Image = global::Regresser.Properties.Resources.add;
-            this.button_Add.Location = new System.Drawing.Point(31, 416);
+            this.button_Add.Location = new System.Drawing.Point(31, 426);
             this.button_Add.Name = "button_Add";
             this.button_Add.Size = new System.Drawing.Size(113, 40);
             this.button_Add.TabIndex = 7;
@@ -165,6 +174,8 @@ namespace Regresser
             // 
             // panel
             // 
+            this.panel.Controls.Add(this.textBox_Url_WS);
+            this.panel.Controls.Add(this.label27);
             this.panel.Controls.Add(this.button_Edit);
             this.panel.Controls.Add(this.button_Clone);
             this.panel.Controls.Add(this.treeView_Actions);
@@ -177,12 +188,29 @@ namespace Regresser
             this.panel.Size = new System.Drawing.Size(706, 473);
             this.panel.TabIndex = 6;
             // 
+            // textBox_Url_WS
+            // 
+            this.textBox_Url_WS.Location = new System.Drawing.Point(103, 8);
+            this.textBox_Url_WS.Name = "textBox_Url_WS";
+            this.textBox_Url_WS.PlaceholderText = "http://191.239.245.232:9999/tmsExchangeMessage/TMSExchangeMessage.asmx";
+            this.textBox_Url_WS.Size = new System.Drawing.Size(564, 23);
+            this.textBox_Url_WS.TabIndex = 44;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(35, 11);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(62, 15);
+            this.label27.TabIndex = 19;
+            this.label27.Text = "Url do WS:";
+            // 
             // button_Edit
             // 
             this.button_Edit.Enabled = false;
             this.button_Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Edit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Edit.Location = new System.Drawing.Point(261, 416);
+            this.button_Edit.Location = new System.Drawing.Point(261, 426);
             this.button_Edit.Name = "button_Edit";
             this.button_Edit.Size = new System.Drawing.Size(105, 40);
             this.button_Edit.TabIndex = 12;
@@ -195,7 +223,7 @@ namespace Regresser
             this.button_Clone.Enabled = false;
             this.button_Clone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Clone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Clone.Location = new System.Drawing.Point(150, 416);
+            this.button_Clone.Location = new System.Drawing.Point(150, 426);
             this.button_Clone.Name = "button_Clone";
             this.button_Clone.Size = new System.Drawing.Size(105, 40);
             this.button_Clone.TabIndex = 11;
@@ -205,9 +233,9 @@ namespace Regresser
             // 
             // treeView_Actions
             // 
-            this.treeView_Actions.Location = new System.Drawing.Point(16, 13);
+            this.treeView_Actions.Location = new System.Drawing.Point(16, 41);
             this.treeView_Actions.Name = "treeView_Actions";
-            this.treeView_Actions.Size = new System.Drawing.Size(674, 387);
+            this.treeView_Actions.Size = new System.Drawing.Size(674, 373);
             this.treeView_Actions.TabIndex = 10;
             this.treeView_Actions.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView_Actions_AfterSelect);
             // 
@@ -257,13 +285,6 @@ namespace Regresser
             this.saveFileDialog_JSON.FileName = "requisicoes";
             this.saveFileDialog_JSON.Filter = "Arquivos JSON (*.json)|*.json|Todos os arquivos(*.*)|*.*";
             // 
-            // validaçãoNoBancoToolStripMenuItem
-            // 
-            this.validaçãoNoBancoToolStripMenuItem.Name = "validaçãoNoBancoToolStripMenuItem";
-            this.validaçãoNoBancoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.validaçãoNoBancoToolStripMenuItem.Text = "Validação no Banco";
-            this.validaçãoNoBancoToolStripMenuItem.Click += new System.EventHandler(this.validaçãoNoBancoToolStripMenuItem_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -283,6 +304,7 @@ namespace Regresser
             this.Activated += new System.EventHandler(this.MainForm_Activated);
             this.contextMenuStrip.ResumeLayout(false);
             this.panel.ResumeLayout(false);
+            this.panel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -308,6 +330,8 @@ namespace Regresser
         private System.Windows.Forms.Button button_Edit;
         private System.Windows.Forms.ToolStripMenuItem cTeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem validaçãoNoBancoToolStripMenuItem;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.TextBox textBox_Url_WS;
     }
 }
 

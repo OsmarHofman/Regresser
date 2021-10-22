@@ -45,8 +45,6 @@ namespace Regresser
             this.textBox_Normal_Token = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_Normal_EnterpriseId = new System.Windows.Forms.TextBox();
-            this.textBox_Url_WS = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
             this.button_Cancelar = new System.Windows.Forms.Button();
             this.button_Save = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -265,27 +263,10 @@ namespace Regresser
             this.textBox_Normal_EnterpriseId.Size = new System.Drawing.Size(220, 23);
             this.textBox_Normal_EnterpriseId.TabIndex = 0;
             // 
-            // textBox_Url_WS
-            // 
-            this.textBox_Url_WS.Location = new System.Drawing.Point(229, 23);
-            this.textBox_Url_WS.Name = "textBox_Url_WS";
-            this.textBox_Url_WS.PlaceholderText = "http://191.239.245.232:9999/tmsExchangeMessage/TMSExchangeMessage.asmx";
-            this.textBox_Url_WS.Size = new System.Drawing.Size(564, 23);
-            this.textBox_Url_WS.TabIndex = 43;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(161, 26);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(62, 15);
-            this.label27.TabIndex = 42;
-            this.label27.Text = "Url do WS:";
-            // 
             // button_Cancelar
             // 
             this.button_Cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Cancelar.Location = new System.Drawing.Point(886, 486);
+            this.button_Cancelar.Location = new System.Drawing.Point(886, 442);
             this.button_Cancelar.Name = "button_Cancelar";
             this.button_Cancelar.Size = new System.Drawing.Size(105, 38);
             this.button_Cancelar.TabIndex = 40;
@@ -297,7 +278,7 @@ namespace Regresser
             // button_Save
             // 
             this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Save.Location = new System.Drawing.Point(748, 486);
+            this.button_Save.Location = new System.Drawing.Point(748, 442);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(105, 38);
             this.button_Save.TabIndex = 39;
@@ -310,7 +291,7 @@ namespace Regresser
             // 
             this.tabControl1.Controls.Add(this.tabPage_CTe_Normal);
             this.tabControl1.Controls.Add(this.tabPage_CTe_Complementary);
-            this.tabControl1.Location = new System.Drawing.Point(12, 59);
+            this.tabControl1.Location = new System.Drawing.Point(12, 15);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1007, 421);
@@ -873,14 +854,12 @@ namespace Regresser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1033, 538);
+            this.ClientSize = new System.Drawing.Size(1034, 501);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.button_Cancelar);
-            this.Controls.Add(this.label27);
             this.Controls.Add(this.button_Save);
-            this.Controls.Add(this.textBox_Url_WS);
-            this.MaximumSize = new System.Drawing.Size(1049, 577);
-            this.MinimumSize = new System.Drawing.Size(1049, 577);
+            this.MaximumSize = new System.Drawing.Size(1050, 540);
+            this.MinimumSize = new System.Drawing.Size(1050, 540);
             this.Name = "CTeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CTeForm";
@@ -894,7 +873,6 @@ namespace Regresser
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -916,8 +894,6 @@ namespace Regresser
         private System.Windows.Forms.TextBox textBox_Normal_Token;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox_Normal_EnterpriseId;
-        private System.Windows.Forms.TextBox textBox_Url_WS;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Button button_Cancelar;
         private System.Windows.Forms.Button button_Save;
         private System.Windows.Forms.TabControl tabControl1;

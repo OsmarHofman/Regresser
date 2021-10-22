@@ -97,7 +97,7 @@ namespace Regresser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(314, 190);
+            this.ClientSize = new System.Drawing.Size(314, 194);
             this.ControlBox = false;
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_DestinationLocationXid);
@@ -105,6 +105,8 @@ namespace Regresser
             this.Controls.Add(this.button_Save);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_Release_Xid);
+            this.MaximumSize = new System.Drawing.Size(330, 233);
+            this.MinimumSize = new System.Drawing.Size(330, 233);
             this.Name = "ReleaseXidForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Xid da Ordem";

@@ -85,7 +85,9 @@ namespace Regresser
             this.Controls.Add(this.label_Timeout);
             this.Controls.Add(this.textBox_Valor_Timeout);
             this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(356, 154);
             this.MinimizeBox = false;
+            this.MinimumSize = new System.Drawing.Size(356, 154);
             this.Name = "TimeoutForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Timeout - UserBolt";

@@ -40,8 +40,6 @@ namespace Regresser
         {
             var binoActions = robot.actions.First() as BinoActions;
 
-            textBox_Url_WS.Text = binoActions.UrlWs;
-
             ctes = binoActions.Ctes;
 
             if (ctes != null)
@@ -62,7 +60,7 @@ namespace Regresser
             if (!ctes.Any() && !complCtes.Any()) MessageBox.Show("Não há CT-es Normais nem Complementares a serem salvos!");
             else
             {
-                var actions = new BinoActions { UrlWs = textBox_Url_WS.Text };
+                var actions = new BinoActions();
 
                 if (ctes != null)
                     actions.Ctes = ctes;
@@ -138,8 +136,6 @@ namespace Regresser
             textBox_Normal_Emitter.Text = textBox_Normal_Emitter.PlaceholderText;
             textBox_Normal_Sender.Text = textBox_Normal_Sender.PlaceholderText;
             textBox_Normal_Recipient.Text = textBox_Normal_Recipient.PlaceholderText;
-            if (string.IsNullOrEmpty(textBox_Url_WS.Text))
-                textBox_Url_WS.Text = textBox_Url_WS.PlaceholderText;
         }
 
         private void button_Add_Item_Click(object sender, EventArgs e)
@@ -311,8 +307,6 @@ namespace Regresser
             textBox_Compl_Emitter.Text = textBox_Compl_Emitter.PlaceholderText;
             textBox_Compl_Sender.Text = textBox_Compl_Sender.PlaceholderText;
             textBox_Compl_Recipient.Text = textBox_Compl_Recipient.PlaceholderText;
-            if (string.IsNullOrEmpty(textBox_Url_WS.Text))
-                textBox_Url_WS.Text = textBox_Url_WS.PlaceholderText;
         }
 
         #endregion

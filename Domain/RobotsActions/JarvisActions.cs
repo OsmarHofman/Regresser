@@ -18,7 +18,7 @@ namespace Regresser.Domain.RobotsActions
 
         public override TreeNode ToStringAsTreeNodes()
         {
-            var treeNodes = new List<TreeNode> { new TreeNode($"Url do WS: {UrlWs}") };
+            var treeNodes = new List<TreeNode>();
 
             foreach (var shipment in Shipments) treeNodes.Add(shipment.ToStringAsTreeNodes());
 

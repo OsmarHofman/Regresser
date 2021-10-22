@@ -289,6 +289,8 @@ namespace Regresser
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_Server_IP);
             this.Controls.Add(this.label1);
+            this.MaximumSize = new System.Drawing.Size(956, 574);
+            this.MinimumSize = new System.Drawing.Size(956, 574);
             this.Name = "DBAForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DBAForm";
