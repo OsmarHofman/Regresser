@@ -32,6 +32,9 @@ namespace Regresser
             this.textBox_Release_Xid = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button_Save = new System.Windows.Forms.Button();
+            this.checkBox_DestinationToggle = new System.Windows.Forms.CheckBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox_DestinationLocationXid = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // textBox_Release_Xid
@@ -53,7 +56,7 @@ namespace Regresser
             // button_Save
             // 
             this.button_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_Save.Location = new System.Drawing.Point(98, 72);
+            this.button_Save.Location = new System.Drawing.Point(115, 152);
             this.button_Save.Name = "button_Save";
             this.button_Save.Size = new System.Drawing.Size(56, 26);
             this.button_Save.TabIndex = 15;
@@ -62,12 +65,43 @@ namespace Regresser
             this.button_Save.UseVisualStyleBackColor = true;
             this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
             // 
+            // checkBox_DestinationToggle
+            // 
+            this.checkBox_DestinationToggle.AutoSize = true;
+            this.checkBox_DestinationToggle.Location = new System.Drawing.Point(12, 71);
+            this.checkBox_DestinationToggle.Name = "checkBox_DestinationToggle";
+            this.checkBox_DestinationToggle.Size = new System.Drawing.Size(286, 19);
+            this.checkBox_DestinationToggle.TabIndex = 16;
+            this.checkBox_DestinationToggle.Text = "Usar a location de destino diferente do embarque";
+            this.checkBox_DestinationToggle.UseVisualStyleBackColor = true;
+            this.checkBox_DestinationToggle.CheckedChanged += new System.EventHandler(this.checkBox_DestinationToggle_CheckedChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 109);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(89, 15);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Xid da Location";
+            // 
+            // textBox_DestinationLocationXid
+            // 
+            this.textBox_DestinationLocationXid.Enabled = false;
+            this.textBox_DestinationLocationXid.Location = new System.Drawing.Point(98, 106);
+            this.textBox_DestinationLocationXid.Name = "textBox_DestinationLocationXid";
+            this.textBox_DestinationLocationXid.Size = new System.Drawing.Size(160, 23);
+            this.textBox_DestinationLocationXid.TabIndex = 17;
+            // 
             // ReleaseXidForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 111);
+            this.ClientSize = new System.Drawing.Size(314, 190);
             this.ControlBox = false;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBox_DestinationLocationXid);
+            this.Controls.Add(this.checkBox_DestinationToggle);
             this.Controls.Add(this.button_Save);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_Release_Xid);
@@ -84,5 +118,8 @@ namespace Regresser
         private System.Windows.Forms.TextBox textBox_Release_Xid;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button_Save;
+        private System.Windows.Forms.CheckBox checkBox_DestinationToggle;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox_DestinationLocationXid;
     }
 }

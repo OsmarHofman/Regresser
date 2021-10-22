@@ -10,11 +10,20 @@ namespace Regresser.Domain.Shipper
 
         public string ReleaseXid { get; set; }
 
+        public string DestinationLocationXid { get; set; }
+
         public List<Refnum> ReleaseRefnums { get; set; }
 
         public Release(string releaseXid)
         {
             ReleaseXid = releaseXid;
+            ReleaseRefnums = new List<Refnum>();
+        }
+
+        public Release(string releaseXid, string destinationLocationXid)
+        {
+            ReleaseXid = releaseXid;
+            DestinationLocationXid = destinationLocationXid;
             ReleaseRefnums = new List<Refnum>();
         }
 
@@ -28,6 +37,9 @@ namespace Regresser.Domain.Shipper
         public TreeNode ToStringAsTreeNodes()
         {
             var treeNodes = new List<TreeNode>();
+
+            if (DestinationLocationXid != null)
+                treeNodes.Add(new TreeNode($"Xid da location de destino: {DestinationLocationXid}"));
 
             if (ReleaseRefnums != null && ReleaseRefnums.Any())
                 foreach (var refnum in ReleaseRefnums) treeNodes.Add(refnum.ToStringAsTreeNodes());

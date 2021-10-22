@@ -27,6 +27,11 @@ namespace Regresser
 
             this.release = release;
             textBox_Release_Xid.Text = release.ReleaseXid;
+            if (release.DestinationLocationXid != null)
+            {
+                checkBox_DestinationToggle.Enabled = true;
+                textBox_DestinationLocationXid.Text = release.DestinationLocationXid;
+            }
             isEditing = true;
         }
 
@@ -37,10 +42,19 @@ namespace Regresser
 
             if (!string.IsNullOrEmpty(textBox_Release_Xid.Text))
             {
-                if (isEditing) release.ReleaseXid = textBox_Release_Xid.Text;
-                else ShipmentForm.releases.Add(new Release(textBox_Release_Xid.Text));
+                if (isEditing)
+                {
+                    release.ReleaseXid = textBox_Release_Xid.Text;
+                    release.DestinationLocationXid = textBox_DestinationLocationXid.Text;
+                }
+                else ShipmentForm.releases.Add(new Release(textBox_Release_Xid.Text, textBox_DestinationLocationXid.Text));
                 Close();
             }
+        }
+
+        private void checkBox_DestinationToggle_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox_DestinationLocationXid.Enabled = !textBox_DestinationLocationXid.Enabled;
         }
     }
 }
