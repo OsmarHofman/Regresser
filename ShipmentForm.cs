@@ -61,6 +61,8 @@ namespace Regresser
 
             comboBox_Emission_Status.SelectedItem = shipment.EmissionStatus;
 
+            textBox_Occurrence_Xids.Text = string.Join(";", shipment.ShipmentStatus);
+
             textBox_Carrier_Xid.Text = shipment.XidCarrier;
 
             textBox_Source_Location_Xid.Text = shipment.XidSourceLocation;
@@ -196,28 +198,6 @@ namespace Regresser
             return shipmentCosts;
         }
 
-        private List<Release> GenerateReleases(string domainName)
-        {
-            if (!ShipmentForm.releases.Any())
-                return null;
-
-            var releases = new List<Release>();
-
-            foreach (var refnum in ShipmentForm.releases)
-            {
-                var release = new Release
-                (
-                    domainName,
-                    refnum.ReleaseXid,
-                    (refnum.ReleaseRefnums != null && refnum.ReleaseRefnums.Any()) ? refnum.ReleaseRefnums : null
-                );
-
-                releases.Add(release);
-            }
-
-            return releases;
-        }
-
         private Shipment GenerateShipment(string domainName, List<Release> releases, List<ShipmentCost> shipmentCosts)
         {
             var sourceAddress = new Address
@@ -258,6 +238,13 @@ namespace Regresser
             if (!shipmentRefnums.Any())
                 shipmentRefnums = null;
 
+            var occurrencesXids = textBox_Occurrence_Xids.Text.Split(";").ToList();
+
+            var occurrences = new List<ShipmentStatus>();
+
+            foreach (var occurrenceXid in occurrencesXids)
+                occurrences.Add(new ShipmentStatus { StatusXid = occurrenceXid });
+
             return new Shipment
             {
                 ShipmentDomainName = domainName,
@@ -279,6 +266,7 @@ namespace Regresser
                 ShipmentCosts = shipmentCosts,
                 ShipmentRefnums = shipmentRefnums,
                 Releases = releases,
+                ShipmentStatus = occurrences,
             };
         }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Regresser.Domain.Shipper;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -45,6 +46,8 @@ namespace Regresser.Domain.Shipper
 
         public List<Release> Releases { get; set; }
 
+        public List<ShipmentStatus> ShipmentStatus { get; set; }
+
         public override string ToString()
         {
             return $"Embarque {ShipmentXid}; {TravelStatus}; " +
@@ -89,6 +92,8 @@ namespace Regresser.Domain.Shipper
             if (Releases != null)
                 foreach (var release in Releases) treeNodes.Add(release.ToStringAsTreeNodes());
 
+            if (ShipmentStatus != null)
+                foreach (var shipmentStatus in ShipmentStatus) treeNodes.Add(shipmentStatus.ToStringAsTreeNodes());
 
             return new TreeNode($"Embarque: {ShipmentDomainName}.{ShipmentXid}", treeNodes.ToArray());
         }

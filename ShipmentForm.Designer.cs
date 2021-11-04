@@ -101,6 +101,8 @@ namespace Regresser
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox_Travel_Status = new System.Windows.Forms.ComboBox();
             this.tabControl = new System.Windows.Forms.TabControl();
+            this.textBox_Occurrence_Xids = new System.Windows.Forms.TextBox();
+            this.label23 = new System.Windows.Forms.Label();
             this.tabPage_Release.SuspendLayout();
             this.tabPage_Participants.SuspendLayout();
             this.tabPage_Shipment_Refnum.SuspendLayout();
@@ -713,6 +715,8 @@ namespace Regresser
             // 
             // tabPage_Planning
             // 
+            this.tabPage_Planning.Controls.Add(this.textBox_Occurrence_Xids);
+            this.tabPage_Planning.Controls.Add(this.label23);
             this.tabPage_Planning.Controls.Add(this.checkBox_Toll_Payment);
             this.tabPage_Planning.Controls.Add(this.checkBox_Toll_Calculation);
             this.tabPage_Planning.Controls.Add(this.textBox_Driver_Xid);
@@ -740,7 +744,7 @@ namespace Regresser
             // checkBox_Toll_Payment
             // 
             this.checkBox_Toll_Payment.AutoSize = true;
-            this.checkBox_Toll_Payment.Location = new System.Drawing.Point(429, 181);
+            this.checkBox_Toll_Payment.Location = new System.Drawing.Point(429, 170);
             this.checkBox_Toll_Payment.Name = "checkBox_Toll_Payment";
             this.checkBox_Toll_Payment.Size = new System.Drawing.Size(149, 19);
             this.checkBox_Toll_Payment.TabIndex = 19;
@@ -750,7 +754,7 @@ namespace Regresser
             // checkBox_Toll_Calculation
             // 
             this.checkBox_Toll_Calculation.AutoSize = true;
-            this.checkBox_Toll_Calculation.Location = new System.Drawing.Point(429, 153);
+            this.checkBox_Toll_Calculation.Location = new System.Drawing.Point(429, 142);
             this.checkBox_Toll_Calculation.Name = "checkBox_Toll_Calculation";
             this.checkBox_Toll_Calculation.Size = new System.Drawing.Size(128, 19);
             this.checkBox_Toll_Calculation.TabIndex = 18;
@@ -759,14 +763,14 @@ namespace Regresser
             // 
             // textBox_Driver_Xid
             // 
-            this.textBox_Driver_Xid.Location = new System.Drawing.Point(429, 111);
+            this.textBox_Driver_Xid.Location = new System.Drawing.Point(429, 100);
             this.textBox_Driver_Xid.Name = "textBox_Driver_Xid";
             this.textBox_Driver_Xid.Size = new System.Drawing.Size(152, 23);
             this.textBox_Driver_Xid.TabIndex = 17;
             // 
             // textBox_Taker_Xid
             // 
-            this.textBox_Taker_Xid.Location = new System.Drawing.Point(429, 69);
+            this.textBox_Taker_Xid.Location = new System.Drawing.Point(429, 58);
             this.textBox_Taker_Xid.Name = "textBox_Taker_Xid";
             this.textBox_Taker_Xid.Size = new System.Drawing.Size(152, 23);
             this.textBox_Taker_Xid.TabIndex = 15;
@@ -774,7 +778,7 @@ namespace Regresser
             // 
             // textBox_Shipment_Number
             // 
-            this.textBox_Shipment_Number.Location = new System.Drawing.Point(155, 69);
+            this.textBox_Shipment_Number.Location = new System.Drawing.Point(155, 58);
             this.textBox_Shipment_Number.Name = "textBox_Shipment_Number";
             this.textBox_Shipment_Number.Size = new System.Drawing.Size(140, 23);
             this.textBox_Shipment_Number.TabIndex = 2;
@@ -782,7 +786,7 @@ namespace Regresser
             // 
             // textBox_Carrier_Xid
             // 
-            this.textBox_Carrier_Xid.Location = new System.Drawing.Point(429, 26);
+            this.textBox_Carrier_Xid.Location = new System.Drawing.Point(429, 15);
             this.textBox_Carrier_Xid.Name = "textBox_Carrier_Xid";
             this.textBox_Carrier_Xid.Size = new System.Drawing.Size(152, 23);
             this.textBox_Carrier_Xid.TabIndex = 12;
@@ -790,7 +794,7 @@ namespace Regresser
             // 
             // textBox_Shipment_DomainName
             // 
-            this.textBox_Shipment_DomainName.Location = new System.Drawing.Point(155, 26);
+            this.textBox_Shipment_DomainName.Location = new System.Drawing.Point(155, 15);
             this.textBox_Shipment_DomainName.Name = "textBox_Shipment_DomainName";
             this.textBox_Shipment_DomainName.Size = new System.Drawing.Size(140, 23);
             this.textBox_Shipment_DomainName.TabIndex = 0;
@@ -799,7 +803,7 @@ namespace Regresser
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(345, 114);
+            this.label18.Location = new System.Drawing.Point(345, 103);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(78, 15);
             this.label18.TabIndex = 16;
@@ -808,7 +812,7 @@ namespace Regresser
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 29);
+            this.label1.Location = new System.Drawing.Point(11, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 15);
             this.label1.TabIndex = 1;
@@ -820,7 +824,7 @@ namespace Regresser
             this.comboBox_Emission_Status.Items.AddRange(new object[] {
             "PRE_EMISSAO_ENVIADA",
             "DADOS_DPS_RECEBIDO"});
-            this.comboBox_Emission_Status.Location = new System.Drawing.Point(155, 154);
+            this.comboBox_Emission_Status.Location = new System.Drawing.Point(155, 141);
             this.comboBox_Emission_Status.Name = "comboBox_Emission_Status";
             this.comboBox_Emission_Status.Size = new System.Drawing.Size(140, 23);
             this.comboBox_Emission_Status.TabIndex = 6;
@@ -829,7 +833,7 @@ namespace Regresser
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 157);
+            this.label4.Location = new System.Drawing.Point(51, 144);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(101, 15);
             this.label4.TabIndex = 7;
@@ -838,7 +842,7 @@ namespace Regresser
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(51, 114);
+            this.label3.Location = new System.Drawing.Point(51, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(98, 15);
             this.label3.TabIndex = 5;
@@ -847,7 +851,7 @@ namespace Regresser
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(323, 29);
+            this.label5.Location = new System.Drawing.Point(323, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 15);
             this.label5.TabIndex = 8;
@@ -856,7 +860,7 @@ namespace Regresser
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(74, 72);
+            this.label2.Location = new System.Drawing.Point(74, 61);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(75, 15);
             this.label2.TabIndex = 3;
@@ -865,7 +869,7 @@ namespace Regresser
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(349, 72);
+            this.label8.Location = new System.Drawing.Point(349, 61);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 15);
             this.label8.TabIndex = 11;
@@ -878,7 +882,7 @@ namespace Regresser
             "PLANEJADO",
             "INICIADO",
             "EMBARCADO"});
-            this.comboBox_Travel_Status.Location = new System.Drawing.Point(155, 111);
+            this.comboBox_Travel_Status.Location = new System.Drawing.Point(155, 100);
             this.comboBox_Travel_Status.Name = "comboBox_Travel_Status";
             this.comboBox_Travel_Status.Size = new System.Drawing.Size(140, 23);
             this.comboBox_Travel_Status.TabIndex = 4;
@@ -896,6 +900,23 @@ namespace Regresser
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(614, 246);
             this.tabControl.TabIndex = 16;
+            // 
+            // textBox_Occurrence_Xids
+            // 
+            this.textBox_Occurrence_Xids.Location = new System.Drawing.Point(155, 180);
+            this.textBox_Occurrence_Xids.Name = "textBox_Occurrence_Xids";
+            this.textBox_Occurrence_Xids.PlaceholderText = "IOD;POD;Cancelamento...";
+            this.textBox_Occurrence_Xids.Size = new System.Drawing.Size(140, 23);
+            this.textBox_Occurrence_Xids.TabIndex = 20;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(33, 183);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(116, 15);
+            this.label23.TabIndex = 21;
+            this.label23.Text = "Xids das Ocorrências";
             // 
             // ShipmentForm
             // 
@@ -1004,5 +1025,7 @@ namespace Regresser
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.ComboBox comboBox_Travel_Status;
         private System.Windows.Forms.TabControl tabControl;
+        private System.Windows.Forms.TextBox textBox_Occurrence_Xids;
+        private System.Windows.Forms.Label label23;
     }
 }
